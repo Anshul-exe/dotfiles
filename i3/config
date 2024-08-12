@@ -31,11 +31,14 @@ gaps outer 10
 
 # Mod1 = Alt ////// Mod4 = Windows
 set $mod Mod1
+
+# rofi key binds
 exec_always feh --bg-scale /home/mir/Pictures/astronaut.jpg
 bindsym $mod+space exec rofi -show run -theme rofidmenu.rasi
 bindsym $mod+e exec rofi -show emoji -theme todo.rasi
+bindsym $mod+c exec rofi -show calc -theme rofidmenu.rasi
 bindsym $mod+t exec  rofi -modi "todos:$HOME/.config/rofi/rofitodo.sh" -show todos -theme $HOME/.config/rofi/todo.rasi
-# bindsym $mod+t exec rofi -show run -theme todo.rasi
+bindsym $mod+F4 exec "$HOME/.config/rofi/powermenu.sh"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
