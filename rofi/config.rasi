@@ -1,0 +1,4 @@
+configuration {
+    modes: "window,filebrowser,drun,run,ssh,calc,emoji";
+}
+

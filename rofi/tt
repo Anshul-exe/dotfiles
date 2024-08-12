@@ -1,0 +1,2 @@
+rofi -combi-modi window -show combi -modi combi -show-icons
+https://github.com/yoshimoto/i3-alt-tab.py
