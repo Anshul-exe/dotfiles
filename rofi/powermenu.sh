@@ -1,23 +1,8 @@
 #!/bin/sh
-#
-# # Power menu script using tofi
-#
-# CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown\nLog Out" | rofi --config "$HOME"/.config/rofi/powermenu-config)
-#
-# case "$CHOSEN" in
-# "Lock") lockscreen ;;
-# "Suspend") systemctl suspend-then-hibernate ;;
-# "Reboot") reboot ;;
-# "Shutdown") poweroff ;;
-# "Log Out") hyprctl dispatch exit ;;
-# *) exit 1 ;;
-# esac
-
-#!/bin/sh
 
 # Power menu script using rofi
 
-CHOSEN=$(printf "Shutdown\nLog Out\nReboot\nLock\nSuspend" | rofi -dmenu -i -p "Power Menu:" -theme "$HOME/.config/rofi/rofidmenu.rasi")
+CHOSEN=$(printf "Shutdown\nLog Out\nReboot\nLock\nSuspend" | rofi -dmenu -i -p "Power Menu:" -theme "$HOME/.config/rofi/todo.rasi")
 
 case "$CHOSEN" in
 "Lock")

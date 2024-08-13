@@ -1,20 +1,6 @@
-02:21:36 AM 👁️  sh launch
-xrandr is /usr/bin/xrandr
+echo "$(light | cut -d. -f1)"
+bash: light: command not found
 
- on ARCH ~/.config/polybar
-error: Uncaught exception, shutting down: X resource "Xft.dpi" not found (no fallback set)
-echo "Xft.dpi: 96" | xrdb -merge
+No backlight controller was found, so we could not decide an automatic target. The current command will have no effect. Please use -L to find a target and then specify it with -s.
 
-error: module/mpd: Connection refused
-error: Disabling module "wifi" (reason: No interface found for type 'wireless')
-error: Failed to restack bar window: No suitable sibling window for restacking was found
-error: tray: Failed to put tray above 0x0e00002 in the stack (XCB_MATCH (8))
-error: module/mpd: Connection refused
-error: module/mpd: Connection refused
-error: module/mpd: Connection refused
-
-03:26:05 AM 👁️  sh launch
-xrandr is /usr/bin/xrandr
-
- on ARCH ~/.config/polybar
-error: tray: Failed to put tray above 0x1000001 in the stack (XCB_MATCH (8))
+0
