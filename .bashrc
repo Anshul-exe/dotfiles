@@ -29,6 +29,7 @@ alias 192="ip a| grep 192"
 alias pip="ip a | grep -E '192|10\.'"
 alias check="ping arch.org"
 alias cpc="~/.scripts/copyShitz"
+alias lz="lazygit"
 
 # Pacman Aliases
 alias evolve="sudo pacman -Syu"

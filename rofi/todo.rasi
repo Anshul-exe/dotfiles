@@ -15,10 +15,13 @@ window {
     background-color: @background;
     border:           3;
     padding:          5;
-    width:      300px;
+    width:      350px;
+    // height:     600px;
     border-color: 	#585b70;
-    y-offset:       -400;
-    x-offset:       785;
+    y-offset:       -360;
+    x-offset:       766;
+    // y-offset:         -400;
+    // x-offset:         785;
 }
 listview {
     lines:   5;
