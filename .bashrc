@@ -30,6 +30,7 @@ alias pip="ip a | grep -E '192|10\.'"
 alias check="ping arch.org"
 alias cpc="~/.scripts/copyShitz"
 alias lz="lazygit"
+alias tkill="tmux kill-session"
 
 # Pacman Aliases
 alias evolve="sudo pacman -Syu"
