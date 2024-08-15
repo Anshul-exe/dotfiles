@@ -35,6 +35,9 @@ cp ~/.config/starship.toml ~/dotsi/starship.toml
 # bashrc
 cp ~/.bashrc ~/dotsi/.bashrc
 
+# tmux
+cp ~/.tmux.conf ~/dotsi/tmux.conf
+
 # Wallpapers
 cp -r ~/Pictures/wallpapers/* ~/dotsi/wallpapers/
 
