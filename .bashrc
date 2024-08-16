@@ -28,9 +28,10 @@ alias bi="nvim ~/.config/i3/config"
 alias 192="ip a| grep 192"
 alias pip="ip a | grep -E '192|10\.'"
 alias check="ping arch.org"
-alias cpc="~/.scripts/copyShitz"
+alias cpc="~/.scripts/copyShitz.sh"
 alias lz="lazygit"
 alias tkill="tmux kill-session"
+alias rnr="ranger"
 
 # Pacman Aliases
 alias evolve="sudo pacman -Syu"

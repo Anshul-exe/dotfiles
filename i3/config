@@ -36,7 +36,7 @@ set $mod Mod1
 exec_always feh --bg-scale /home/mir/Pictures/astronaut.jpg
 bindsym $mod+space exec rofi -show run -theme rofidmenu.rasi
 bindsym $mod+e exec rofi -show emoji -theme todo.rasi
-bindsym $mod+c exec rofi -show calc -theme rofidmenu.rasi
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme rofidmenu.rasi
 bindsym $mod+t exec  rofi -modi "todos:$HOME/.config/rofi/rofitodo.sh" -show todos -theme $HOME/.config/rofi/todo.rasi
 bindsym $mod+F4 exec "$HOME/.config/rofi/powermenu.sh"
 
