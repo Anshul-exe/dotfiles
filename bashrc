@@ -20,6 +20,7 @@ alias sb="source ~/.bashrc"
 alias bi="nvim ~/.config/i3/config"
 alias cpc="~/.scripts/copyShitz.sh"
 alias bc="nvim ~/.scripts/copyShitz.sh"
+alias rnrc='cd ~/.config && ranger'
 
 # listing shitz
 alias vidr='ls -a'

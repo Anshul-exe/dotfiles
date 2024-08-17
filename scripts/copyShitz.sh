@@ -34,7 +34,7 @@ cp -r ~/.config/ranger/* ~/dotsi/ranger/
 cp ~/.config/starship.toml ~/dotsi/starship.toml
 
 # bashrc
-cp ~/.bashrc ~/dotsi/.bashrc
+cp ~/.bashrc ~/dotsi/bashrc
 
 # tmux
 cp ~/.tmux.conf ~/dotsi/tmux.conf
