@@ -10,7 +10,8 @@ cp -r ~/.config/rofi/{*,.*} ~/dotsi/rofi/
 cp ~/.config/alacritty/alacritty.toml ~/dotsi/alacritty/alacritty.toml
 
 # i3
-cp ~/.config/i3/config ~/dotsi/i3/config
+# cp ~/.config/i3/config ~/dotsi/i3/config
+cp ~/.config/i3/* ~/dotsi/i3/
 
 # neofetch
 cp ~/.config/neofetch/config.conf ~/dotsi/neofetch/config.conf

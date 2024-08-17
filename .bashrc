@@ -26,6 +26,7 @@ alias bb="nvim ~/.bashrc"
 alias sb="source ~/.bashrc"
 alias bi="nvim ~/.config/i3/config"
 alias cpc="~/.scripts/copyShitz.sh"
+alias bc="nvim ~/.scripts/copyShitz.sh"
 
 # listing shitz
 alias ls="exa"
@@ -47,6 +48,10 @@ alias kitnepkg="pacman -Q | wc -l && echo ITNE PACKAGES HAI WITH THEIR DEPENDENC
 alias yehai?="pacman -Q | grep "
 alias useof="pacman -Qi "
 
+# change my default USER shell
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
+
 # random alias that I need
 alias nv="nvim"
 alias vn="unalias nv"
@@ -59,12 +64,18 @@ alias rnr="ranger"
 alias findf="find . -type f -name"
 alias findd="find . -type d -name"
 alias mkdir="mkdir -pv "
+alias process="ps aux | grep -v grep | grep -i -e VSZ -e"
 ################## END OF ALL ALIASES ######################
 
 ################## CUSTOM FUNCTIONS ########################
-# To get the description of the provided package
+# To get the description of provided package
 desc() {
   pacman -Qi "$1" | awk '/^Name/{name=$3}/^Description/{for (i=3; i<=NF; i++) desc = desc $i " "; print name ": " desc; desc=""}'
+}
+
+# To get the size of given package
+size() {
+  pacman -Qi "$1" | awk '/^Name/{name=$3}/^Installed Size/{size=$4 " " $5; print name " --> " size}'
 }
 
 # For going up (changing directory cd..) as much dir I want
@@ -86,7 +97,21 @@ up() {
     echo "Couldn't go up $limit dirs."
   fi
 }
+
+cdown() {
+  N=$1
+  while [[ $((--N)) -gt 0 ]]; do
+    echo "$N" | figlet -c | lolcat && sleep 1
+  done
+  echo "TIME 'S UP ! !" | figlet -c | lolcat
+}
 ################## END OF CUSTOM FUNCTIONS ##################
+
+################## SHOPT #########################
+shopt -s autocd       # cd into dir without using typing cd
+shopt -s cdspell      # automatically corrects typos while cd-ing
+shopt -s checkwinsize # when I'll resize the terminal window, commands will use the updated size
+################## SHOPT END #########################
 
 # Sundarta
 eval "$(starship init bash)"
