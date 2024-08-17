@@ -5,13 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias vidr='ls -a'
-alias dir='ls'
-# alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias la='ls -a'
-alias l='ls -CF'
-# alias perm="ls -l"
 PS1='[\u@\h \W]\$ '
 
 ################## ALL ALIASES ##################
@@ -29,12 +22,17 @@ alias cpc="~/.scripts/copyShitz.sh"
 alias bc="nvim ~/.scripts/copyShitz.sh"
 
 # listing shitz
+alias vidr='ls -a'
+alias dir='ls'
+alias la='ls -a'
+alias l='ls -CF'
 alias ls="exa"
 alias perm="exa --long --header --git --icons"
 alias perma="exa --long --header --git --icons -a"
 alias eza="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=1"
 alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux --height 65% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
 alias tfv="fd --type f --hidden --exclude .git | fzf-tmux --preview 'bat --color=always {}' -p --reverse| xargs nvim"
+alias grep='grep --color=auto'
 
 # pacman aliases
 alias evolve="sudo pacman -Syu"
@@ -113,24 +111,31 @@ shopt -s cdspell      # automatically corrects typos while cd-ing
 shopt -s checkwinsize # when I'll resize the terminal window, commands will use the updated size
 ################## SHOPT END #########################
 
-# Sundarta
+##################### Sundarta #######################
 eval "$(starship init bash)"
 (cat ~/.cache/wal/sequences &)
+################### END OF Sundarta ####################
 
+###################### IDK WTF DOES THESE THINGS DO #################
 # Alternative (blocks terminal for 0-3ms)
 cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
+###################### IDK WTF DOES THESE THINGS DO #################
 
-# Random ass shitzz
+################# RANDOM ASS SHITZ #######################
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
+################# END O  RANDOM ASS SHITZ #######################
 
-# Welcome text
+################# WELCOME TEXT ##################
 pokeget random --hide-name -s
+################# END OF WELCOME TEXT ##################
 
-# Default editor
+################### DEFAULT SHITZ #################
 export EDITOR=nvim
+################### END OF DEFAULT SHITZ #################
 
-# path
+################### PATH #######################
 export PATH=$PATH:/usr/local/bin
+################ END OF PATH #####################
