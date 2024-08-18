@@ -19,6 +19,11 @@ wallpapers=(
   "Rick|ricl.jpg"
   "Tux|a.jpg"
   "Rick and Morty|rickMorty.jpg"
+  "Nuts|Nuts.jpg"
+  "Camping|camping.jpg"
+  "Night Night|FACE.png"
+  "Hill House|hill_house.jpg"
+  "Junior|Junior.jpg"
 )
 
 # Generate rofi menu options
