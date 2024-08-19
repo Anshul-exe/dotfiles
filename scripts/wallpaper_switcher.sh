@@ -7,7 +7,11 @@ WALLPAPER_DIR="$HOME/Pictures/wallpapers"
 # Format: Custom Name|Actual Filename
 wallpapers=(
   "Astronaut|astronaut.jpg"
+  "Hill House|hill_house.jpg"
+  "Junior|Junior.jpg"
   "Wizard World|deez.jpg"
+  "Rick|ricl.jpg"
+  "Camping|camping.jpg"
   "Batman & Joker|google_bg.jpg"
   "Batman|batman_minimalistic_bg.png"
   "Justice League|desktop_bg.jpg"
@@ -16,14 +20,10 @@ wallpapers=(
   "Miles Prowler|miles_bg.jpg"
   "Miles Spiderman|miles_r&b_bg.jpg"
   "Typecraft|nice-blue-background.png"
-  "Rick|ricl.jpg"
   "Tux|a.jpg"
   "Rick and Morty|rickMorty.jpg"
   "Nuts|Nuts.jpg"
-  "Camping|camping.jpg"
   "Night Night|FACE.png"
-  "Hill House|hill_house.jpg"
-  "Junior|Junior.jpg"
 )
 
 # Generate rofi menu options
