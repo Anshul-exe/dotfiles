@@ -1,46 +1,46 @@
 #!/bin/bash
 
 # polybar
-cp -r ~/.config/polybar/* ~/dotsi/polybar/
+cp -r ~/.config/polybar/* ~/dotfiles/polybar/
 
 #rofi
-cp -r ~/.config/rofi/{*,.*} ~/dotsi/rofi/
+cp -r ~/.config/rofi/{*,.*} ~/dotfiles/rofi/
 
 # alacritty
-cp ~/.config/alacritty/alacritty.toml ~/dotsi/alacritty/alacritty.toml
+cp ~/.config/alacritty/alacritty.toml ~/dotfiles/alacritty/alacritty.toml
 
 # i3
-# cp ~/.config/i3/config ~/dotsi/i3/config
-cp ~/.config/i3/* ~/dotsi/i3/
+# cp ~/.config/i3/config ~/dotfiles/i3/config
+cp ~/.config/i3/* ~/dotfiles/i3/
 
 # neofetch
-cp ~/.config/neofetch/config.conf ~/dotsi/neofetch/config.conf
+cp ~/.config/neofetch/config.conf ~/dotfiles/neofetch/config.conf
 
 # nvim
-cp -r ~/.config/nvim/* ~/dotsi/nvim/.config/
-# cp -r ~/.local/share/nvim/* ~/dotsi/nvim/.local/share/
+cp -r ~/.config/nvim/* ~/dotfiles/nvim/.config/
+# cp -r ~/.local/share/nvim/* ~/dotfiles/nvim/.local/share/
 
 # picom
-cp ~/.config/picom/picom.conf ~/dotsi/picom/picom.conf
+cp ~/.config/picom/picom.conf ~/dotfiles/picom/picom.conf
 
 # ranger
-cp -r ~/.config/ranger/* ~/dotsi/ranger/
+cp -r ~/.config/ranger/* ~/dotfiles/ranger/
 
 # sddm
-# cp -r /usr/share/sddm/themes/* ~/dotsi/sddm/usr/share/sddm/themes/
-# cp -r /etc/sddm.conf ~/dotsi/sddm/etc/sddm.conf
+# cp -r /usr/share/sddm/themes/* ~/dotfiles/sddm/usr/share/sddm/themes/
+# cp -r /etc/sddm.conf ~/dotfiles/sddm/etc/sddm.conf
 
 # starship
-cp ~/.config/starship.toml ~/dotsi/starship.toml
+cp ~/.config/starship.toml ~/dotfiles/starship.toml
 
 # bashrc
-cp ~/.bashrc ~/dotsi/bashrc
+cp ~/.bashrc ~/dotfiles/bashrc
 
 # tmux
-cp ~/.tmux.conf ~/dotsi/tmux.conf
+cp ~/.tmux.conf ~/dotfiles/tmux.conf
 
 # Wallpapers
-cp -r ~/Pictures/wallpapers/* ~/dotsi/wallpapers/
+cp -r ~/Pictures/wallpapers/* ~/dotfiles/wallpapers/
 
 # scripts
-cp -r ~/.scripts/* ~/dotsi/scripts/
+cp -r ~/.scripts/* ~/dotfiles/scripts/

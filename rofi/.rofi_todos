@@ -1,6 +1,7 @@
- increase workspace
- rofi selected text colour change
- add "alt+tab" to switch workspace
- $mod1/2/3 binds
- jaise polybar ke sound me pauvcontrol open krne ka system hai vaise hi powermenu ko add krna hai
- why is mod+f4 not working
+ hotspot
+ add gestures
+ asusctl & supergfxctl
+ asusctl -c 98 (battery)
+ ncspot
+screenshot
+ figure playerctl & spotifyd

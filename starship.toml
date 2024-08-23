@@ -13,7 +13,7 @@ add_newline = false
 
 [character] # The name of the module we are configuring is 'character'
 # success_symbol = '[🎧👻👁️🤌🗿🍌🛹🎀🐍🐉💲](bold green)'
-success_symbol = '[🐉](bold blue)'
+success_symbol = '[💲](bold blue)'
 
 # Disable the package module, hiding the version of the current package
 [package]

@@ -2,7 +2,7 @@
 
 # Power menu script using rofi
 
-CHOSEN=$(printf "Shutdown\nLog Out\nReboot\nLock\nSuspend" | rofi -dmenu -i -p "Power Menu:" -theme "$HOME/.config/rofi/todo.rasi")
+CHOSEN=$(printf "Shutdown\nLog Out\nReboot\nLock\nSuspend" | rofi -dmenu -i -p "Power Menu:" -theme "$HOME/.config/rofi/topRight.rasi")
 
 case "$CHOSEN" in
 "Lock")
@@ -12,7 +12,7 @@ case "$CHOSEN" in
   systemctl suspend-then-hibernate
   ;;
 "Reboot")
-  reboot
+  sudo reboot
   ;;
 "Shutdown")
   poweroff

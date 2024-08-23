@@ -11,7 +11,7 @@ PS1='[\u@\h \W]\$ '
 # powermenu shitz
 alias x="exit"
 alias xx='sudo shutdown -h now'
-alias xr="sudo reboot"
+alias xr="sudo reboot && thisshit"
 alias xl="i3-msg exit"
 
 # access from anywhere
@@ -21,6 +21,7 @@ alias bi="nvim ~/.config/i3/config"
 alias cpc="~/.scripts/copyShitz.sh"
 alias bc="nvim ~/.scripts/copyShitz.sh"
 alias rnrc='cd ~/.config && ranger'
+alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
 
 # listing shitz
 alias vidr='ls -a'
@@ -32,7 +33,7 @@ alias perm="exa --long --header --git --icons"
 alias perma="exa --long --header --git --icons -a"
 alias eza="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=1"
 alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux --height 65% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
-alias tfv="fd --type f --hidden --exclude .git | fzf-tmux --preview 'bat --color=always {}' -p --reverse| xargs nvim"
+alias fvt="fd --type f --hidden --exclude .git | fzf-tmux --preview 'bat --color=always {}' -p --reverse| xargs nvim"
 alias grep='grep --color=auto'
 
 # pacman aliases
@@ -64,6 +65,36 @@ alias findf="find . -type f -name"
 alias findd="find . -type d -name"
 alias mkdir="mkdir -pv "
 alias process="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias nf="fastfetch"
+alias mirror="sudo reflector --country 'India' --age 12 --sort rate --save /etc/pacman.d/mirrorlist"
+alias nana="ncmpcpp"
+alias mod="chmod +x"
+
+# TMUX
+alias tt="tmux"
+alias tta="tmux a"
+alias ttl="tmux ls"
+alias ttk="tmux kill-session"
+
+################# ASUS CTL CONTROLS #####################
+alias asusp="asusctl profile -p"
+
+alias battib="asusctl -n"
+alias battik="asusctl -p"
+
+alias red="asusctl led-mode static -c ff0000"
+alias yellow="asusctl led-mode static -c FFFF00"
+alias green="asusctl led-mode static -c 008000"
+alias blue="asusctl led-mode static -c 0000FF"
+alias purple="asusctl led-mode static -c 800080"
+alias pink="asusctl led-mode static -c FF1493"
+alias cyan="asusctl led-mode static -c 00FFFF"
+alias pinkish="asusctl led-mode static -c DC143C"
+alias skin="asusctl led-mode static -c FF6347"
+alias gold="asusctl led-mode static -c FFD700"
+alias white="asusctl led-mode static -c FFFACD"
+
+################# END OF ASUS CTL CONTROLS #####################
 ################## END OF ALL ALIASES ######################
 
 ################## CUSTOM FUNCTIONS ########################
@@ -139,4 +170,7 @@ export EDITOR=nvim
 
 ################### PATH #######################
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/home/mir/.spicetify
+export PATH=$PATH:/usr/bin/spicetify
 ################ END OF PATH #####################
+. "$HOME/.cargo/env"
