@@ -76,12 +76,13 @@ alias tta="tmux a"
 alias ttl="tmux ls"
 alias ttk="tmux kill-session"
 
-################# ASUS CTL CONTROLS #####################
+# Asusctl controls
 alias asusp="asusctl profile -p"
 
 alias battib="asusctl -n"
 alias battik="asusctl -p"
 
+# keyboard color change krne ka rofi menu banana padega
 alias red="asusctl led-mode static -c ff0000"
 alias yellow="asusctl led-mode static -c FFFF00"
 alias green="asusctl led-mode static -c 008000"
@@ -128,6 +129,7 @@ up() {
   fi
 }
 
+# countdown with figlet and lolcat
 cdown() {
   N=$1
   while [[ $((--N)) -gt 0 ]]; do
@@ -172,5 +174,5 @@ export EDITOR=nvim
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/mir/.spicetify
 export PATH=$PATH:/usr/bin/spicetify
-################ END OF PATH #####################
 . "$HOME/.cargo/env"
+################ END OF PATH #####################
