@@ -35,7 +35,7 @@ get_duration() {
 
 }
 
-KEY="62628c16e6247d2c1caf0cb398a3dffa"
+KEY="SUCK ON THIS YOU THEIF"
 CITY="Noida"
 UNITS="metric"
 SYMBOL="°"

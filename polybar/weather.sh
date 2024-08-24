@@ -6,9 +6,9 @@
 
 # APIKEY="b3583824922b1ebb7c41be7a351343bc"
 # Just so you know that this isn't my APIKEY, so if you want to steal this you certainly can... Hahahahahah!!
-APIKEY="b4701524046f341a77e705822e15b012"
+APIKEY="SUCK ON THIS"
 # if you leave these empty location will be picked based on your ip-adres
-CITY_NAME='Greater Noida'
+CITY_NAME='Sadak ke kinare'
 COUNTRY_CODE='IN'
 # Desired output language
 LANG="en"
