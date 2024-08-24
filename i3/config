@@ -27,7 +27,7 @@ exec_always --no-startup-id wal -R
 
 # Set default window gaps (optional)
 gaps inner 10
-gaps outer 10
+gaps outer 5
 
 # Mod1 = Alt ////// Mod4 = Windows
 set $mod Mod1

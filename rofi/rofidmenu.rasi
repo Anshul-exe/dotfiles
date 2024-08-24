@@ -1,5 +1,5 @@
 configuration {
-    // font:                "FiraCode Nerd Font medium 10";
+    font:                "Cantarell Bold 14";
     show-icons:          true;
     icon-theme:          "Papirus";
     display-drun:        "Apps";
@@ -40,12 +40,12 @@ listview {
   spacing:      8px;
   scrollbar:    false;
   padding:      2px 0px 0px;
-  font:         "FiraCode Nerd Font Bold 14";
+  font:         "Cantarell Bold 14";
 }
 element {
   border:  0;
   padding: 1px;
-  font:  "FiraCode Nerd Font Bold 14";
+  font:  "Cantarell Bold 14";
 }
 element-text {
   background-color: inherit;
@@ -120,7 +120,7 @@ case-indicator {
 entry {
     placeholder: " क्या ढूँढ़ रहे हो? ";
     spacing:    0;
-    font:       "FiraCode Nerd Font Bold 14";
+    font:       "Cantarell Bold 14";
     text-color: @normal-foreground;
 }
 prompt {
@@ -132,8 +132,8 @@ inputbar {
 }
 textbox-prompt-colon {
     expand:     false;
-    str:        "󰍉 " ;
+    str:        "󰍉" ;
     margin:     0px 0.3em 0em 0em;
-    font:       "FiraCode Nerd Font Bold 17";
+    font:       "Cantarell Bold 17";
     text-color: #3281F4;
 }
