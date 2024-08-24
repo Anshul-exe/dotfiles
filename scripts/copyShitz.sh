@@ -42,5 +42,8 @@ cp ~/.tmux.conf ~/dotfiles/tmux.conf
 # Wallpapers
 cp -r ~/Pictures/wallpapers/* ~/dotfiles/wallpapers/
 
+# gestures
+cp ~/.config/libinput-gestures.conf ~/dotfiles/libinput-gestures.conf
+
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
