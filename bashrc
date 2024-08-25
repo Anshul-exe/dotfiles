@@ -76,26 +76,10 @@ alias tta="tmux a"
 alias ttl="tmux ls"
 alias ttk="tmux kill-session"
 
-# Asusctl controls
+# Asus ctl controls
 alias asusp="asusctl profile -p"
-
 alias battib="asusctl -n"
 alias battik="asusctl -p"
-
-# keyboard color change krne ka rofi menu banana padega
-alias red="asusctl led-mode static -c ff0000"
-alias yellow="asusctl led-mode static -c FFFF00"
-alias green="asusctl led-mode static -c 008000"
-alias blue="asusctl led-mode static -c 0000FF"
-alias purple="asusctl led-mode static -c 800080"
-alias pink="asusctl led-mode static -c FF1493"
-alias cyan="asusctl led-mode static -c 00FFFF"
-alias pinkish="asusctl led-mode static -c DC143C"
-alias skin="asusctl led-mode static -c FF6347"
-alias gold="asusctl led-mode static -c FFD700"
-alias white="asusctl led-mode static -c FFFACD"
-
-################# END OF ASUS CTL CONTROLS #####################
 ################## END OF ALL ALIASES ######################
 
 ################## CUSTOM FUNCTIONS ########################

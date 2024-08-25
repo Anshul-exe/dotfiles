@@ -24,6 +24,7 @@ wallpapers=(
   "Rick and Morty|rickMorty.jpg"
   "Nuts|Nuts.jpg"
   "Night Night|FACE.png"
+  "Black|black.png"
 )
 
 # Generate rofi menu options

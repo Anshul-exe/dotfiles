@@ -1,7 +1,6 @@
  hotspot
- add gestures
  asusctl & supergfxctl
  asusctl -c 98 (battery)
  ncspot
-screenshot
  figure playerctl & spotifyd
+ battery alert - dunst

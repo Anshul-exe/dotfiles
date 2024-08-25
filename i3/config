@@ -20,7 +20,7 @@ exec_always --no-startup-id killall -q polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id picom -b --experimental-backends
-exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id dunst
 
 # Pywal
 exec_always --no-startup-id wal -R
@@ -41,6 +41,7 @@ bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme ro
 bindsym $mod+t exec  rofi -modi "todos:$HOME/.config/rofi/rofitodo.sh" -show todos -theme $HOME/.config/rofi/todo.rasi
 bindsym $mod+p exec "~/.scripts/wallpaper_switcher.sh"
 bindsym $mod+F4 exec "~/.scripts/polybar/powermenu.sh"
+bindsym Mod4+F4 exec "~/.config/rofi/rgb_control.sh"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -287,4 +288,13 @@ bindsym Mod4+F5 exec "asusctl profile -n"
 
 # bluetooth
 exec_always --no-startup-id bluetooth
-# bindsym PrtSc exec "asusctl led-mode static -c FFFACD"
+# screenshot
+bindsym Print exec --no-startup-id flameshot gui -p ~/Pictures/screenshots/
+# playerctl
+bindsym XF86AudioStop exec --no-startup-id "playerctl play-pause"
+bindsym XF86AudioPlay exec --no-startup-id "playerctl -p spotify play-pause "
+bindsym XF86AudioNext exec --no-startup-id "playerctl -p spotify next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl -p spotify previous"
+# bindsym Mod4+equal exec --no-startup-id "playerctl -p spotify position 10"
+bindsym Mod4+XF86AudioNext exec --no-startup-id "playerctl -p spotify position 10+"
+bindsym Mod4+XF86AudioPrev exec --no-startup-id "playerctl -p spotify position 10-"
