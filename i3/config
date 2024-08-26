@@ -21,6 +21,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id picom -b --experimental-backends
 exec_always --no-startup-id dunst
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/lockscreen.sh
 
 # Pywal
 exec_always --no-startup-id wal -R
@@ -296,5 +297,5 @@ bindsym XF86AudioPlay exec --no-startup-id "playerctl -p spotify play-pause "
 bindsym XF86AudioNext exec --no-startup-id "playerctl -p spotify next"
 bindsym XF86AudioPrev exec --no-startup-id "playerctl -p spotify previous"
 # bindsym Mod4+equal exec --no-startup-id "playerctl -p spotify position 10"
-bindsym Mod4+XF86AudioNext exec --no-startup-id "playerctl -p spotify position 10+"
-bindsym Mod4+XF86AudioPrev exec --no-startup-id "playerctl -p spotify position 10-"
+bindsym Shift+XF86AudioNext exec --no-startup-id "playerctl -p spotify position 10+"
+bindsym Shift+XF86AudioPrev exec --no-startup-id "playerctl -p spotify position 10-"

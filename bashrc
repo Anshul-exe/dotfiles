@@ -49,8 +49,8 @@ alias yehai?="pacman -Q | grep "
 alias useof="pacman -Qi "
 
 # change my default USER shell
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
+alias tobash="sudo chsh -s /usr/bin/bash && echo 'Log out and log back in for change to take effect.'"
+alias tozsh="sudo chsh -s /usr/bin/zsh && echo 'Log out and log back in for change to take effect.'"
 
 # random alias that I need
 alias nv="nvim"

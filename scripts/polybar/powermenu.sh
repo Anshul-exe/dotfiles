@@ -6,7 +6,7 @@ CHOSEN=$(printf "Shutdown\nLog Out\nReboot\nLock\nSuspend" | rofi -dmenu -i -p "
 
 case "$CHOSEN" in
 "Lock")
-  lockscreen # Replace with your lock command
+  ~/.config/i3/lockscreen.sh
   ;;
 "Suspend")
   systemctl suspend-then-hibernate
