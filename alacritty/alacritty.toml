@@ -1,5 +1,9 @@
+import = [
+  "~/.config/alacritty/themes/themes/coolnight.toml"
+]
+
 [window]
-opacity = 0.85
+opacity = 0.75
 dynamic_padding = true
 decorations = "full"
 

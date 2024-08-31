@@ -37,7 +37,10 @@ cp ~/.config/starship.toml ~/dotfiles/starship.toml
 cp ~/.bashrc ~/dotfiles/bashrc
 
 # zshrc
-cp ~/.zshrc ~/dotfiles/zshrc
+cp ~/.zshrc ~/dotfiles/zsh/zshrc
+cp -r ~/.oh-my-zsh/custom/aliases.zsh ~/dotfiles/zsh/custom/aliases.zsh
+cp -r ~/.oh-my-zsh/custom/binds.zsh ~/dotfiles/zsh/custom/binds.zsh
+cp -r ~/.oh-my-zsh/custom/functions.zsh ~/dotfiles/zsh/custom/function.zsh
 
 # tmux
 cp ~/.tmux.conf ~/dotfiles/tmux.conf
