@@ -1,6 +1,4 @@
- hotspot
  asusctl & supergfxctl
  asusctl -c 98 (battery)
- ncspot
  figure playerctl & spotifyd
- battery alert - dunst
+ use "polybar main"

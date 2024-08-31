@@ -6,7 +6,7 @@ CHOSEN=$(printf "Shutdown\nLog Out\nReboot\nLock\nSuspend" | rofi -dmenu -i -p "
 
 case "$CHOSEN" in
 "Lock")
-  ~/.scripts/lockscreen.sh
+  ~/.scripts/Tala/lockscreen.sh
   ;;
 "Suspend")
   systemctl suspend-then-hibernate

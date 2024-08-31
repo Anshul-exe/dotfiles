@@ -36,6 +36,9 @@ cp ~/.config/starship.toml ~/dotfiles/starship.toml
 # bashrc
 cp ~/.bashrc ~/dotfiles/bashrc
 
+# zshrc
+cp ~/.zshrc ~/dotfiles/zshrc
+
 # tmux
 cp ~/.tmux.conf ~/dotfiles/tmux.conf
 
