@@ -17,7 +17,7 @@ cp ~/.config/i3/* ~/dotfiles/i3/
 cp ~/.config/neofetch/config.conf ~/dotfiles/neofetch/config.conf
 
 # nvim
-cp -r ~/.config/nvim/* ~/dotfiles/nvim/.config/
+cp -r ~/.config/nvim/lua/* ~/dotfiles/nvim/
 # cp -r ~/.local/share/nvim/* ~/dotfiles/nvim/.local/share/
 
 # picom

@@ -69,6 +69,7 @@ alias mod="chmod +x"
 alias rmd="rm -rf"
 alias sl="sl -e"
 alias code="codium"
+alias gg="google"
 
 # TMUX
 alias tt="tmux"
