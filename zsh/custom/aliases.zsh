@@ -44,7 +44,7 @@ alias kitnehai="pacman -Qqe | wc -l && echo TOTAL INSTALLED USER PACKAGES"
 alias kitnepkg="pacman -Q | wc -l && echo ITNE PACKAGES HAI WITH THEIR DEPENDENCIES"
 alias yehai='pacman -Q | grep '
 alias useof="pacman -Qi "
-
+alias pdf="zathura"
 # change my default USER shell
 alias tobash="sudo chsh -s /usr/bin/bash && echo 'Log out and log back in for change to take effect.'"
 alias tozsh="sudo chsh -s /usr/bin/zsh && echo 'Log out and log back in for change to take effect.'"
@@ -70,6 +70,8 @@ alias rmd="rm -rf"
 alias sl="sl -e"
 alias code="codium"
 alias gg="google"
+alias btm="btm --battery --enable_gpu -T"
+alias tp="toipe -n 25"
 
 # TMUX
 alias tt="tmux"

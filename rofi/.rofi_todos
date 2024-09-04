@@ -2,3 +2,6 @@
  asusctl -c 98 (battery)
  figure playerctl & spotifyd
  use "polybar main"
+ add cache for whatsoop
+ sleep nahi hibernate chahiye
+ ^n=nvim for nb

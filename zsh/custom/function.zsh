@@ -4,7 +4,7 @@ desc() {
 }
 
 #### To get the size of given package
-size() {
+sizeof() {
   pacman -Qi "$1" | awk '/^Name/{name=$3}/^Installed Size/{size=$4 " " $5; print name " --> " size}'
 }
 
@@ -35,3 +35,18 @@ cdown() {
   echo "TIME 'S UP ! !" | figlet -c | lolcat
 }
 
+#### Who the fuck uses nano
+sudo() {
+  if [ "$1" = "pacman" ] && [ "$2" = "-S" ] && [ "$3" = "nano" ]; then
+    figlet "Shut  the  Fuck  Up, Hmare  PC  me  nano  nahi  padega... Bhk.  Mard  bano  aur  nvim  use  kro"
+  else 
+    command sudo "$@"
+  fi
+}
+yay() {
+  if [ "$1" = "-S" ] && [ "$2" = "nano" ]; then
+    figlet "Are  Bhadwe... abhi  bhi  nahi  mane  tum??"
+  else 
+    command yay "$@"
+  fi
+}

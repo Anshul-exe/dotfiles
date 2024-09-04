@@ -17,5 +17,5 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# bindkey '*e' edit-command-line
+#edit-command-line
 bindkey '^e' edit-command-line
