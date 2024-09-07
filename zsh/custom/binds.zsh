@@ -19,3 +19,6 @@ bindkey -v '^?' backward-delete-char
 
 #edit-command-line
 bindkey '^e' edit-command-line
+
+#navigation
+# bindkey '^j' `cd ~/clear_space/codeLore/

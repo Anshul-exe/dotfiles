@@ -161,3 +161,8 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # edit line in vim with ctrl-e
 autoload edit-command-line
 zle -N edit-command-line
+export SYSTEMD_EDITOR=nvim
+export SYSTEMD_EDITOR=nvim
+export SYSTEMD_EDITOR=nvim
+export EDITOR=nvim
+export VISUAL=nvim

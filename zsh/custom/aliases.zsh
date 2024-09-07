@@ -17,6 +17,8 @@ alias cpc="~/.scripts/copyShitz.sh"
 alias bc="nvim ~/.scripts/copyShitz.sh"
 alias rnrc='cd ~/.config && ranger'
 alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
+alias cod="cd ~/clear_space/codeLore/"
+# alias cc
 
 # listing shitz
 alias vidr='ls -a'
@@ -24,14 +26,14 @@ alias dir='ls'
 alias la='ls -a'
 alias l='ls -CF'
 alias ls="exa"
-alias lg="ls | grep "
-alias lag="la | grep "
+alias lg="ls | grep -i "
+alias lag="la | grep -i "
 alias perm="exa --long --header --git --icons"
 alias perma="exa --long --header --git --icons -a"
 alias eza="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=1"
 alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux --height 65% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
 alias fvt="fd --type f --hidden --exclude .git | fzf-tmux --preview 'bat --color=always {}' -p --reverse| xargs nvim"
-alias grep='grep --color=auto'
+alias grep='grep -i --color=auto'
 
 # pacman aliases
 alias evolve="sudo pacman -Syu"
@@ -72,6 +74,7 @@ alias code="codium"
 alias gg="google"
 alias btm="btm --battery --enable_gpu -T"
 alias tp="toipe -n 25"
+alias fiwi="sudo systemctl restart NetworkManager"
 
 # TMUX
 alias tt="tmux"
@@ -83,5 +86,5 @@ alias ttk="tmux kill-session"
 
 # Asus ctl controls
 alias asusp="asusctl profile -p"
-alias battib="asusctl -n"
+alias battiz="asusctl -n"
 alias battik="asusctl -p"
