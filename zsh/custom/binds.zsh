@@ -21,4 +21,5 @@ bindkey -v '^?' backward-delete-char
 bindkey '^e' edit-command-line
 
 #navigation
-# bindkey '^j' `cd ~/clear_space/codeLore/
+bindkey '^G' cd_codeLore
+

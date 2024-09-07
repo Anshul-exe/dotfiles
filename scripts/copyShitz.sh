@@ -40,7 +40,7 @@ cp ~/.bashrc ~/dotfiles/bashrc
 cp ~/.zshrc ~/dotfiles/zsh/zshrc
 cp -r ~/.oh-my-zsh/custom/aliases.zsh ~/dotfiles/zsh/custom/aliases.zsh
 cp -r ~/.oh-my-zsh/custom/binds.zsh ~/dotfiles/zsh/custom/binds.zsh
-cp -r ~/.oh-my-zsh/custom/functions.zsh ~/dotfiles/zsh/custom/function.zsh
+cp -r ~/.oh-my-zsh/custom/aafunction.zsh ~/dotfiles/zsh/custom/aafunction.zsh
 
 # tmux
 cp ~/.tmux.conf ~/dotfiles/tmux.conf

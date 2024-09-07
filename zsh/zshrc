@@ -22,11 +22,16 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 HISTFILE=~/.cache/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# SHOPT
 setopt autocd extendedglob nomatch notify
 setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
+setopt autocd       # cd into dir without using typing cd
+setopt correct      # automatically corrects typos while cd-ing
+
 unsetopt beep
 
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -104,19 +109,6 @@ source $ZSH/oh-my-zsh.sh
 
 # CUSTOM FUNCTIONS
 
-# SHOPT
-setopt autocd       # cd into dir without using typing cd
-setopt correct      # automatically corrects typos while cd-ing
-
-# # Sundarta
-# # eval "$(starship init zsh)"
-# (cat ~/.cache/wal/sequences &)
-
-# # IDK WTF DOES THESE THINGS DO
-# # Alternative (blocks terminal for 0-3ms)
-# cat ~/.cache/wal/sequences
-# # To add support for TTYs this line can be optionally added.
-# source ~/.cache/wal/colors-tty.sh
 # RANDOM ASS SHITZ
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 
@@ -162,7 +154,24 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload edit-command-line
 zle -N edit-command-line
 export SYSTEMD_EDITOR=nvim
-export SYSTEMD_EDITOR=nvim
-export SYSTEMD_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
+
+# ctrl-r for history inside fzf
+fzf-history-widget() {
+  local selected=$(fc -rl 1 | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
+  if [[ -n $selected ]]; then
+    LBUFFER="${selected#*[0-9]  }"  # Append the selected history command to the buffer
+  fi
+  zle redisplay
+}
+
+zle -N fzf-history-widget
+bindkey "^R" fzf-history-widget
+
+#sourcing shitz
+source ~/.oh-my-zsh/custom/aafunction.zsh
+source ~/.oh-my-zsh/custom/binds.zsh
+source ~/.oh-my-zsh/custom/aliases.zsh
+
+PROMPT='%~ % '

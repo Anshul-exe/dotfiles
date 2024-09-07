@@ -50,3 +50,11 @@ yay() {
     command yay "$@"
   fi
 }
+
+# for keybinds
+cd_codeLore() {
+  cd ~/clear_space/codeLore
+  ls
+  zle reset-prompt  # Update the prompt
+}
+zle -N cd_codeLore  # Register the widget

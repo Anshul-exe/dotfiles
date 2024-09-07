@@ -5,20 +5,18 @@ alias xr="sudo reboot && thisshit"
 alias xl="i3-msg exit"
 
 # access from anywhere
-alias zz="source ~/.zshrc"
+alias zz="source ~/.zshrc source && source ~/.oh-my-zsh/custom/aafunction.zsh && source ~/.oh-my-zsh/custom/binds.zsh"
 alias zb="nvim ~/.zshrc"
 alias na="nvim ~/.oh-my-zsh/custom/aliases.zsh"
 alias naa="source ~/.oh-my-zsh/custom/aliases.zsh"
 alias nb="nvim ~/.oh-my-zsh/custom/binds.zsh"
-alias nbb="source ~/.oh-my-zsh/custom/binds.zsh"
-alias nf="nvim ~/.oh-my-zsh/custom/functions.zsh"
+alias nf="nvim ~/.oh-my-zsh/custom/aafunction.zsh"
 alias bi="nvim ~/.config/i3/config"
 alias cpc="~/.scripts/copyShitz.sh"
 alias bc="nvim ~/.scripts/copyShitz.sh"
 alias rnrc='cd ~/.config && ranger'
 alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
 alias cod="cd ~/clear_space/codeLore/"
-# alias cc
 
 # listing shitz
 alias vidr='ls -a'
@@ -75,6 +73,7 @@ alias gg="google"
 alias btm="btm --battery --enable_gpu -T"
 alias tp="toipe -n 25"
 alias fiwi="sudo systemctl restart NetworkManager"
+alias clr="clear"
 
 # TMUX
 alias tt="tmux"
