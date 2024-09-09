@@ -1,7 +1,7 @@
 # powermenu shitz
 alias x="exit"
 alias xx='sudo shutdown -h now'
-alias xr="sudo reboot && thisshit"
+alias xr="sudo reboot"
 alias xl="i3-msg exit"
 
 # access from anywhere
@@ -74,6 +74,7 @@ alias btm="btm --battery --enable_gpu -T"
 alias tp="toipe -n 25"
 alias fiwi="sudo systemctl restart NetworkManager"
 alias clr="clear"
+alias machli="asciiquarium"
 
 # TMUX
 alias tt="tmux"

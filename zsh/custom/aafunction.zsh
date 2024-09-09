@@ -54,7 +54,8 @@ yay() {
 # for keybinds
 cd_codeLore() {
   cd ~/clear_space/codeLore
-  ls
+  ls -l
   zle reset-prompt  # Update the prompt
+  # zle -R
 }
 zle -N cd_codeLore  # Register the widget

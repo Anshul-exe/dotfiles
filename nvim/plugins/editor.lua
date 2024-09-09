@@ -215,5 +215,14 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
-  { "folke/flash.nvim", enabled = false },
+  {
+    "folke/flash.nvim",
+    enabled = false,
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+  },
+  {
+    "szw/vim-maximizer",
+  },
 }
