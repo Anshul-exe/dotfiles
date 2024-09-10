@@ -31,6 +31,7 @@ setopt hist_ignore_dups
 setopt hist_verify
 setopt autocd       # cd into dir without using typing cd
 setopt correct      # automatically corrects typos while cd-ing
+unsetopt extended_glob
 
 unsetopt beep
 
@@ -58,7 +59,8 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+# available - web-search
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -173,5 +175,6 @@ bindkey "^R" fzf-history-widget
 source ~/.oh-my-zsh/custom/aafunction.zsh
 source ~/.oh-my-zsh/custom/binds.zsh
 source ~/.oh-my-zsh/custom/aliases.zsh
+source <(fzf --zsh)
 
 PROMPT='%~ % '

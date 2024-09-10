@@ -1,3 +1,12 @@
+# for keybinds
+cd_codeLore() {
+  cd ~/clear_space/codeLore
+  ls -l
+  zle reset-prompt  # Update the prompt
+  # zle -R
+}
+zle -N cd_codeLore  # Register the widget
+
 #### To get the description of provided package
 desc() {
   pacman -Qi "$1" | awk '/^Name/{name=$3}/^Description/{for (i=3; i<=NF; i++) desc = desc $i " "; print name ": " desc; desc=""}'
@@ -51,11 +60,7 @@ yay() {
   fi
 }
 
-# for keybinds
-cd_codeLore() {
-  cd ~/clear_space/codeLore
-  ls -l
-  zle reset-prompt  # Update the prompt
-  # zle -R
+# killing processes with fzf
+prokill() {
+  kill -9 $(ps -ef | fzf | awk '{print $2}')
 }
-zle -N cd_codeLore  # Register the widget

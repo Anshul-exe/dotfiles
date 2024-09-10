@@ -29,8 +29,8 @@ alias lag="la | grep -i "
 alias perm="exa --long --header --git --icons"
 alias perma="exa --long --header --git --icons -a"
 alias eza="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=1"
-alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux --height 65% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
-alias fvt="fd --type f --hidden --exclude .git | fzf-tmux --preview 'bat --color=always {}' -p --reverse| xargs nvim"
+alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux -m --height 65% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
+alias fvt="fd --type f --hidden --exclude .git | fzf-tmux -m --preview 'bat --color=always {}' -p --reverse| xargs nvim"
 alias grep='grep -i --color=auto'
 
 # pacman aliases
@@ -48,6 +48,19 @@ alias pdf="zathura"
 # change my default USER shell
 alias tobash="sudo chsh -s /usr/bin/bash && echo 'Log out and log back in for change to take effect.'"
 alias tozsh="sudo chsh -s /usr/bin/zsh && echo 'Log out and log back in for change to take effect.'"
+
+# TMUX
+alias tt="tmux"
+alias tta="tmux a"
+alias ttas="tmux attach-session -t"
+alias ttl="tmux ls"
+alias ttn="tmux new -s"
+alias ttk="tmux kill-session"
+
+# Asus ctl controls
+alias asusp="asusctl profile -p"
+alias battiz="asusctl -n"
+alias battik="asusctl -p"
 
 # random alias that I need
 alias nv="nvim"
@@ -75,16 +88,4 @@ alias tp="toipe -n 25"
 alias fiwi="sudo systemctl restart NetworkManager"
 alias clr="clear"
 alias machli="asciiquarium"
-
-# TMUX
-alias tt="tmux"
-alias tta="tmux a"
-alias ttas="tmux attach-session -t"
-alias ttl="tmux ls"
-alias ttn="tmux new -s"
-alias ttk="tmux kill-session"
-
-# Asus ctl controls
-alias asusp="asusctl profile -p"
-alias battiz="asusctl -n"
-alias battik="asusctl -p"
+alias vid="mpv"

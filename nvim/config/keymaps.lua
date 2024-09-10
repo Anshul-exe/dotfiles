@@ -67,6 +67,9 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
+-- Opening all the tabs after fv
+keymap.set("n", "<Leader>t", ":tab all<Return>")
+
 -- Diagnostics
 -- keymap.set("n", "<C-j>", function()
 --   vim.diagnostic.goto_next()

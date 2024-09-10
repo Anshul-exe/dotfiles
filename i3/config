@@ -252,3 +252,12 @@ bindsym Mod4+l exec --no-startup-id "~/.scripts/Tala/lockscreen.sh"
 # cycle through workspaces
 bindsym $mod+Tab exec --no-startup-id i3-msg 'workspace next'
 bindsym $mod+Shift+Tab exec --no-startup-id i3-msg 'workspace prev'
+# volume Increase Decrease Mute/Unmute
+bindsym Mod4+equal exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym Mod4+minus exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym Mod4+0 exec --no-startup-id amixer -D pulse sset Master toggle
+# brightness Increase Decrease
+bindsym Mod4+Shift+equal exec --no-startup-id brightnessctl set +5%
+bindsym Mod4+Shift+minus exec --no-startup-id brightnessctl set 5%-
+# hotspot toggle
+bindsym Mod4+h exec --no-startup-id ~/.scripts/hotspot.sh
