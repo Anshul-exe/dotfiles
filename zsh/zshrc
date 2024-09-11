@@ -59,8 +59,8 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# available - web-search
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+# available - 
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 source $ZSH/oh-my-zsh.sh
 
