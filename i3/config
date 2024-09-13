@@ -24,7 +24,7 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/lockscreen.sh
 
 # Pywal
-exec_always --no-startup-id wal -R
+# exec_always --no-startup-id wal -R
 
 # Set default window gaps (optional)
 gaps inner 10
@@ -40,7 +40,7 @@ bindsym $mod+space exec "~/.config/rofi/better.sh"
 bindsym $mod+e exec rofi -show emoji -theme todo.rasi
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme rofidmenu.rasi
 bindsym $mod+t exec  rofi -modi "todos:$HOME/.config/rofi/rofitodo.sh" -show todos -theme $HOME/.config/rofi/todo.rasi
-bindsym $mod+p exec "~/.scripts/wallpaper_switcher.sh"
+bindsym $mod+p exec "~/.scripts/feh_switcher.sh"
 bindsym $mod+F4 exec "~/.scripts/Tala/powermenu.sh"
 bindsym Mod4+F4 exec "~/.config/rofi/rgb_control.sh"
 
@@ -253,9 +253,9 @@ bindsym Mod4+l exec --no-startup-id "~/.scripts/Tala/lockscreen.sh"
 bindsym $mod+Tab exec --no-startup-id i3-msg 'workspace next'
 bindsym $mod+Shift+Tab exec --no-startup-id i3-msg 'workspace prev'
 # volume Increase Decrease Mute/Unmute
-bindsym Mod4+equal exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym Mod4+minus exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym Mod4+0 exec --no-startup-id amixer -D pulse sset Master toggle
+bindsym Mod4+equal exec --no-startup-id amixer -D pulse set Master 5%+
+bindsym Mod4+minus exec --no-startup-id amixer -D pulse set Master 5%-
+bindsym Mod4+0 exec --no-startup-id amixer -D pulse set Master toggle
 # brightness Increase Decrease
 bindsym Mod4+Shift+equal exec --no-startup-id brightnessctl set +5%
 bindsym Mod4+Shift+minus exec --no-startup-id brightnessctl set 5%-
