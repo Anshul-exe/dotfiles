@@ -25,6 +25,8 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/lockscr
 
 # Pywal
 # exec_always --no-startup-id wal -R
+# feh
+exec --no-startup-id feh --bg-fill ~/clear_space/Random_Photos/wallpapers/Junior.jpg
 
 # Set default window gaps (optional)
 gaps inner 10
@@ -233,18 +235,25 @@ exec_always --no-startup-id libinput-gestures-setup restart
 # asusctl keybinds
 bindsym Mod4+F5 exec "asusctl profile -n"
 
+# cursor change
+exec --no-startup-id xrdb ~/.Xresources
 # bluetooth
 exec_always --no-startup-id bluetooth
 # screenshot
 bindsym Print exec --no-startup-id flameshot gui -p ~/Pictures/screenshots/
-# playerctl
+# playerctl media play-pause
 bindsym XF86AudioStop exec --no-startup-id "playerctl play-pause"
+bindsym Mod4+Shift+apostrophe exec --no-startup-id "playerctl play-pause"
+# playerctl spotify play-pause
 bindsym XF86AudioPlay exec --no-startup-id "playerctl -p spotify play-pause "
 bindsym Mod4+apostrophe exec --no-startup-id "playerctl -p spotify play-pause "
+# playerctl spotify next
 bindsym XF86AudioNext exec --no-startup-id "playerctl -p spotify next"
 bindsym Mod4+bracketright exec --no-startup-id "playerctl -p spotify next"
+# playerctl spotify previous
 bindsym XF86AudioPrev exec --no-startup-id "playerctl -p spotify previous"
 bindsym Mod4+bracketleft exec --no-startup-id "playerctl -p spotify previous"
+# playerctl spotify 10 sec aage-peeche
 bindsym Shift+XF86AudioNext exec --no-startup-id "playerctl -p spotify position 10+"
 bindsym Shift+XF86AudioPrev exec --no-startup-id "playerctl -p spotify position 10-"
 # screen lock
@@ -261,3 +270,5 @@ bindsym Mod4+Shift+equal exec --no-startup-id brightnessctl set +5%
 bindsym Mod4+Shift+minus exec --no-startup-id brightnessctl set 5%-
 # hotspot toggle
 bindsym Mod4+h exec --no-startup-id ~/.scripts/hotspot.sh
+# OCR bind
+bindsym Mod4+Shift+c exec --no-startup-id ~/.scripts/ocr.sh

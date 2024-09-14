@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+WALLPAPER_DIR="$HOME/clear_space/Random_Photos/wallpapers"
 
 # List of wallpapers with custom names
 # Format: Custom Name|Actual Filename
@@ -25,7 +25,7 @@ wallpapers=(
   "Nuts|Nuts.jpg"
   "Night Night|FACE.png"
   "Black|black.png"
-  "Change Wallpaper|rofi_menu" # Added option for rofi menu
+  "White|white.jpg"
 )
 
 # Generate rofi menu options
