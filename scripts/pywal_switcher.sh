@@ -6,9 +6,9 @@ WALLPAPER_DIR="$HOME/clear_space/Random_Photos/wallpapers"
 # List of wallpapers with custom names
 # Format: Custom Name|Actual Filename
 wallpapers=(
+  "Junior|Junior.jpg"
   "Astronaut|astronaut.jpg"
   "Hill House|hill_house.jpg"
-  "Junior|Junior.jpg"
   "Wizard World|deez.jpg"
   "Rick|ricl.jpg"
   "Camping|camping.jpg"

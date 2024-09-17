@@ -3,6 +3,7 @@ alias x="exit"
 alias xx='sudo shutdown -h now'
 alias xr="sudo reboot"
 alias xl="i3-msg exit"
+alias xs="systemctl suspend"
 
 # access from anywhere
 alias zz="source ~/.zshrc source && source ~/.oh-my-zsh/custom/aafunction.zsh && source ~/.oh-my-zsh/custom/binds.zsh"
@@ -45,6 +46,7 @@ alias kitnepkg="pacman -Q | wc -l && echo ITNE PACKAGES HAI WITH THEIR DEPENDENC
 alias yehai='pacman -Q | grep '
 alias useof="pacman -Qi "
 alias pdf="zathura"
+
 # change my default USER shell
 alias tobash="sudo chsh -s /usr/bin/bash && echo 'Log out and log back in for change to take effect.'"
 alias tozsh="sudo chsh -s /usr/bin/zsh && echo 'Log out and log back in for change to take effect.'"
@@ -89,3 +91,5 @@ alias fiwi="sudo systemctl restart NetworkManager"
 alias clr="clear"
 alias machli="asciiquarium"
 alias vid="mpv"
+alias cd="z"
+alias cdi="zi"

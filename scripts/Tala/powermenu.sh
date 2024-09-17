@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# Power menu script using rofi
-
 CHOSEN=$(printf "Shutdown\nLog Out\nReboot\nLock\nSuspend" | rofi -dmenu -i -p "Power Menu:" -theme "$HOME/.config/rofi/topRight.rasi")
 
 case "$CHOSEN" in
@@ -9,7 +7,8 @@ case "$CHOSEN" in
   ~/.scripts/Tala/lockscreen.sh
   ;;
 "Suspend")
-  systemctl suspend-then-hibernate
+  # systemctl suspend-then-hibernate
+  systemctl suspend
   ;;
 "Reboot")
   sudo reboot
@@ -18,7 +17,7 @@ case "$CHOSEN" in
   poweroff
   ;;
 "Log Out")
-  i3-msg exit # Replace with your logout command
+  i3-msg exit
   ;;
 *)
   exit 1
