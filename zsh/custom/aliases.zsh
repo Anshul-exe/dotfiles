@@ -49,6 +49,14 @@ alias useof="pacman -Qi "
 alias pdf="zathura"
 
 # Xrandr / second screen commands
+# phle connected device ka name dekho fir jaha set krna hai vaha ki
+# command do aur fir "xrandr --auto" krke laga do
+alias whichscreen="xrandr | grep connected"
+alias upar="xrandr --output HDMI-1-0 --above eDP-1"
+alias neeche="xrandr --output HDMI-1-0 --below eDP-1"
+alias left="xrandr --output HDMI-1-0 --left-of eDP-1"
+alias right="xrandr --output HDMI-1-0 --right-of eDP-1"
+alias dusriband="xrandr --output HDMI-1-0 --off"
 
 # change my default USER shell
 alias tobash="sudo chsh -s /usr/bin/bash && echo 'Log out and log back in for change to take effect.'"
