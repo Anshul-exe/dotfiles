@@ -48,6 +48,8 @@ alias yehai='pacman -Q | grep '
 alias useof="pacman -Qi "
 alias pdf="zathura"
 
+# Xrandr / second screen commands
+
 # change my default USER shell
 alias tobash="sudo chsh -s /usr/bin/bash && echo 'Log out and log back in for change to take effect.'"
 alias tozsh="sudo chsh -s /usr/bin/zsh && echo 'Log out and log back in for change to take effect.'"
@@ -96,3 +98,4 @@ alias cd="z"
 alias cdi="zi"
 alias fileppt="libreoffice --impress "
 alias filedoc="libreoffice --writer "
+alias db="sudo mariadb -u anshul -p"

@@ -16,7 +16,7 @@ tmux split-window -h -l 50%
 tmux send-keys -t $SESSION_NAME:0.0 'cd mid && nvim' C-m
 tmux send-keys -t $SESSION_NAME:0.1 'cd mid && nodemon solution4.js' C-m
 tmux send-keys -t $SESSION_NAME:0.2 'cava' C-m
-tmux send-keys -t $SESSION_NAME:0.3 'cd mid && ls' C-m
+tmux send-keys -t $SESSION_NAME:0.3 'cd mid && clear && ls' C-m
 
 # Attach to the session
 tmux attach-session -t $SESSION_NAME
