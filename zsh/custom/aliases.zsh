@@ -18,6 +18,7 @@ alias bc="nvim ~/.scripts/copyShitz.sh"
 alias rnrc='cd ~/.config && ranger'
 alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
 alias cod="cd ~/clear_space/codeLore/"
+alias shit="~/.scripts/tmux1by3.sh"
 
 # listing shitz
 alias vidr='ls -a'
@@ -93,3 +94,5 @@ alias machli="asciiquarium"
 alias vid="mpv"
 alias cd="z"
 alias cdi="zi"
+alias fileppt="libreoffice --impress "
+alias filedoc="libreoffice --writer "
