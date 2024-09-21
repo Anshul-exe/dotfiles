@@ -30,7 +30,9 @@ alias lg="ls | grep -i "
 alias lag="la | grep -i "
 alias perm="exa --long --header --git --icons"
 alias perma="exa --long --header --git --icons -a"
-alias eza="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=1"
+alias tre="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=1 --tree"
+alias tree="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=2 --tree"
+alias treee="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=3 --tree"
 alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux -m --height 65% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
 alias fvt="fd --type f --hidden --exclude .git | fzf-tmux -m --preview 'bat --color=always {}' -p --reverse| xargs nvim"
 alias grep='grep -i --color=auto'
@@ -49,7 +51,7 @@ alias useof="pacman -Qi "
 alias pdf="zathura"
 
 # Xrandr / second screen commands
-# phle connected device ka name dekho fir jaha set krna hai vaha ki
+# phle connected device ka name dekho (HDMI-1-0) fir jaha set krna hai vaha ki
 # command do aur fir "xrandr --auto" krke laga do
 alias whichscreen="xrandr | grep connected"
 alias upar="xrandr --output HDMI-1-0 --above eDP-1"
@@ -79,7 +81,7 @@ alias battik="asusctl -p"
 alias nv="nvim"
 alias vn="unalias nv"
 alias 192="ip a| grep 192"
-alias pip="ip a | grep -E '192|10\.'"
+alias ipa="ip a | grep -E '192|10\.'"
 alias check="ping arch.org"
 alias lz="lazygit"
 alias tkill="tmux kill-session"
