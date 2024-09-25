@@ -60,6 +60,11 @@ keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
 keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
+-- Move window with vim-tmux-navigator
+keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
+keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>")
+keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>")
+keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
 
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")

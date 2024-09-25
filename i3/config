@@ -272,3 +272,5 @@ bindsym Mod4+Shift+minus exec --no-startup-id brightnessctl set 5%-
 bindsym Mod4+h exec --no-startup-id ~/.scripts/hotspot.sh
 # OCR bind
 bindsym Mod4+Shift+c exec --no-startup-id ~/.scripts/ocr.sh
+# normal work vali shit open krne vala
+bindsym Mod4+Return exec --no-startup-id ~/.scripts/dailyShitz.sh
