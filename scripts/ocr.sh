@@ -1,5 +1,6 @@
 #!/bin/env bash
 
+mkdir -p /tmp/OCRshitz
 imagefile="/tmp/OCRshitz/sloppy.$RANDOM.png"
 text="/tmp/OCRshitz/translation.txt"
 echo "$imagefile"
