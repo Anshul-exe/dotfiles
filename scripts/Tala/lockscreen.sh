@@ -1,7 +1,7 @@
 #!/bin/sh
 
 COLOR='#000000'
-IMAGE='/home/mir/Pictures/wallpapers/FACE1.png'
+IMAGE='~/clear_space/Random_Photos/wallpapers/FACE1.png'
 
 i3lock -i $IMAGE -f -k \
   --clock --date-str="%A, %d %B" --time-color=ffffffff --date-color=ffffffff \
