@@ -19,6 +19,7 @@ alias rnrc='cd ~/.config && ranger'
 alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
 alias cod="cd ~/clear_space/codeLore/"
 alias shit="~/.scripts/tmux1by3.sh"
+alias ttc="nvim ~/.tmux.conf"
 
 # listing shitz
 alias vidr='ls -a'
@@ -48,7 +49,6 @@ alias kitnehai="pacman -Qqe | wc -l && echo TOTAL INSTALLED USER PACKAGES"
 alias kitnepkg="pacman -Q | wc -l && echo ITNE PACKAGES HAI WITH THEIR DEPENDENCIES"
 alias yehai='pacman -Q | grep '
 alias useof="pacman -Qi "
-alias pdf="zathura"
 
 # Xrandr / second screen commands
 # phle connected device ka name dekho (HDMI-1-0) fir jaha set krna hai vaha ki
@@ -109,3 +109,4 @@ alias cdi="zi"
 alias fileppt="libreoffice --impress "
 alias filedoc="libreoffice --writer "
 alias db="sudo mariadb -u anshul -p"
+alias pdf="zathura"
