@@ -43,7 +43,7 @@ bindsym $mod+e exec rofi -show emoji -theme todo.rasi
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme rofidmenu.rasi
 bindsym $mod+t exec  rofi -modi "todos:$HOME/.config/rofi/rofitodo.sh" -show todos -theme $HOME/.config/rofi/todo.rasi
 bindsym $mod+p exec "~/.scripts/feh_switcher.sh"
-bindsym $mod+F4 exec "~/.scripts/Tala/powermenu.sh"
+bindsym $mod+F9 exec "~/.scripts/Tala/powermenu.sh"
 bindsym Mod4+F4 exec "~/.config/rofi/rgb_control.sh"
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -223,8 +223,8 @@ set $crust     #11111b
 
 # target                 title     bg    text      indicator    border
 client.focused           $mantle   $mauve $mantle  $rosewater $mauve
-client.focused_inactive  $overlay0 $base  $text    $rosewater $overlay0
 client.unfocused         $overlay0 $base  $text    $rosewater $overlay0
+client.focused_inactive  $overlay0 $base  $text    $rosewater $overlay0
 client.urgent            $peach    $base  $peach   $overlay0  $peach
 client.placeholder       $overlay0 $base  $text    $overlay0  $overlay0
 client.background        $base
@@ -274,3 +274,5 @@ bindsym Mod4+h exec --no-startup-id ~/.scripts/hotspot.sh
 bindsym Mod4+Shift+c exec --no-startup-id ~/.scripts/ocr.sh
 # normal work vali shit open krne vala
 bindsym Mod4+Return exec --no-startup-id ~/.scripts/dailyShitz.sh
+
+
