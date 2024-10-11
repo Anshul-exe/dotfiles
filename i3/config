@@ -43,7 +43,7 @@ bindsym $mod+e exec rofi -show emoji -theme todo.rasi
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme rofidmenu.rasi
 bindsym $mod+t exec  rofi -modi "todos:$HOME/.config/rofi/rofitodo.sh" -show todos -theme $HOME/.config/rofi/todo.rasi
 bindsym $mod+p exec "~/.scripts/feh_switcher.sh"
-bindsym $mod+F9 exec "~/.scripts/Tala/powermenu.sh"
+bindsym $mod+F9 exec "~/.config/rofi/powermenu/type-4/powermenu.sh"
 bindsym Mod4+F4 exec "~/.config/rofi/rgb_control.sh"
 
 # Font for window titles. Will also be used by the bar unless a different font
