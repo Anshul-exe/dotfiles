@@ -34,7 +34,7 @@ alias perma="exa --long --header --git --icons -a"
 alias tre="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=1 --tree"
 alias tree="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=2 --tree"
 alias treee="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --level=3 --tree"
-alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux -m --height 65% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
+alias fv="fd --type f --hidden --exclude .git '' | fzf-tmux -m --height 75% --preview 'bat --color=always {}' --reverse | xargs -o nvim"
 alias fvt="fd --type f --hidden --exclude .git | fzf-tmux -m --preview 'bat --color=always {}' -p --reverse| xargs nvim"
 alias grep='grep -i --color=auto'
 
