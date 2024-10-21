@@ -10,7 +10,7 @@ sleep 0.7
 i3-msg "workspace 3"
 sleep 0.3
 i3-msg "exec spotify"
-sleep 0.7
+sleep 0.8
 
 # Back to workspace 1 and open Alacritty
 i3-msg "workspace 1"
