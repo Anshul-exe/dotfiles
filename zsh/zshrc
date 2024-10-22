@@ -32,6 +32,7 @@ setopt hist_verify
 setopt autocd       # cd into dir without using typing cd
 setopt correct      # automatically corrects typos while cd-ing
 unsetopt extended_glob
+unsetopt correct_all
 
 unsetopt beep
 
