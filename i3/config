@@ -240,7 +240,7 @@ exec --no-startup-id xrdb ~/.Xresources
 # bluetooth
 exec_always --no-startup-id bluetooth
 # screenshot
-bindsym Print exec --no-startup-id flameshot gui -p ~/clear_space/Random_Photos/screenshots
+bindsym Print exec --no-startup-id ~/.scripts/ssCustomName.sh
 # playerctl media play-pause
 bindsym XF86AudioStop exec --no-startup-id "playerctl play-pause"
 bindsym Mod4+Shift+apostrophe exec --no-startup-id "playerctl play-pause"
