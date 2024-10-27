@@ -64,3 +64,8 @@ yay() {
 prokill() {
   kill -9 $(ps -ef | fzf | awk '{print $2}')
 }
+
+# search function for yay
+search () {
+    yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S
+}
