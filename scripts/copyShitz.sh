@@ -53,3 +53,9 @@ cp ~/.config/libinput-gestures.conf ~/dotfiles/libinput-gestures.conf
 
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
+
+# git shit
+cp ~/.ssh/id_ed25519 ~/clear_space/backups/gitSetup/DOTssh/
+cp ~/.ssh/id_ed25519.pub ~/clear_space/backups/gitSetup/DOTssh/
+cp ~/.gitconfig ~/clear_space/backups/gitSetup/gitconfig
+cp ~/.git-credentials ~/clear_space/backups/gitSetup/git-credentials
