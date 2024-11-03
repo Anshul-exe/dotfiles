@@ -41,31 +41,51 @@ cdown() {
   while [[ $((--N)) -gt 0 ]]; do
     echo "$N" | figlet -c | lolcat && sleep 1
   done
-  echo "TIME 'S UP ! !" | figlet -c | lolcat
+echo "TIME 'S UP ! !" | figlet -c | lolcat
 }
 
 #### Who the fuck uses nano
 sudo() {
-  if [ "$1" = "pacman" ] && [ "$2" = "-S" ] && [ "$3" = "nano" ]; then
-    figlet "Shut  the  Fuck  Up, Hmare  PC  me  nano  nahi  padega... Bhk.  Mard  bano  aur  nvim  use  kro"
-  else 
-    command sudo "$@"
-  fi
+if [ "$1" = "pacman" ] && [ "$2" = "-S" ] && [ "$3" = "nano" ]; then
+  figlet "Shut  the  Fuck  Up, Hmare  PC  me  nano  nahi  padega... Bhk.  Mard  bano  aur  nvim  use  kro"
+else 
+  command sudo "$@"
+fi
 }
 yay() {
-  if [ "$1" = "-S" ] && [ "$2" = "nano" ]; then
-    figlet "Are  Bhadwe... abhi  bhi  nahi  mane  tum??"
-  else 
-    command yay "$@"
-  fi
+if [ "$1" = "-S" ] && [ "$2" = "nano" ]; then
+  figlet "Are  Bhadwe... abhi  bhi  nahi  mane  tum??"
+else 
+  command yay "$@"
+fi
 }
 
 # killing processes with fzf
 prokill() {
-  kill -9 $(ps -ef | fzf | awk '{print $2}')
+kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
 }
 
 # search function for yay
 search () {
-    yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S
+  yay -Slq | fzf --multi --height 55% --preview 'yay -Si {1}' | xargs -ro yay -S
+}
+
+# navigating through used directories
+cdf () {
+  dirs -v | fzf --height 40% | awk '{print $2}' | xargs -r cd
+}
+
+# copying file path
+fpclip () {
+  realpath "$(find . -type f | fzf --height 40%)" | xclip -selection clipboard
+}
+
+# Most disk space consumer
+biggest () {
+  du -ah . | sort -rh | head -n 50 | fzf --height 40% --preview 'echo {}'
+}
+
+## get weather
+weather () {
+  curl -s "wttr.in/${1:-Delhi}?format=3" | lolcat
 }
