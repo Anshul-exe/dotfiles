@@ -51,6 +51,9 @@ cp -r ~/clear_space/Random_Photos/wallpapers/* ~/dotfiles/wallpapers/
 # gestures
 cp ~/.config/libinput-gestures.conf ~/dotfiles/libinput-gestures.conf
 
+# dunst
+cp -r ~/.config/dunst/* ~/dotfiles/dunst/
+
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
 
