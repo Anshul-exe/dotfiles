@@ -18,7 +18,7 @@ cp ~/.config/neofetch/config.conf ~/dotfiles/neofetch/config.conf
 
 # nvim
 cp -r ~/.config/nvim/lua/* ~/dotfiles/nvim/
-# cp -r ~/.local/share/nvim/* ~/dotfiles/nvim/.local/share/
+cp -r ~/.local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua ~/dotfiles/nvim/local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua
 
 # picom
 cp ~/.config/picom/picom.conf ~/dotfiles/picom/picom.conf
