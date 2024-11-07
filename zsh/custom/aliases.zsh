@@ -79,7 +79,7 @@ alias battik="asusctl -p"
 
 # random alias that I need
 alias nv="nvim"
-alias 189="ip a| grep 192"
+alias 192="ip a| grep 192"
 alias ipa="ip a | grep -E '192|10\.'"
 alias check="ping arch.org"
 alias lz="lazygit"
