@@ -109,44 +109,38 @@ source $ZSH/oh-my-zsh.sh
 # autoload -U colors && colors
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-
-# CUSTOM FUNCTIONS
-
 # RANDOM ASS SHITZ
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 
-# DEFAULT SHITZ
-export EDITOR=nvim
-
-# PATH
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/home/mir/.spicetify
-export PATH=$PATH:/usr/bin/spicetify
-. "$HOME/.cargo/env"
+# path
+export path=$path:/usr/local/bin
+export path=$path:/home/mir/.spicetify
+export path=$path:/usr/bin/spicetify
+. "$home/.cargo/env"
 eval "$(zoxide init zsh)"
 
 # things that should be at last
-autoload -Uz compinit
+autoload -uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-# Change cursor shape for different vi modes.
+# change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
+  if [[ ${keymap} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
     echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
+  elif [[ ${keymap} == main ]] ||
+       [[ ${keymap} == viins ]] ||
+       [[ ${keymap} = '' ]] ||
        [[ $1 = 'beam' ]]; then
     echo -ne '\e[5 q'
   fi
 }
-zle -N zle-keymap-select
+zle -n zle-keymap-select
 zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    zle -k viins # initiate `vi insert` as keymap (can be removed if `bindkey -v` has been set elsewhere)
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init

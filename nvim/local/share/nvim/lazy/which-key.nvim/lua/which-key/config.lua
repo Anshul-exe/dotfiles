@@ -7,7 +7,7 @@ M.version = "3.13.3" -- x-release-please-version
 ---@class wk.Opts
 local defaults = {
   ---@type false | "classic" | "modern" | "helix"
-  preset = "classic",
+  preset = "modern",
   -- Delay before showing the popup. Can be a number or a function that returns a number.
   ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number
   delay = function(ctx)
