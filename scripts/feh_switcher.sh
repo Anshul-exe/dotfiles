@@ -26,6 +26,7 @@ wallpapers=(
   "Night Night|FACE.png"
   "Black|black.png"
   "White|white.jpg"
+  "Bed|Bed.jpeg"
 )
 
 # Generate rofi menu options

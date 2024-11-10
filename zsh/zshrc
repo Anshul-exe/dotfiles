@@ -112,44 +112,40 @@ source $ZSH/oh-my-zsh.sh
 # RANDOM ASS SHITZ
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 
-# path
-export path=$path:/usr/local/bin
-export path=$path:/home/mir/.spicetify
-export path=$path:/usr/bin/spicetify
-. "$home/.cargo/env"
+# DEFAULT SHITZ
+export EDITOR=nvim
+# PATH
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/home/mir/.spicetify
+export PATH=$PATH:/usr/bin/spicetify
+. "$HOME/.cargo/env"
 eval "$(zoxide init zsh)"
 
 # things that should be at last
-autoload -uz compinit
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-# change cursor shape for different vi modes.
+# Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${keymap} == vicmd ]] ||
+  if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
     echo -ne '\e[1 q'
-  elif [[ ${keymap} == main ]] ||
-       [[ ${keymap} == viins ]] ||
-       [[ ${keymap} = '' ]] ||
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
        [[ $1 = 'beam' ]]; then
     echo -ne '\e[5 q'
   fi
 }
-zle -n zle-keymap-select
+zle -N zle-keymap-select
 zle-line-init() {
-    zle -k viins # initiate `vi insert` as keymap (can be removed if `bindkey -v` has been set elsewhere)
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-# edit line in vim with ctrl-e
-autoload edit-command-line
-zle -N edit-command-line
 export SYSTEMD_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
