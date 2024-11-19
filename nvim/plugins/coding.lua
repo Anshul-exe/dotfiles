@@ -5,4 +5,5 @@ return {
     cmd = "IncRename",
     config = true,
   },
+  { "wakatime/vim-wakatime", lazy = false },
 }
