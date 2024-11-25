@@ -225,4 +225,14 @@ return {
   {
     "szw/vim-maximizer",
   },
+  {
+    "jalvesaq/Nvim-R",
+    ft = { "r", "rmd" }, -- Load for R and R Markdown files only
+    config = function()
+      -- Basic Nvim-R settings
+      vim.g.R_auto_start = 2 -- Automatically start R when opening an R file
+      vim.g.R_assign = 0 -- Disable `<C-->` for `<-` to avoid interference
+      vim.g.Rout_more_colors = 1 -- Enable better colors in the R console
+    end,
+  },
 }
