@@ -67,6 +67,8 @@ packages=(
   "postman"
   "rambox"
   "ranger"
+  "impala"
+  "atac"
 )
 
 # Update yay
