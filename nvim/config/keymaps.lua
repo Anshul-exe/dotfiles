@@ -76,11 +76,11 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 keymap.set("n", "<Leader>t", ":tab all<Return>")
 
 -- R Programming shitz
--- keymap.set("n", "<Leader>r", ":R<CR>", { noremap = true, silent = true }) -- Start R
--- keymap.set("n", "<Leader>l", "<Plug>RSendLine", {}) -- Send current line to R
--- keymap.set("v", "<Leader>l", "<Plug>RSendSelection", {}) -- Send selection to R
--- keymap.set("n", "<Leader>a", "<Plug>RSendFile", {}) -- Send entire file to R
--- keymap.set("n", "<Leader>q", ":RQuit<CR>") -- Quit R
+keymap.set("n", "<Leader>r", ":R<CR>", { noremap = true, silent = true }) -- Start R
+keymap.set("n", "<Leader>l", "<Plug>RSendLine", {}) -- Send current line to R
+keymap.set("v", "<Leader>l", "<Plug>RSendSelection", {}) -- Send selection to R
+keymap.set("n", "<Leader>a", "<Plug>RSendFile", {}) -- Send entire file to R
+keymap.set("n", "<Leader>q", ":RQuit<CR>") -- Quit R
 
 -- Diagnostics
 -- keymap.set("n", "<C-j>", function()
