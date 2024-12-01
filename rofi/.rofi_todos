@@ -12,3 +12,6 @@ nvim + atac
 tmux start se firse
 image.nvim andar lagana
 GSOC
+fzf-git
+ zoom icon in tmux
+maximize window in nvim

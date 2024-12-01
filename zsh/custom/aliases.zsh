@@ -26,7 +26,7 @@ alias vidr='ls -a'
 alias dir='ls'
 alias la='ls -a'
 alias l='ls -CF'
-alias ls="exa"
+alias ls="exa --icons=always"
 alias lg="ls | grep -i "
 alias lag="la | grep -i "
 alias perm="exa --long --header --git --icons"
