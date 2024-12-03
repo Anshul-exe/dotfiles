@@ -7,8 +7,8 @@ WALLPAPER_DIR="$HOME/clear_space/Random_Photos/wallpapers"
 # Format: Custom Name|Actual Filename
 wallpapers=(
   "Junior|Junior.jpg"
-  "Astronaut|astronaut.jpg"
   "Hill House|hill_house.jpg"
+  "Astronaut|astronaut.jpg"
   "Wizard World|deez.jpg"
   "Rick|ricl.jpg"
   "Camping|camping.jpg"
@@ -26,7 +26,6 @@ wallpapers=(
   "Night Night|FACE.png"
   "Black|black.png"
   "White|white.jpg"
-  "Bed|Bed.jpeg"
 )
 
 # Generate rofi menu options
