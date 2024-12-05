@@ -46,7 +46,7 @@ cp -r ~/.oh-my-zsh/custom/aafunction.zsh ~/dotfiles/zsh/custom/aafunction.zsh
 cp ~/.tmux.conf ~/dotfiles/tmux.conf
 
 # Wallpapers
-cp -r ~/clear_space/Random_Photos/wallpapers/* ~/dotfiles/wallpapers/
+cp -r ~/clear_space/Media/wallpapers/* ~/dotfiles/wallpapers/
 
 # gestures
 cp ~/.config/libinput-gestures.conf ~/dotfiles/libinput-gestures.conf

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Giving the path for saving screenshot
-screenshot_dir=~/clear_space/Random_Photos/screenshots
+screenshot_dir=~/clear_space/Media/screenshots
 
 # Taking Screenshot using flameshot and storing it with a default name
 default_name=$(date '+%Y-%m-%d_%H-%M-%S').png

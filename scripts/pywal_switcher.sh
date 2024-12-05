@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="$HOME/clear_space/Random_Photos/wallpapers"
+WALLPAPER_DIR="$HOME/clear_space/Media/wallpapers"
 
 # List of wallpapers with custom names
 # Format: Custom Name|Actual Filename

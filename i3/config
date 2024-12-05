@@ -26,7 +26,7 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/Tala/lo
 # Pywal
 # exec_always --no-startup-id wal -R
 # feh
-exec --no-startup-id feh --bg-fill ~/clear_space/Random_Photos/wallpapers/Junior.jpg
+exec --no-startup-id feh --bg-fill ~/clear_space/Media/wallpapers/Junior.jpg
 
 # Set default window gaps (optional)
 gaps inner 10
@@ -229,7 +229,7 @@ client.urgent            $peach    $base  $peach   $overlay0  $peach
 client.placeholder       $overlay0 $base  $text    $overlay0  $overlay0
 client.background        $base
 
-# Random Ass Shit
+###### Random Ass Shit ######
 exec_always --no-startup-id libinput-gestures-setup restart
 
 # asusctl keybinds
