@@ -69,8 +69,8 @@ alias tozsh="sudo chsh -s /usr/bin/zsh && echo 'Log out and log back in for chan
 
 # TMUX
 alias tt="tmux"
-alias tta="tmux a"
-alias ttas="tmux attach-session -t"
+# alias tta="tmux a"
+alias tta="tmux attach-session -t"
 alias ttl="tmux ls"
 alias ttn="tmux new -s"
 alias ttk="tmux kill-session"
@@ -111,3 +111,4 @@ alias cdi="zi"
 alias fileppt="libreoffice --impress "
 alias filedoc="libreoffice --writer "
 alias db="mariadb -u anshul -p"
+alias pp="python3"
