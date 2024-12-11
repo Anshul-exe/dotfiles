@@ -13,7 +13,7 @@ usage() {
 }
 
 # Initialize variables
-URL="https://mygbu.in/schd/?name=SOICT&dept=CSE&section=31"
+URL="https://mygbu.in/schd/?name=SOICT&dept=CSE&section=1277"
 PDF_VIEWER="zathura"
 
 # Parse command-line arguments
@@ -56,5 +56,4 @@ echo ".navbar { display: none; }" >/tmp/gbu-remove.css
 
 wkhtmltopdf --user-style-sheet "/tmp/gbu-remove.css" --page-size A4 --orientation Landscape "$URL" "$PDF_FILE" &>/dev/null
 echo "PDF should be getting displayed in $PDF_VIEWER"
-echo "🍻 Nikhil Singh ~ https://github.com/niksingh710"
 $PDF_VIEWER "$PDF_FILE" &>/dev/null

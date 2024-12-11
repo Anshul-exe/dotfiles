@@ -1,9 +1,10 @@
 # for keybinds
 cd_codeLore() {
-  cd ~/clear_space/codeLore
-  ls -l
-  zle reset-prompt  # Update the prompt
-  # zle -R
+  # cd ~/clear_space/codeLore
+  # ls -l
+  # zle reset-prompt  # Update the prompt
+  # # zle -R
+  sh ~/.scripts/bhaiya.sh
 }
 zle -N cd_codeLore  # Register the widget
 
