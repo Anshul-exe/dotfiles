@@ -48,14 +48,14 @@ echo "TIME 'S UP ! !" | figlet -c | lolcat
 #### Who the fuck uses nano
 sudo() {
 if [ "$1" = "pacman" ] && [ "$2" = "-S" ] && [ "$3" = "nano" ]; then
-  figlet "Shut  the  Fuck  Up, Hmare  PC  me  nano  nahi  padega... Bhk.  Mard  bano  aur  nvim  use  kro"
+  echo "Shut  the  Fuck  Up, Hmare  PC  me  nano  nahi  padega... Bhk.  Mard  bano  aur  nvim  use  kro" | figlet | lolcat
 else 
   command sudo "$@"
 fi
 }
 yay() {
 if [ "$1" = "-S" ] && [ "$2" = "nano" ]; then
-  figlet "Are  Bhadwe... abhi  bhi  nahi  mane  tum??"
+  echo "Are  Bhadwe... abhi  bhi  nahi  mane  tum??" | figlet | lolcat
 else 
   command yay "$@"
 fi
