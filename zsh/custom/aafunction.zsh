@@ -61,6 +61,10 @@ else
 fi
 }
 
+aryan(){
+ echo "Aaj ke baad kisi bhi type ke nashe nahi krunga, kyoki me aaj, 14 dec ko ideal nashedi lag rha hu" | figlet | lolcat
+}
+
 # killing processes with fzf
 prokill() {
 kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
