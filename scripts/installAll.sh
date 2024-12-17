@@ -69,6 +69,7 @@ packages=(
   "ranger"
   "impala"
   "atac"
+  "ncdu"
 )
 
 # Update yay

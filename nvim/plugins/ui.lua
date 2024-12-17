@@ -114,6 +114,9 @@ return {
       })
     end,
   },
+  {
+    "johngrib/vim-game-code-break",
+  },
 
   --Welcome logo
   {
