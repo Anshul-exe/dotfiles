@@ -70,6 +70,7 @@ packages=(
   "impala"
   "atac"
   "ncdu"
+  "sl"
 )
 
 # Update yay
