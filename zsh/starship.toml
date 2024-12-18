@@ -1,0 +1,58 @@
+[cmd_duration]
+disabled = true
+
+[git_branch]
+disabled = true
+
+# Disable Git commit information
+[git_commit]
+disabled = true
+
+# Don't print a new ➜line at the start of the prompt
+add_newline = false
+
+[character] # The name of the module we are configuring is 'character'
+# success_symbol = '[🎧👻👁️🤌🗿🍌🛹🎀🐍🐉💲](bold green)'
+success_symbol = '[🐉](bold blue)'
+
+# Disable the package module, hiding the version of the current package
+[package]
+disabled = false
+
+# [[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+# threshold = 30
+# style = 'bold red'
+# discharging_symbol = '💀 '
+#
+# [[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+# threshold = 60
+# style = 'bold yellow'
+# discharging_symbol = '☢️ '
+#
+# [[battery.display]]
+# threshold = 90
+# style = 'bold green'
+# discharging_symbol = '✨ '
+#
+# # when capacity is over 60%, the battery indicator will not be displayed
+#
+# [battery]
+# full_symbol = '🔋 '
+# charging_symbol = '⚡️'
+# discharging_symbol = '💀 '
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false
+
+# [time]
+# disabled = false
+# format = '[$time]($style) '
+# time_format = '%r'
+# style = 'bold purple'
