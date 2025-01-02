@@ -17,12 +17,14 @@ packages=(
   "yay"
   "fzf"
   "bat"
-  "pywal"
+  "pywal" no
   "feh"
-  "pokeget"
+  "pokeget" no
   "zoxide"
-  "bluez" "bluez-utils"
-  "nm-applet"
+  "bluez"
+  "bluez-utils"
+  "blueman"
+  "nm-applet" no
   "picom"
   "dunst"
   "eza"
@@ -38,10 +40,10 @@ packages=(
   "supergfxctl"
   "light"
   "fastfetch"
-  "batfetch"
-  "rofi-calc" "rofi-emoji"
+  "batfetch" no
+  "rofi-calc" "rofi-emoji" no
   "xdotool"
-  "papirus-icon-theme"
+  "papirus-icon-theme" no
   "acpi"
   "libnotify"
   "iptables"
@@ -71,6 +73,7 @@ packages=(
   "atac"
   "ncdu"
   "sl"
+  "zathura"
 )
 
 # Update yay

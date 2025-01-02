@@ -2,12 +2,12 @@
 ---@field triggers {mappings: wk.Mapping[], modes: table<string,boolean>}
 local M = {}
 
-M.version = "3.13.3" -- x-release-please-version
+M.version = "3.15.0" -- x-release-please-version
 
 ---@class wk.Opts
 local defaults = {
   ---@type false | "classic" | "modern" | "helix"
-  preset = "modern",
+  preset = "classic",
   -- Delay before showing the popup. Can be a number or a function that returns a number.
   ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number
   delay = function(ctx)
@@ -295,15 +295,16 @@ function M.setup(opts)
 
     M.loaded = true
   end
-  load = vim.schedule_wrap(load)
+  local _load = vim.schedule_wrap(load)
 
   if vim.v.vim_did_enter == 1 then
-    load()
+    _load()
   else
-    vim.api.nvim_create_autocmd("VimEnter", { once = true, callback = load })
+    vim.api.nvim_create_autocmd("VimEnter", { once = true, callback = _load })
   end
 
   vim.api.nvim_create_user_command("WhichKey", function(cmd)
+    load()
     local mode, keys = cmd.args:match("^([nixsotc]?)%s*(.*)$")
     if not mode then
       return require("which-key.util").error("Usage: WhichKey [mode] [keys]")
