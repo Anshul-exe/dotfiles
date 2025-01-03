@@ -61,8 +61,8 @@ COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # available - 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer copyfile thefuck)
-
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer copyfile)
+# thefuck
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -130,33 +130,34 @@ _comp_options+=(globdots)
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+if [[ ${KEYMAP} == vicmd ]] ||
+  [[ $1 = 'block' ]]; then
+echo -ne '\e[1 q'
+elif [[ ${KEYMAP} == main ]] ||
+    [[ ${KEYMAP} == viins ]] ||
+    [[ ${KEYMAP} = '' ]] ||
+    [[ $1 = 'beam' ]]; then
+echo -ne '\e[5 q'
+fi
 }
 zle -N zle-keymap-select
 zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+echo -ne "\e[5 q"
 }
 zle -N zle-line-init
 export SYSTEMD_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # ctrl-r for history inside fzf
 fzf-history-widget() {
-  local selected=$(fc -rl 1 | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
-  if [[ -n $selected ]]; then
-    LBUFFER="${selected#*[0-9]  }"  # Append the selected history command to the buffer
-  fi
-  zle redisplay
+local selected=$(fc -rl 1 | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
+if [[ -n $selected ]]; then
+LBUFFER="${selected#*[0-9]  }"  # Append the selected history command to the buffer
+fi
+zle redisplay
 }
 
 zle -N fzf-history-widget

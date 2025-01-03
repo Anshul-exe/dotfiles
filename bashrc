@@ -130,15 +130,15 @@ shopt -s checkwinsize # when I'll resize the terminal window, commands will use 
 
 ##################### Sundarta #######################
 eval "$(starship init bash)"
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 ################### END OF Sundarta ####################
 
 ###################### IDK WTF DOES THESE THINGS DO #################
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
+# source ~/.cache/wal/colors-tty.sh
 ###################### IDK WTF DOES THESE THINGS DO #################
 
 ################# RANDOM ASS SHITZ #######################
@@ -157,5 +157,6 @@ export EDITOR=nvim
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/mir/.spicetify
 export PATH=$PATH:/usr/bin/spicetify
-. "$HOME/.cargo/env"
+export PATH=$PATH:/.cargo/bin
 ################ END OF PATH #####################
+. "$HOME/.cargo/env"
