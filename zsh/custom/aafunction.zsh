@@ -71,7 +71,7 @@ kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
 }
 
 # search function for yay
-search () {
+yays () {
   yay -Slq | fzf --multi --height 55% --preview 'yay -Si {1}' | xargs -ro yay -S
 }
 

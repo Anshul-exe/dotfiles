@@ -235,4 +235,11 @@ return {
       vim.g.Rout_more_colors = 1 -- Enable better colors in the R console
     end,
   },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      preset = "modern",
+    },
+  },
 }

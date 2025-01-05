@@ -17,7 +17,7 @@ i3-msg "workspace 1"
 
 # First terminal
 sleep 0.3
-i3-msg "exec alacritty -e tmux new-session -s 8===D"
+i3-msg "exec alacritty -e tmux new-session -s Main Bi-"
 
 # Second terminal as a scratchpad
 sleep 0.7
