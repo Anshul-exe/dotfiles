@@ -54,6 +54,9 @@ cp ~/.config/libinput-gestures.conf ~/dotfiles/libinput-gestures.conf
 # dunst
 cp -r ~/.config/dunst/* ~/dotfiles/dunst/
 
+# hypr
+cp -r ~/.config/hypr/* ~/dotfiles/hypr/
+
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
 
