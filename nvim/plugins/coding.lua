@@ -6,45 +6,108 @@ return {
     config = true,
   },
   { "wakatime/vim-wakatime", lazy = false },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    keys = {
+      {
+        "<leader>ucc",
+        function()
+          -- Check Copilot status without using client.is_attached
+          local status_ok, copilot = pcall(require, "copilot")
+          if not status_ok then
+            vim.notify("Copilot is not properly initialized", vim.log.levels.ERROR)
+            return
+          end
+
+          if vim.g.copilot_status == nil then
+            vim.g.copilot_status = "running"
+          end
+
+          if vim.g.copilot_status == "running" then
+            vim.g.copilot_status = "stopped"
+            vim.cmd("Copilot disable")
+            vim.notify("Copilot disabled", vim.log.levels.INFO)
+          else
+            vim.g.copilot_status = "running"
+            vim.cmd("Copilot enable")
+            vim.notify("Copilot enabled", vim.log.levels.INFO)
+          end
+        end,
+        desc = "Toggle Copilot",
+      },
+    },
+    opts = {
+      panel = {
+        enabled = true,
+        auto_refresh = true,
+      },
+      filetypes = {
+        yaml = false,
+        markdown = true,
+        help = false,
+        gitcommit = false,
+        gitrebase = false,
+        hgcommit = false,
+        svn = false,
+        cvs = false,
+        ["."] = false,
+      },
+      suggestion = {
+        enable = true,
+        auto_trigger = true,
+        debounce = 75,
+        keymap = {
+          accept = "<C-a>",
+          next = "<C-]>",
+          prev = "<C-[>",
+          dismiss = "<C-\\>",
+        },
+      },
+      server_opts_overrides = {
+        trace = "verbose",
+        settings = {
+          advanced = {
+            listCount = 10,
+            inlineSuggestCount = 3,
+          },
+        },
+      },
+    },
+    config = function(_, opts)
+      vim.schedule(function()
+        require("copilot").setup(opts)
+      end)
+    end,
+  },
   -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   keys = {
-  --     {
-  --       "<leader>ucc",
-  --       function()
-  --         if vim.g.copilot_status == nil then
-  --           vim.g.copilot_status = "running"
-  --         end
-  --         if vim.g.copilot_status == "running" then
-  --           vim.g.copilot_status = "stopped"
-  --           vim.cmd("Copilot disable")
-  --         else
-  --           vim.g.copilot_status = "running"
-  --           vim.cmd("Copilot enable")
-  --         end
-  --       end,
-  --       desc = "Toggle Copilot",
-  --     },
-  --   },
-  --   opts = {
-  --     filetypes = {
-  --       yaml = false,
-  --       markdown = true,
-  --       help = false,
-  --       gitcommit = false,
-  --       gitrebase = false,
-  --       hgcommit = false,
-  --       svn = false,
-  --       cvs = false,
-  --       ["."] = false,
-  --     },
-  --     suggestion = {
-  --       enable = true,
-  --       auto_trigger = true,
-  --     },
-  --   },
+  --   "hrsh7th/nvim-cmp",
+  --   event = "InsertEnter", -- you can adjust the event to fit your needs
+  --   config = function()
+  --     -- Setup for nvim-cmp (basic config)
+  --     local cmp = require("cmp")
+  --     cmp.setup({
+  --       -- Add your cmp configuration here
+  --       mapping = {
+  --         ["<C-Space>"] = cmp.mapping.complete(),
+  --         ["<CR>"] = cmp.mapping.confirm({ select = true }),
+  --       },
+  --       sources = cmp.config.sources({
+  --         { name = "nvim_lsp" },
+  --         { name = "buffer" },
+  --       }),
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   dependencies = { "zbirenbaum/copilot.lua" },
+  --   opts = {},
+  --   config = function(_, opts)
+  --     local copilot_cmp = require("copilot_cmp")
+  --     copilot_cmp.setup(opts)
+  --   end,
   -- },
   -- {
   --   "CopilotC-Nvim/CopilotChat.nvim",
