@@ -63,6 +63,9 @@ cp -r ~/.config/waybar/* ~/dotfiles/waybar/
 # waypaper
 cp -r ~/.config/waypaper/* ~/dotfiles/waypaper/
 
+# kitty
+cp -r ~/.config/kitty/* ~/dotfiles/kitty/
+
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
 

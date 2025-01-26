@@ -1,0 +1,64 @@
+## name: Sard Raat
+## author: anshul
+## license: CC0 1.0
+## upstream: https://github.com/404
+
+#: The basic colors
+background                              #011423
+foreground                              #CBE0F0
+selection_foreground                    none
+selection_background                    none
+
+
+#: cursor colors
+cursor                                  #47FF9C
+
+
+#: URL underline color when hovering with mouse
+url_color                               #0087bd
+
+
+#: kitty window border colors and terminal bell colors
+visual_bell_color                       none
+
+
+#: Tab bar colors
+active_tab_foreground                   #FFFFFF
+active_tab_background                   #9C7BD7
+inactive_tab_foreground                 #FFFFFF
+inactive_tab_background                 #545B7D
+
+
+#: The basic 16 colors
+
+#: black
+color0                                  #214969
+color8                                  #214969
+
+#: red
+color1                                  #E52E2E
+color9                                  #E52E2E
+
+#: green
+color2                                  #44FFB1
+color10                                 #44FFB1
+
+#: yellow
+color3                                  #F5921D
+color11                                 #FEED6B
+
+#: blue
+color4                                  #4E81AA
+color12                                 #0B72C1
+
+#: magenta
+color5                                  #8B54FE
+color13                                 #9D6EFE
+
+#: cyan
+color6                                  #24EAF7
+color14                                 #24EAF7
+
+#: white
+color7                                  #CBCBC5
+color15                                 #F8F8F2
