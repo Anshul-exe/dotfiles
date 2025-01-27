@@ -60,6 +60,9 @@ cp -r ~/.config/hypr/* ~/dotfiles/hypr/
 # waybar
 cp -r ~/.config/waybar/* ~/dotfiles/waybar/
 
+# waypaper
+cp -r ~/.config/waypaper/* ~/dotfiles/waypaper/
+
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
 
