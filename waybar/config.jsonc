@@ -1,0 +1,257 @@
+{
+    "reload_style_on_change": true,
+    "margin-top": 3,
+    "margin-bottom": 0,
+    "margin-left": 5,
+    "margin-right": 5,
+    "height": 40, 
+    "layer": "top",
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/window",
+      "group/power"
+//      "mpris"
+    ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "group/hwmon",
+        "tray",
+        "group/system", 
+        "clock",
+        "custom/power-menu"
+    ],
+    "group/system":{ 
+      "orientation": "horizontal",
+      "modules": [
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        "backlight"
+      ]
+    },
+    "group/power":{
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 400
+      },
+      "modules":[
+        "battery",
+        "power-profiles-daemon",
+        "idle_inhibitor"
+      ]
+    },
+    "group/hwmon":{
+      "orientation": "horizontal",
+      "modules":[
+        "cpu",
+        "memory"
+      ]
+    },
+    "mpris": {
+      "interval": 1,
+      "format": "{player_icon} {dynamic} {status_icon}",
+      "status-icons": {
+        "paused": "",
+        "playing": ""
+      },
+      "player-icons":{
+        "brave": " ",
+        "firefox": " ",
+        "spotify": " "
+      },
+      "dynamic-len":50,
+      "ellipsis": ""
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "idle_inhibitor": {
+      "format": "{icon} ",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+    "custom/hotspot": {
+        "format": "{icon}{}",
+        "return-type": "json",
+        "format-icons": {
+          "active": "A",
+          "not-active": "NA"
+        },
+        "exec": "~/.config/waybar/scripts/waybar-hotspot -a watch",
+        "interval": 1
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+         "format-icons": {
+           "1": "一",
+           "2": "二",
+           "3": "三",
+           "4": "四",
+           "5": "五",
+           "6": "六",
+           "7": "七",
+           "8": "八",
+           "9": "九",
+           "10": "十"
+         }
+        //"format-icons": {
+        //  "1": "१",
+        //  "2": "२",
+        //  "3": "३",
+        //  "4": "४",
+        //  "5": "५",
+        //  "6": "६",
+        //  "7": "७",
+        //  "8": "८",
+        //  "9": "९",
+        //  "10": "०"
+        //}
+    },
+    "hyprland/window": {
+      "format": "{initialTitle}",
+      "rewrite": {
+        "(.*)Mozilla Firefox": "Firefox",
+        "(.*)Brave": "Brave",
+        "(.*)Discord": "Discord",
+        "": "K4R7IK"
+      },
+      "seprate-outputs": true
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 60,
+        "align": 0,
+        "rotate": 0,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%H:%M}",
+        "format-alt": "{:%a %b %d, %G}"
+    },
+    "bluetooth": {
+        "format": "",
+        "on-click": "rofi-bluetooth &",
+        "tooltip" : true,
+        "tooltip-format": "Battery: {device_battery_percentage}"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}%",
+        "format-alt": " {avg_frequency}GHz",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "{avg_frequency}"
+    },
+    "memory": {
+        "interval": 1,
+        "format": " {percentage}%",
+        "format-alt": " {used:0.1f}GiB",
+        "max-length": 10,
+        "tooltip": false
+    },
+    "backlight": {
+        "device": "eDP-1",
+        "format": "{icon}",
+        "tooltip-format": "{percent}",
+        "format-icons": ["󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "],
+        "on-scroll-down": "brightnessctl s 2%-",
+        "on-scroll-up": "brightnessctl s +2%"
+
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰌙",
+        "tooltip-format": "{essid}",
+        "on-click": "kitty nmtui",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "婢",
+        "format-icons": {
+            "default": ["", "", "󰕾"]
+        },
+        "on-click": "pavucontrol &",
+        "on-click-right": "pamixer -t",
+        "scroll-step": 5,
+        "on-scroll-up": "~/.config/waybar/scripts/volume.sh --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume.sh --dec"
+    },
+    "battery": {
+        "interval": 30,
+        "full-at": 100,
+        "design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": "󰠠 {capacity}%",
+        "format-full": "{icon} Full",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+          "󰪞",
+          "󰪟",
+          "󰪠",
+          "󰪡",
+          "󰪢",
+          "󰪣",
+          "󰪤",
+          "󰪥"
+        ],
+        "format-time": "{H}h {M}min",
+        "tooltip": true
+    },
+    "custom/weather": {
+        "exec": "python3 ~/.config/waybar/scripts/weather.py",
+        "restart-interval": 300,
+        "return-type": "json"
+    },
+    "custom/media": {
+      "format": "{icon} {}",
+      "escape": true,
+      "return-type": "json",
+      "max-length": 30,
+      "on-click": "playerctl play-pause",
+      "on-click-right": "playerctl stop",
+      "smooth-scrolling-threshold": 10, 
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous",
+      "exec": "$HOME/.config/waybar/scripts/genericplayer.py"
+    },
+    "custom/power-menu": {
+        "format": " ⏻ ",
+        "on-click": "~/.config/rofi/scripts/powermenu.sh"
+    },
+    "custom/launcher": {
+        "format": "󰣇",
+        "on-click": "~/.config/rofi/scripts/launcher.sh"
+    },
+    "custom/wallpaper": {
+        "format": "",
+        "on-click": "~/.config/rofi/scripts/wallpaper",
+        "on-click-right": "~/.config/waybar/scripts/wallpaper.sh"
+    },
+    "custom/theme": {
+        "format": "",
+        "on-click": "~/.config/waybar/scripts/theme.sh"
+    }
+}

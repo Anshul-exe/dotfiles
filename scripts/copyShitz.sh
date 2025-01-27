@@ -57,6 +57,9 @@ cp -r ~/.config/dunst/* ~/dotfiles/dunst/
 # hypr
 cp -r ~/.config/hypr/* ~/dotfiles/hypr/
 
+# waybar
+cp -r ~/.config/waybar/* ~/dotfiles/waybar/
+
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
 
