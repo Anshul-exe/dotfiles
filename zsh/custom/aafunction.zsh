@@ -1,12 +1,12 @@
 # for keybinds
-cd_codeLore() {
+timeTable() {
   # cd ~/clear_space/codeLore
   # ls -l
   # zle reset-prompt  # Update the prompt
   # # zle -R
   sh ~/.scripts/bhaiya.sh
 }
-zle -N cd_codeLore  # Register the widget
+zle -N timeTable  # Register the widget
 
 #### To get the description of provided package
 desc() {
