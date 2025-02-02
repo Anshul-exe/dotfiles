@@ -21,5 +21,4 @@ bindkey -v '^?' backward-delete-char
 bindkey '^e' edit-command-line
 
 #navigation
-bindkey '^G' cd_codeLore
-
+bindkey '^G' timeTable
