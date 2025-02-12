@@ -119,6 +119,9 @@ export EDITOR=nvim
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/mir/.spicetify
 export PATH=$PATH:/usr/bin/spicetify
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 . "$HOME/.cargo/env"
 eval "$(zoxide init zsh)"
 
@@ -180,3 +183,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # Created by `pipx` on 2025-02-06 14:35:12
 export PATH="$PATH:/home/mir/.local/bin"
+
+# pnpm
+export PNPM_HOME="/home/mir/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
