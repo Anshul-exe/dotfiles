@@ -27,7 +27,7 @@ cp ~/.config/picom/picom.conf ~/dotfiles/picom/picom.conf
 cp -r ~/.config/ranger/* ~/dotfiles/ranger/
 
 # sddm
-cp -r /usr/share/sddm/themes/* ~/dotfiles/sddm/usr/share/sddm/themes/
+# cp -r /usr/share/sddm/themes/* ~/dotfiles/sddm/usr/share/sddm/themes/
 cp -r /etc/sddm.conf ~/dotfiles/sddm/etc/sddm.conf
 
 # starship
