@@ -283,4 +283,5 @@ bindsym Mod4+f exec hints
 bindsym Mod4+Shift+f exec hints --right-click
 bindsym Mod4+Ctrl+f exec hints --hover
 bindsym Mod4+Alt+f exec hints --drag
-
+# transparency toggle
+bindsym Mod4+t exec ~/.scripts/transparency.sh
