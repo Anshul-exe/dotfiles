@@ -6,39 +6,41 @@ CHOSEN=$(printf "Red\nYellow\nGreen\nBlue\nPurple\nPink\nCyan\nPinkish\nSkin\nGo
 
 case "$CHOSEN" in
 "Red")
-  asusctl led-mode static -c ff0000
+  asusctl aura static -c ff0000
   ;;
 "Yellow")
-  asusctl led-mode static -c FFFF00
+  asusctl aura static -c FFFF00
   ;;
 "Green")
-  asusctl led-mode static -c 008000
+  asusctl aura static -c 008000
   ;;
 "Blue")
-  asusctl led-mode static -c 0000FF
+  asusctl aura static -c 0000FF
   ;;
 "Purple")
-  asusctl led-mode static -c 800080
+  asusctl aura static -c 800080
   ;;
 "Pink")
-  asusctl led-mode static -c FF1493
+  asusctl aura static -c FF1493
   ;;
 "Cyan")
-  asusctl led-mode static -c 00FFFF
+  asusctl aura static -c 00FFFF
   ;;
 "Pinkish")
-  asusctl led-mode static -c DC143C
+  asusctl aura static -c DC143C
   ;;
 "Skin")
-  asusctl led-mode static -c FF6347
+  asusctl aura static -c FF6347
   ;;
 "Gold")
-  asusctl led-mode static -c FFD700
+  asusctl aura static -c FFD700
   ;;
 "White")
-  asusctl led-mode static -c FFFACD
+  asusctl aura static -c FFFACD
   ;;
 *)
   exit 1
   ;;
 esac
+
+# -z flag can be used to specify the zone of the keyboard and in place of static we can specify the modes like rainbow, breathing, etc.
