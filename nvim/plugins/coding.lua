@@ -59,7 +59,7 @@ return {
         auto_trigger = true,
         debounce = 75,
         keymap = {
-          accept = "<C-a>",
+          accept = "<C-m>",
           next = "<C-]>",
           prev = "<C-[>",
           dismiss = "<C-\\>",
@@ -79,6 +79,23 @@ return {
       vim.schedule(function()
         require("copilot").setup(opts)
       end)
+    end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app; yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+      vim.g.mkdp_browser = "/usr/bin/google-chrome-stable"
+    end,
+    ft = { "markdown" },
+    config = function()
+      vim.keymap.set("n", "<leader>mdn", ":MarkdownPreview<CR>")
+      vim.keymap.set("n", "<leader>mds", ":MarkdownPreviewStop<CR>")
+
+      vim.g.mkdp_markdown_css = "/Users/michaelwilliams/dotfiles/.config/nvim/assets/md.css"
+      vim.g.mkdp_highlight_css = "/Users/michaelwilliams/dotfiles/.config/nvim/assets/mdhl.css"
     end,
   },
   -- {

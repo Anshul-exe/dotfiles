@@ -55,23 +55,22 @@ keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
--- Move window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
+-- Window resizer
+keymap.set("n", "sh", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+keymap.set("n", "sl", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+keymap.set("n", "sj", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally
+keymap.set("n", "sk", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally
+keymap.set("n", "<C-m>", ":MaximizerToggle<CR>", { noremap = true, silent = true })
+-- Window Scroll
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-f>", "<C-f>zz")
+keymap.set("n", "<C-b>", "<C-b>zz")
 -- Move window with vim-tmux-navigator
 keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
 keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>")
 keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>")
 keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
-
--- Resize window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><right>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
-keymap.set("n", "<C-m>", ":MaximizerToggle<CR>", { noremap = true, silent = true })
 
 -- Opening all the tabs after fv
 keymap.set("n", "<Leader>t", ":tab all<Return>")
