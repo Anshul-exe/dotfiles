@@ -20,9 +20,9 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # history file setup
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.cache/zsh/histfile
-HISTSIZE=1000
-SAVEHIST=1000
 
 # SHOPT
 setopt autocd extendedglob nomatch notify
@@ -32,6 +32,7 @@ setopt hist_ignore_dups
 setopt hist_verify
 setopt autocd       # cd into dir without using typing cd
 setopt correct      # automatically corrects typos while cd-ing
+setopt INC_APPEND_HISTORY SHARE_HISTORY
 unsetopt extended_glob
 unsetopt correct_all
 
@@ -159,11 +160,11 @@ export VDPAU_DRIVER=nvidia
 
 # ctrl-r for history inside fzf
 fzf-history-widget() {
-local selected=$(fc -rl 1 | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
-if [[ -n $selected ]]; then
-LBUFFER="${selected#*[0-9]  }"  # Append the selected history command to the buffer
-fi
-zle redisplay
+  local selected=$(cat $HISTFILE | awk -F ';' '{print $2}' | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
+  if [[ -n $selected ]]; then
+    LBUFFER="$selected"  # Append the selected history command to the buffer
+  fi
+  zle redisplay
 }
 
 zle -N fzf-history-widget
