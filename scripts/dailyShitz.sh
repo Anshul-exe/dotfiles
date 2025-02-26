@@ -3,7 +3,7 @@
 # Chrome in workspace 2
 i3-msg "workspace 2"
 sleep 0.3
-i3-msg "exec google-chrome-stable"
+i3-msg "exec google-chrome-stable --new-tab https://www.youtube.com --new-tab https://chat.openai.com"
 sleep 0.7
 
 # Spotify in workspace 3
