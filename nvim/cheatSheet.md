@@ -33,6 +33,10 @@
 - `:CellularAutomaton <Tab>` for fun animations
 - `:Tetris` to play tetris
 
+- `g?` to encrypt in ROT13 (rotate by 13 places)
+- `e <url>` to get that page's url into your buffer
+- `r! < shell command>` to get the output of that command into your buffer
+
 ## Substitution regex cheatsheet
 
 - `\v` → Enables "very magic" mode (makes regex simpler).
