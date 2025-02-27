@@ -1,5 +1,6 @@
 # WELCOME TEXT
 pokeget random --hide-name -s
+# pokeget $(shuf -i 1-905 -n 6 | tr '\n' ' ') --hide-name -s
 # oneko &
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.

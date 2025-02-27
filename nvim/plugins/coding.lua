@@ -59,7 +59,7 @@ return {
         auto_trigger = true,
         debounce = 75,
         keymap = {
-          accept = "<C-m>",
+          accept = "<C-a>",
           next = "<C-]>",
           prev = "<C-[>",
           dismiss = "<C-\\>",
