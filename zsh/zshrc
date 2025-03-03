@@ -115,8 +115,6 @@ source $ZSH/oh-my-zsh.sh
 # RANDOM ASS SHITZ
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 
-# DEFAULT SHITZ
-export EDITOR=nvim
 # PATH
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/mir/.spicetify
