@@ -44,3 +44,7 @@
 - `\=input("Replace with: ")` → Prompts you to enter the replacement manually each time.
 - `(\=)` → is a Vimscript expression that evaluates the code inside it, meaning the replacement is evaluated dynamically
 - `+ 1` → Since Vim lists start from index 1, we add 1 to match the correct index.
+
+## Random shit jo pata chli
+
+- I used "! ls | tee <file-path>" and then it added added it to my file but it didn't changed the buffer or the saved file blki usi buffer me usne add krdiya and saved file hi thi still even tho file ka sara content change hogaya tha
