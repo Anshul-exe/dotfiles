@@ -74,6 +74,7 @@ packages=(
   "ncdu"
   "sl"
   "zathura"
+  "reflector"
 )
 
 # Update yay
