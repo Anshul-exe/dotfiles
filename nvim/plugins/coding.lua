@@ -98,13 +98,6 @@ return {
       vim.g.mkdp_highlight_css = "/Users/michaelwilliams/dotfiles/.config/nvim/assets/mdhl.css"
     end,
   },
-  {
-    "kiyoon/jupyter-nvim",
-    build = "pip install jupyter",
-    config = function()
-      vim.g.jupyter_mapkeys = 0 -- Set to 1 if you want default keybindings
-    end,
-  },
   -- {
   --   "hrsh7th/nvim-cmp",
   --   event = "InsertEnter", -- you can adjust the event to fit your needs
