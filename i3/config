@@ -129,11 +129,11 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
-# # Show the next scratchpad window or hide the foucsed scratchpad window.
-# bindsym $mod+s scratchpad show
-#
-# #move the currently focused window to the scratchpad
-# bindsym $mod+Shift+s move scratchpad
+# Show the next scratchpad window or hide the foucsed scratchpad window.
+bindsym $mod+s scratchpad show
+
+#move the currently focused window to the scratchpad
+bindsym $mod+Shift+s move scratchpad
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
