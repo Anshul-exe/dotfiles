@@ -272,3 +272,6 @@ bindsym Mod4+Ctrl+f exec hints --hover
 # bindsym Mod4+Alt+f exec hints --drag
 # transparency toggle
 bindsym Mod4+t exec ~/.scripts/transparency.sh
+
+## custom exec commands
+exec --no-startup-id ~/.scripts/greeter.sh

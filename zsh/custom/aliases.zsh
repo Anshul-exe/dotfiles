@@ -42,7 +42,7 @@ alias fvt="fd --type f --hidden --exclude .git | fzf-tmux -m --preview 'bat --co
 alias grep='grep -i --color=auto'
 
 # pacman aliases
-alias evolve="sudo pacman -Syu && yay -Syu"
+alias evolve="yay -Syu --noconfirm"
 alias sweep="sudo pacman -Sc"
 alias hatao="sudo pacman -Rns"
 alias hataodd="sudo pacman -Qdt"

@@ -3,7 +3,6 @@
 ## which-key combinations
 
 - leader + un = dismiss all notif
-- leader + / = terminal
 - leader + cR = rename file
 - leader + n = notif
 - leader + uw = wrap
@@ -19,6 +18,9 @@
 - leader + uC = ColorScheme
 - leader + mdn = markdown-preview start
 - leader + mds = markdown-preview stop
+- ctrl + / = terminal
+- ctrl + t = better terminal
+- hahaha
 
 ## Nvim Commands
 
