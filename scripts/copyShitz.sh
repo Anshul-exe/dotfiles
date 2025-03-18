@@ -64,6 +64,9 @@ cp -r ~/.config/waybar/* ~/dotfiles/waybar/
 # waypaper
 cp -r ~/.config/waypaper/* ~/dotfiles/waypaper/
 
+# hyprpanel
+cp -r ~/.config/hyprpanel/* ~/dotfiles/hyprpanel/
+
 # kitty
 cp -r ~/.config/kitty/* ~/dotfiles/kitty/
 
