@@ -1,5 +1,6 @@
 # WELCOME TEXT
 pokeget random --hide-name -s
+echo "sddm ke wallpapers add"
 # pokeget $(shuf -i 1-905 -n 6 | tr '\n' ' ') --hide-name -s
 # oneko &
 
