@@ -29,6 +29,12 @@ wallpapers=(
   "Night Night|FACE.png"
   "Black|black.png"
   "White|white.jpg"
+  "Black Hole|black_hole.png"
+  "Cyberpunk|cyberpunk.png"
+  "Hypr kath|hyprland_kath.png"
+  "Jake|jake_the_dog.png"
+  "Hacker|post-apocalyptic_hacker.png"
+  "Leaves|purple_leaves.png"
 )
 
 # Generate rofi menu options

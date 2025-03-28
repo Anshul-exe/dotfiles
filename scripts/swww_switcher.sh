@@ -29,6 +29,17 @@ wallpapers=(
   "Night Night|FACE.png"
   "Black|black.png"
   "White|white.jpg"
+  "Black Hole|black_hole.png"
+  "Cyberpunk|cyberpunk.png"
+  "Hypr Kath Vid|hyprland_kath.mp4"
+  "Hypr kath|hyprland_kath.png"
+  "Jake Vid|jake_the_dog.mp4"
+  "Jake|jake_the_dog.png"
+  "Japanese Asthetic|japanese_aesthetic.png"
+  "Sakura Vid|pixel_sakura.gif"
+  "Sakura |pixel_sakura_static.png"
+  "Hacker|post-apocalyptic_hacker.png"
+  "Leaves|purple_leaves.png"
 )
 
 # Generate rofi menu options
