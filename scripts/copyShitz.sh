@@ -70,6 +70,9 @@ cp -r ~/.config/hyprpanel/* ~/dotfiles/hyprpanel/
 # kitty
 cp -r ~/.config/kitty/* ~/dotfiles/kitty/
 
+# fastfetch
+cp -r ~/.config/fastfetch/* ~/dotfiles/fastfetch/
+
 # scripts
 cp -r ~/.scripts/* ~/dotfiles/scripts/
 
