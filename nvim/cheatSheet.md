@@ -20,9 +20,12 @@
 - leader + mds = markdown-preview stop
 - ctrl + / = terminal
 - ctrl + t = better terminal
-- hahaha
+- ctrl + Z = Split window maximize
 
 ## Nvim Commands
+
+- `: set spell` se spelling check hogi and `s]`&`s[` se next and previous wrong word pe jump
+  then `z=` se spellchecker open
 
 - Disable Formatter for Current Session by `:lua vim.g.autoformat = false`
 
