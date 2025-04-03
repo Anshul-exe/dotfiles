@@ -464,8 +464,4 @@ ___  ---  ___  ---  ___
     "Eandrju/cellular-automaton.nvim",
     cmd = "CellularAutomaton",
   },
-  {
-    "alec-gibson/nvim-tetris",
-    cmd = "Tetris",
-  },
 }
