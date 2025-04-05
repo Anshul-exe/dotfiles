@@ -1,6 +1,5 @@
 # WELCOME TEXT
 pokeget random --hide-name -s
-echo "kitty ki window sizing"
 # pokeget $(shuf -i 1-905 -n 6 | tr '\n' ' ') --hide-name -s
 # oneko &
 
