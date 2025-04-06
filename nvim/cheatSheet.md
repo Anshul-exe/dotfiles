@@ -18,9 +18,11 @@
 - leader + uC = ColorScheme
 - leader + mdn = markdown-preview start
 - leader + mds = markdown-preview stop
+- ctrl + Z = Split window maximize
+
 - ctrl + / = terminal
 - ctrl + t = better terminal
-- ctrl + Z = Split window maximize
+- `:term` for another terminal
 
 ## Nvim Commands
 
