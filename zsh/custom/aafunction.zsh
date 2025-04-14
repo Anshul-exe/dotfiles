@@ -67,7 +67,7 @@ aryan(){
 
 # killing processes with fzf
 prokill() {
-sudo kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
+kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
 }
 
 # search function for yay
