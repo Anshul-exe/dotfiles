@@ -62,12 +62,12 @@ fi
 }
 
 aryan(){
- echo "Aaj ke baad kisi bhi type ke nashe nahi krunga, kyoki me aaj, 14 dec ko ideal nashedi lag rha hu" | figlet | lolcat
+ echo "Aaj, Thursday April-10 03:09:13 AM IST 2025, ke 5 Saal baad Aryan Rastogi, Jhanvi Yadav ko contact krke gaand jalaega uski apni kamiyabi ko dikha ke" | figlet | lolcat
 }
 
 # killing processes with fzf
 prokill() {
-kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
+sudo kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
 }
 
 # search function for yay
