@@ -53,13 +53,15 @@ alias yehai='pacman -Q | grep '
 alias useof="pacman -Qi "
 
 # Xrandr / second screen commands
+# which screen run krke check kro ki HDMI-1-0 hai ya HDMI-1-1 me kuch connected hai ya nahi agr HDMI ke through connect kr rhe hai device
 # phle connected device ka name dekho (HDMI-1-0) fir jaha set krna hai vaha ki
 # command do aur fir "xrandr --auto" krke laga do
 alias whichscreen="xrandr | grep connected"
-alias upar="xrandr --output HDMI-1-0 --above eDP-1"
-alias neeche="xrandr --output HDMI-1-0 --below eDP-1"
-alias left="xrandr --output HDMI-1-0 --left-of eDP-1"
-alias right="xrandr --output HDMI-1-0 --right-of eDP-1"
+alias upar="xrandr --output HDMI-1-0 --above eDP-2"
+alias neeche="xrandr --output HDMI-1-0 --below eDP-2"
+alias left="xrandr --output HDMI-1-0 --left-of eDP-2"
+alias right="xrandr --output HDMI-1-0 --right-of eDP-2"
+alias mirror="xrandr --output HDMI-1-0 --same-as eDP-2 --auto"
 alias dusriband="xrandr --output HDMI-1-0 --off"
 
 # TMUX
