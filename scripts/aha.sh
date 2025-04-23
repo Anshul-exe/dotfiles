@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # ANSI Color codes
 RED=$'\033[0;31m'
 YELLOW=$'\033[0;33m'
@@ -7,6 +6,7 @@ BLUE=$'\033[0;34m'
 NC=$'\033[0m'
 
 ROOT_DIR="$PWD"
+
 mapfile -t repos < <(find "$ROOT_DIR" -type d -name ".git" -prune 2>/dev/null | sed 's|/.git||')
 
 declare -a dirty_repos
@@ -14,7 +14,6 @@ declare -A repo_lookup
 
 for repo in "${repos[@]}"; do
   cd "$repo" || continue
-
   # Skip corrupted repos
   git rev-parse HEAD &>/dev/null || continue
 
@@ -22,11 +21,11 @@ for repo in "${repos[@]}"; do
   [[ $? -ne 0 ]] && continue
 
   status=""
-
   # Untracked
   echo "$status_output" | grep -q "^??" && status+="${YELLOW}?${NC}"
   # Modified/Staged
   echo "$status_output" | grep -q -E "^[ MDAURC]" && status+="${RED}!${NC}"
+
   # Unpushed
   upstream=$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}" 2>/dev/null)
   if [[ -n "$upstream" ]]; then
@@ -49,7 +48,9 @@ if [[ ${#dirty_repos[@]} -eq 0 ]]; then
   exit 0
 fi
 
-selected=$(printf "%s\n" "${dirty_repos[@]}" | fzf --ansi --prompt="Dirty Git Repos > ")
+selected=$(printf "%s\n" "${dirty_repos[@]}" | fzf --ansi --prompt="Dirty Git Repos > " \
+  --preview="repo=\$(echo {} | cut -d '|' -f1 | xargs); cd \"$ROOT_DIR/\$repo\" && echo -e \"\\n:: Git Status ::\" && git status -s && echo -e \"\\n:: Unpushed Commits ::\" && git log --oneline @{u}..HEAD 2>/dev/null" \
+  --preview-window=right:60%:wrap)
 
 [[ -z "$selected" ]] && exit 0
 
