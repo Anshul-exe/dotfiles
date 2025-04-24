@@ -246,7 +246,9 @@ bindsym XF86AudioPrev exec --no-startup-id "playerctl -p spotify previous"
 bindsym Mod4+bracketleft exec --no-startup-id "playerctl -p spotify previous"
 # playerctl spotify 10 sec aage-peeche
 bindsym Shift+XF86AudioNext exec --no-startup-id "playerctl -p spotify position 10+"
+bindsym Mod4+Shift+bracketright exec --no-startup-id "playerctl -p spotify position 10+"
 bindsym Shift+XF86AudioPrev exec --no-startup-id "playerctl -p spotify position 10-"
+bindsym Mod4+Shift+bracketleft exec --no-startup-id "playerctl -p spotify position 10-"
 # screen lock
 bindsym Mod4+l exec --no-startup-id "~/.scripts/Tala/lockscreen.sh"
 # cycle through workspaces
