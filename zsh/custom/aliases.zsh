@@ -19,6 +19,7 @@ alias rnrc='cd ~/.config && ranger'
 alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
 alias shit="~/.scripts/tmux1by3.sh"
 alias ttc="nvim ~/.tmux.conf"
+alias gv="~/.scripts/gitView.sh"
 
 # listing shitz
 alias vidr='ls -a'
