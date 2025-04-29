@@ -79,7 +79,19 @@ EOF
 # Make the preview script executable
 chmod +x "$PREVIEW_SCRIPT"
 
-mapfile -t repos < <(find "$ROOT_DIR" -type d -name ".git" -prune 2>/dev/null | sed 's|/.git||')
+# Determine if we're inside a git repo already
+if git rev-parse --is-inside-work-tree &>/dev/null; then
+  # We're inside a git repo, so find the repo root
+  REPO_ROOT=$(git rev-parse --show-toplevel)
+  # Start from parent directory of the current repo
+  START_DIR=$(dirname "$REPO_ROOT")
+else
+  # Not in a git repo, use current directory
+  START_DIR="$ROOT_DIR"
+fi
+
+# Find git repositories
+mapfile -t repos < <(find "$START_DIR" -type d -name ".git" -prune 2>/dev/null | sed 's|/.git||')
 
 declare -a dirty_repos
 declare -A repo_lookup
@@ -106,7 +118,7 @@ for repo in "${repos[@]}"; do
   fi
 
   if [[ -n "$status" ]]; then
-    rel_path="${repo#$ROOT_DIR/}"
+    rel_path="${repo#$START_DIR/}"
     dirty_repos+=("${rel_path} | [${status}]")
     repo_lookup["$rel_path"]="$repo"
   fi
@@ -116,14 +128,18 @@ done
 cd "$ROOT_DIR" || exit
 
 if [[ ${#dirty_repos[@]} -eq 0 ]]; then
-  echo "✅ No dirty repositories found in '$ROOT_DIR'."
+  echo "✅ No dirty repositories found in '$START_DIR'."
   exit 0
 fi
 
+# Calculate a reasonable height for the preview window (75% of terminal height)
+TERM_HEIGHT=$(tput lines)
+PREVIEW_HEIGHT=$((TERM_HEIGHT * 75 / 100))
+
 # Run fzf with the preview script
 selected=$(printf "%s\n" "${dirty_repos[@]}" | fzf --ansi --prompt="Dirty Git Repos > " \
-  --preview="$PREVIEW_SCRIPT {} \"$ROOT_DIR\"" \
-  --preview-window=right:60%:wrap)
+  --preview="$PREVIEW_SCRIPT {} \"$START_DIR\"" \
+  --preview-window="right:60%:wrap:~$PREVIEW_HEIGHT")
 
 [[ -z "$selected" ]] && exit 0
 
