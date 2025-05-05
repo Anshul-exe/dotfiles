@@ -157,8 +157,8 @@ read -rp "Open with [n]vim, [l]azygit, or [c]d to directory? " choice
 
 case "$choice" in
 n | N) nvim "$absolute_path" ;;
-l | L) cd "$absolute_path" && lazygit ;;
 # v | V) code "$absolute_path" ;;
+l | L) cd "$absolute_path" && lazygit ;;
 c | C)
   cd "$absolute_path"
   echo "Changed directory to: $absolute_path"
