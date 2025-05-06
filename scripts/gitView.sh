@@ -66,9 +66,9 @@ git stash list --color --pretty=format:"%C(blue)%gd %C(cyan)(%cr) %C(yellow)%cn 
 echo -e "\n${BOLD}${YELLOW}📚 REPO INFO:${NC}"
 remote_url=$(git remote get-url origin 2>/dev/null)
 if [[ $? -eq 0 ]]; then
-  echo -e "${PURPLE}Remote URL: ${BLUE}$remote_url${NC}"
+echo -e "${PURPLE}Remote URL: ${BLUE}$remote_url${NC}"
 else
-  echo -e "${CYAN}No remote set${NC}"
+echo -e "${CYAN}No remote set${NC}"
 fi
 
 # Last activity
@@ -152,12 +152,13 @@ if [[ ! -d "$absolute_path" ]]; then
 fi
 
 echo -e "\n📂 Selected: $repo_path"
-read -rp "Open with [n]vim, [l]azygit, [v]scode, or [c]d to directory? " choice
+read -rp "Open with [n]vim, [l]azygit, or [c]d to directory? " choice
+# read -rp "Open with [n]vim, [l]azygit, [v]scode, or [c]d to directory? " choice ## Uncomment this to add VSCode option (I use NVIM as it's superior and how it should be, also uncomment the VSCode option from the choice case below )
 
 case "$choice" in
 n | N) nvim "$absolute_path" ;;
 l | L) cd "$absolute_path" && lazygit ;;
-v | V) code "$absolute_path" ;;
+# v | V) code "$absolute_path" ;;
 c | C)
   cd "$absolute_path"
   echo "Changed directory to: $absolute_path"
