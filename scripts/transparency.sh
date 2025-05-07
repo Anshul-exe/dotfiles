@@ -12,3 +12,4 @@ fi
 
 pkill picom
 picom
+i3-msg restart
