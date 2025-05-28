@@ -117,6 +117,7 @@ if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 
 # PATH
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/home/mir/.local/bin
 export PATH=$PATH:/home/mir/.spicetify
 export PATH=$PATH:/usr/bin/spicetify
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -182,7 +183,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Created by `pipx` on 2025-02-06 14:35:12
-export PATH="$PATH:/home/mir/.local/bin"
 
 # pnpm
 export PNPM_HOME="/home/mir/.local/share/pnpm"

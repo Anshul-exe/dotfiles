@@ -75,8 +75,8 @@ alias ttk="tmux kill-session"
 
 # Asus ctl controls
 alias asusp="asusctl profile -p"
-alias battiz="asusctl -n"
-alias battik="asusctl -p"
+alias bz="asusctl -n"
+alias bk="asusctl -p"
 
 # random alias that I need
 alias nv="nvim"
