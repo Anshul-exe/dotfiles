@@ -126,3 +126,26 @@ spf() {
         rm -f -- "$SPF_LAST_DIR" > /dev/null
     }
 }
+
+# bt - browse Chrome history in terminal using fzf
+bt() {
+  local cols sep db
+  cols=$(( COLUMNS / 3 ))
+  sep='{::}'
+  db="$HOME/.config/google-chrome/Default/History"
+
+  cp -f "$db" /tmp/h
+
+  sqlite3 -separator "$sep" /tmp/h "
+    SELECT 
+      substr(title, 1, $cols), 
+      datetime(last_visit_time/1000000 - 11644473600, 'unixepoch'), 
+      url 
+    FROM urls 
+    ORDER BY last_visit_time DESC
+  " |
+  awk -F "$sep" '{printf "%-'$cols's  \x1b[33m%-20s\x1b[m  \x1b[36m%s\x1b[m\n", $1, $2, $3}' |
+  fzf --ansi --multi |
+  sed -n 's#.*\(https*://\)#\1#p' |
+  xargs -r xdg-open
+}
