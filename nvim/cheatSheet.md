@@ -51,6 +51,7 @@
 - `\=input("Replace with: ")` → Prompts you to enter the replacement manually each time.
 - `(\=)` → is a Vimscript expression that evaluates the code inside it, meaning the replacement is evaluated dynamically
 - `+ 1` → Since Vim lists start from index 1, we add 1 to match the correct index.
+- `:<command or feature of nvim>`colon dalne ke baad jo bhi nvim ki command use krna chahte ho ya fir koi feature usko bs likh do aur help mil jaegi ya fir tab daba ke search kr lo ya fir FZF likh ke enter then search
 
 ## Random shit jo pata chli
 
