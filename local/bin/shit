@@ -1,0 +1,6 @@
+#!/bin/bash
+
+g++ "$1" -o ayo
+./ayo
+rm ayo
+aha
