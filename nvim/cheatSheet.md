@@ -1,6 +1,6 @@
 # My Nvim Cheatsheet
 
-## which-key combinations
+## which-key combinations 
 
 - leader + un = dismiss all notif
 - leader + cR = rename file
