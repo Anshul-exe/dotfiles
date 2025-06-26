@@ -14,14 +14,6 @@ j# Arch Dotfiles
 
 <!-- GitAds-Verify: 8CHKK4ETCREQDKUQZTLCIYJ4QVMPNOT1 -->
 
-
-
-
-
-
-
-
-
-
 ## GitAds Sponsored
+
 [![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=anshul-exe/dotfiles@github)](https://gitads.dev/v1/ad-track?source=anshul-exe/dotfiles@github)
