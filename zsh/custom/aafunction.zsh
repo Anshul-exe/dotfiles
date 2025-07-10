@@ -149,3 +149,11 @@ bt() {
   sed -n 's#.*\(https*://\)#\1#p' |
   xargs -r xdg-open
 }
+
+# git clone then cd
+gclc() {
+  git clone "$1" || return 1
+  dir="$(basename "$1" .git)"
+  echo "\ncd into $dir"
+  cd "$dir" || return 1
+}
