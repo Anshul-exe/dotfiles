@@ -1,1 +1,34 @@
 #!/usr/bin/env bash
+
+gitclonecd() {
+  git clone "$1" || return 1
+  dir="$(basename "$1" .git)"
+  echo "$dir"
+  cd "$dir" || return 1
+}
+gitclonecd
+
+# if [[ "$1" != ]]
+#
+#
+#
+# ✨ Bonus Enhancements
+# If you want to avoid basename breaking on non-.git URLs:
+#
+# bash
+# Copy
+# Edit
+# gitclonecd() {
+#     git clone "$1" || return 1
+#     dir=$(basename "$1")
+#     dir="${dir%.git}"
+#     echo "→ cd into $dir"
+#     cd "$dir" || return 1
+# }
+# Let me know if you want this function to:
+#
+# Auto-install deps if it detects a dotfiles repo
+#
+# Run a setup.sh if present
+#
+# Detect lazygit, stow, or GNU tools in dotfile setups and auto-link them

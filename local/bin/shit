@@ -1,6 +1,23 @@
 #!/bin/bash
 
-g++ "$1" -o ayo
-./ayo
-rm ayo
-aha
+file="$1"
+
+if [[ "$file" != *.cpp ]]; then
+  echo "❌ Not a C++ file."
+  exit 1
+fi
+
+# temp output file banai run krne ke liye and basename use horha hai extension remove krne ke liye
+outfile="./$(basename "$file" .cpp).out"
+
+g++ "$file" -o "$outfile"
+
+# -ne flag use hota hai to check not equal to and $? is a special variable which is set by taking in the output of last cmd
+if [[ $? -ne 0 ]]; then
+  echo "❌ Compilation failed"
+  exit 1
+fi
+
+./"$outfile"
+
+rm "$outfile"
