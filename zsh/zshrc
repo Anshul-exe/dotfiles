@@ -26,7 +26,7 @@ SAVEHIST=100000
 HISTFILE=~/.cache/zsh/histfile
 
 # SHOPT
-setopt autocd extendedglob nomatch notify
+setopt nomatch notify
 setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
@@ -36,7 +36,6 @@ setopt correct      # automatically corrects typos while cd-ing
 setopt INC_APPEND_HISTORY SHARE_HISTORY
 unsetopt extended_glob
 unsetopt correct_all
-
 unsetopt beep
 
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -68,50 +67,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer c
 # thefuck
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-########### WILL FIGURE OUT WHATEVER THE FUCK IS ABOVE THIS LATER#################
-
-# # Lines configured by zsh-newuser-install
-# Lines configured by zsh-newuser-install
-# End of lines configured by zsh-newuser-install
-
-# The following lines were added by compinstall
-# zstyle :compinstall filename '/home/mir/.zshrc'
-########### End of lines added by compinstall ##############
-
-# # Enable colors and change prompt:
-# autoload -U colors && colors
-# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
 # RANDOM ASS SHITZ
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 
@@ -123,6 +78,7 @@ export PATH=$PATH:/usr/bin/spicetify
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export MANPAGER="sh -C 'col -bx | bat -l man -p'"
 . "$HOME/.cargo/env"
 eval "$(zoxide init zsh)"
 
@@ -132,7 +88,8 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
-
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh/zshCache
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
 if [[ ${KEYMAP} == vicmd ]] ||
@@ -154,27 +111,16 @@ zle -N zle-line-init
 export SYSTEMD_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
+export GIT_EDITOR=nvim
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export LIBVA_DRIVER_NAME=nvidia
 export VDPAU_DRIVER=nvidia
-
-# ctrl-r for history inside fzf
-fzf-history-widget() {
-  local selected=$(cat $HISTFILE | awk -F ';' '{print $2}' | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
-  if [[ -n $selected ]]; then
-    LBUFFER="$selected"  # Append the selected history command to the buffer
-  fi
-  zle redisplay
-}
-
-zle -N fzf-history-widget
-bindkey "^R" fzf-history-widget
 
 #sourcing shitz
 source ~/.oh-my-zsh/custom/aafunction.zsh
 source ~/.oh-my-zsh/custom/binds.zsh
 source ~/.oh-my-zsh/custom/aliases.zsh
-source <(fzf --zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 PROMPT='%~ % '
 
@@ -191,3 +137,30 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# -------------- FZF SHITZ --------------
+# Load fzf key bindings and fuzzy completion
+[ -f ~/.fzf/shell/key-bindings.zsh ] && source ~/.fzf/shell/key-bindings.zsh
+[ -f ~/.fzf/shell/completion.zsh ] && source ~/.fzf/shell/completion.zsh
+
+# Optional: Use fd instead of find (faster)
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude node_modules'
+
+# Unbind the default Ctrl-R binding
+bindkey -r '^R'
+
+# Custom fzf-history-widget
+fzf-history-widget() {
+  local selected=$(fc -rl 1 | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
+  if [[ -n $selected ]]; then
+    LBUFFER="$selected"
+  fi
+  zle redisplay
+}
+zle -N fzf-history-widget
+bindkey "^R" fzf-history-widget
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' \
+  --height=70% --reverse --border --prompt='Fir bhool gae? ' \
+  --bind 'ctrl-a:select-all,ctrl-d:deselect-all,ctrl-x:toggle-preview'"
