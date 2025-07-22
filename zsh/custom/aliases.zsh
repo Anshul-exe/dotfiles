@@ -110,6 +110,6 @@ alias db="sudo mariadb -u root -p"
 alias pp="python3"
 alias spice="spicetify restore backup && spicetify apply"
 alias scrntime="scrntime --with-idletime -d 10 --style 2 --max-length 50"
-alias shu="ssh shashank@147.93.105.208"
+alias shu="ssh shashank@147.93.105.208" #somethingsomehow22
 alias kmon="sudo kmon -a red -c white"
 alias npd="npm run dev"
