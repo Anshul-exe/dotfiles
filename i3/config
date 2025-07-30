@@ -251,6 +251,7 @@ bindsym Shift+XF86AudioPrev exec --no-startup-id "playerctl -p spotify position 
 bindsym Mod4+Shift+bracketleft exec --no-startup-id "playerctl -p spotify position 10-"
 # screen lock
 bindsym Mod4+l exec --no-startup-id "~/.scripts/Tala/lockscreen.sh"
+bindsym Mod4+Shift+l exec --no-startup-id systemctl suspend
 # cycle through workspaces
 bindsym $mod+Tab exec --no-startup-id i3-msg 'workspace next'
 bindsym $mod+Shift+Tab exec --no-startup-id i3-msg 'workspace prev'
