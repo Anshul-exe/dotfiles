@@ -35,6 +35,7 @@ wallpapers=(
   "Jake|jake_the_dog.png"
   "Hacker|post-apocalyptic_hacker.png"
   "Leaves|purple_leaves.png"
+  "Mountains|purpleMountain.jpg"
 )
 
 # Generate rofi menu options
