@@ -113,3 +113,4 @@ alias scrntime="scrntime --with-idletime -d 10 --style 2 --max-length 50"
 alias shu="ssh shashank@147.93.105.208" #somethingsomehow22
 alias kmon="sudo kmon -a red -c white"
 alias npd="npm run dev"
+alias venmo="udisksctl mount -b /dev/sda1" #sda1 me hai themes and all toh use mount krne ke liye
