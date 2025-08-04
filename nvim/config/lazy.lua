@@ -33,7 +33,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     -- { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-    { "ThePrimeagen/vim-be-good" },
     -- import/override with your plugins
     { import = "plugins" },
   },
