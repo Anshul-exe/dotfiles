@@ -275,6 +275,8 @@ bindsym Mod4+Ctrl+f exec hints --hover
 # bindsym Mod4+Alt+f exec hints --drag
 # transparency toggle
 bindsym Mod4+t exec ~/.scripts/transparency.sh
+bindsym $mod+y exec ~/.scripts/guiClipboard.sh
+exec_always --no-startup-id while true; do sleep 1; ~/.scripts/guiClipboard.sh add 2>/dev/null; done
 
 ## custom exec commands
 exec --no-startup-id ~/.scripts/greeter.sh
