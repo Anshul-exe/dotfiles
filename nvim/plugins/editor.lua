@@ -238,4 +238,23 @@ return {
       preset = "modern",
     },
   },
+  {
+    name = "scratchpad",
+    dir = vim.fn.stdpath("config"), -- Points to your nvim config directory
+    config = function()
+      local scratchpad = require("coolStuff.float")
+      scratchpad.setup({
+        -- Main cheatsheet/scratchpad file
+        scratchpad_file = "~/.config/nvim/cheatSheet.md",
+        -- Temporary scratchpad file
+        temp_file = "~/tt", -- or wherever you prefer
+        -- Window sizing
+        width_ratio = 0.8, -- 80% of screen width
+        height_ratio = 0.8, -- 80% of screen height
+        max_width = 120, -- Maximum width in columns
+        -- Border style: "single", "double", "rounded", "solid", "shadow", "none"
+        border = "rounded",
+      })
+    end,
+  },
 }

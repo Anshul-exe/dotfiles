@@ -55,4 +55,4 @@
 
 ## Random shit jo pata chli
 
-- I used "! ls | tee <file-path>" and then it added added it to my file but it didn't changed the buffer or the saved file blki usi buffer me usne add krdiya and saved file hi thi still even tho file ka sara content change hogaya tha
+- I used "! ls | tee <file-path>" and then it added it to my file but it didn't changed the buffer or the saved file blki usi buffer me usne add krdiya and saved file hi thi still even tho file ka sara content change hogaya tha
