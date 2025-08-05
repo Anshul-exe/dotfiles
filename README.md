@@ -1,4 +1,4 @@
-j# Arch Dotfiles
+# Arch Dotfiles
 
 ## Morning Colour Scheme
 
