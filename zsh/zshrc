@@ -78,7 +78,10 @@ export PATH=$PATH:/usr/bin/spicetify
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export MANPAGER="sh -C 'col -bx | bat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | bat --language=help --paging=always --style=plain'"
+export MANROFFOPT="-c"
+export MANPAGER="less -R"
+export MANPAGER="most"
 . "$HOME/.cargo/env"
 eval "$(zoxide init zsh)"
 
