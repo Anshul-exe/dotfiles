@@ -112,7 +112,7 @@ show_history() {
         fi
 
         # Use bullet point instead of numbers
-        display_items+=("• $display_line")
+        display_items+=("→ $display_line")
       fi
     fi
   done <"$HISTORY_FILE"
