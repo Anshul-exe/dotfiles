@@ -253,6 +253,11 @@ return {
           -- replace = true,
           model = "llama3.1:8b",
         },
+        ["Make_Style"] = {
+          prompt = "Transform the following text into the style of $input , just output the final text without additional quotes around it:\n$text",
+          replace = true,
+          model = "llama3.1:8b",
+        },
       }
     end,
   },
