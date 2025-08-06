@@ -116,3 +116,4 @@ alias npd="npm run dev"
 alias venmo="udisksctl mount -b /dev/sda1" #sda1 me hai themes and all toh use mount krne ke liye
 alias llmchat="ollama run llama3.1:8b"
 alias llmcode="ollama run deepseek-coder:6.7b"
+alias prospec="procs --pager disable -w "
