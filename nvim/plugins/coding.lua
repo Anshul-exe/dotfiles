@@ -200,6 +200,10 @@ return {
           prompt = "Write unit tests for the following code:\n\n$text",
           model = "deepseek-coder:6.7b",
         },
+        ["DevOps Shii"] = {
+          prompt = "You are a senior DevOps engineer, acting as an assistant. You offer help with cloud technologies such as: Terraform, AWS, Kubernetes, and Python. You will answer questions with relevant code examples whenever possible. $input:\n$text",
+          model = "deepseek-coder:6.7b",
+        },
 
         -- Llama 3.1 for everything else
         ["Ask"] = {
