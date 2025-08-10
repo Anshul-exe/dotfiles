@@ -75,6 +75,9 @@ keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
 -- Opening all the tabs after fv
 keymap.set("n", "<Leader>t", ":tab all<Return>")
 
+-- Gen.nvim keymaps
+keymap.set({ "n", "v" }, "<leader>G", ":Gen<CR>")
+
 -- R Programming shitz
 -- keymap.set("n", "<Leader>r", ":R<CR>", { noremap = true, silent = true }) -- Start R
 -- keymap.set("n", "<Leader>l", "<Plug>RSendLine", {}) -- Send current line to R
