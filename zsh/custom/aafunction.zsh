@@ -95,7 +95,7 @@ weather () {
   curl -s "wttr.in/${1:-Delhi}?format=3" | lolcat
 }
 
-## cd yazi to last viewing dir
+## cd yazi and ranger to last viewing dir
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -103,6 +103,22 @@ function y() {
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+function ranger() {
+	local tempfile
+	tempfile="$(mktemp -t ranger_cd.XXXXXX)" || return
+
+	command ranger --cmd="map q chain shell echo %d > '$tempfile'; quitall" "$@"
+
+	if [[ -f "$tempfile" ]]; then
+		local newdir
+		newdir="$(<"$tempfile")"
+		if [[ "$newdir" != "$PWD" ]]; then
+			cd -- "$newdir" || return
+		fi
+	fi
+
+	rm -f -- "$tempfile" 2>/dev/null
 }
 
 ## cd spf to last viewing dir
