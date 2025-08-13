@@ -415,6 +415,12 @@ ___  ---  ___  ---  ___
       open_mapping = [[<C-t>]],
       shade_terminals = true,
       direction = "float",
+      float_opts = {
+        border = "curved",
+        height = 50,
+        width = 215,
+        title_pos = "center",
+      },
     },
   },
   {

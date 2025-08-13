@@ -41,6 +41,7 @@
 - `g?` to encrypt in ROT13 (rotate by 13 places)
 - `e <url>` to get that page's url into your buffer
 - `r! < shell command>` to get the output of that command into your buffer
+- `grep -R "<CR>" ~/.config/nvim` bahar se use kr skte to get keybinds/keymaps
 
 ## Substitution regex cheatsheet
 
