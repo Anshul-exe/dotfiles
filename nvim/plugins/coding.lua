@@ -142,7 +142,7 @@ return {
       accept_map = "<c-a>",
       host = "localhost",
       port = "11434",
-      display_mode = "float",
+      display_mode = "vertical-split",
       show_prompt = false,
       show_model = true, -- Show which model is being used
       no_auto_close = false,
