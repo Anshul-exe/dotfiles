@@ -13,7 +13,7 @@ usage() {
 }
 
 # Initialize variables
-URL="https://mygbu.in/schd/?name=SOICT&dept=CSE&section=1277"
+URL="https://mygbu.in/schd/?name=SOICT&dept=CSE&section=1278"
 PDF_VIEWER="zathura"
 
 # Parse command-line arguments
