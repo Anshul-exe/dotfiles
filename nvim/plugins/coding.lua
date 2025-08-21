@@ -192,10 +192,6 @@ return {
           prompt = "Generate code for: $input",
           model = "deepseek-coder:6.7b",
         },
-        ["Add_Comments"] = {
-          prompt = "Add detailed comments to explain the following code:\n\n$text",
-          model = "deepseek-coder:6.7b",
-        },
         ["Write_Tests"] = {
           prompt = "Write unit tests for the following code:\n\n$text",
           model = "deepseek-coder:6.7b",
@@ -231,6 +227,11 @@ return {
         ["Summarize"] = {
           prompt = "Summarize the following text:\n$text",
           model = "llama3.1:8b",
+        },
+        ["Make_Notes"] = {
+          prompt = "Format the given text into concise, well-structured, and visually clear Markdown notes without adding explanations or quotes.:\n$text",
+          model = "llama3.1:8b",
+          replace = true,
         },
         ["Make_List"] = {
           prompt = "Render the following text as a markdown list, just output the final text without additional quotes around it:\n$text",
