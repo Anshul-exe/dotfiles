@@ -11,9 +11,3 @@
 ## bulbasaur's cute right??
 
 ![2024-08-25_05-06](https://github.com/user-attachments/assets/704fcc3f-1a78-4893-bb18-21211b7e695e)
-
-<!-- GitAds-Verify: 8CHKK4ETCREQDKUQZTLCIYJ4QVMPNOT1 -->
-
-## GitAds Sponsored
-
-[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=anshul-exe/dotfiles@github)](https://gitads.dev/v1/ad-track?source=anshul-exe/dotfiles@github)
