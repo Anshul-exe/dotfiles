@@ -118,4 +118,4 @@ alias llmchat="ollama run llama3.1:8b"
 alias llmcode="ollama run deepseek-coder:6.7b"
 alias prospec="procs --pager disable -w "
 alias f1='gcalendar --calendar="Formula 1" --no-of-days=30'
-alias server="python3 -m http.server 6789 --bind 0.0.0.0" # run kro jaha se files share krni hai and access through http://<this-system's-ip>:6789 from another system on the same network
+alias server='ip=$(ip -4 addr show scope global | grep -oP "(?<=inet\s)\d+(\.\d+){3}"); echo "🚀 Serving at: http://$ip:6789"; python3 -m http.server 6789 --bind 0.0.0.0' # run kro jaha se files share krni hai and access through http://<this-system's-ip>:6789 from another system on the same network
