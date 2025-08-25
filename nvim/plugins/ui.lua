@@ -454,13 +454,15 @@ ___  ---  ___  ---  ___
   },
   {
     "sphamba/smear-cursor.nvim",
-    opts = {
-      cursor_color = "#ff8800",
-      stiffness = 0.3,
-      trailing_stiffness = 0.1,
-      trailing_exponent = 5,
-      hide_target_hack = true,
-      gamma = 1,
+    opts = { -- Default  Range
+      cursor_color = "#FF1493",
+      stiffness = 0.3, -- 0.6      [0, 1]
+      trailing_stiffness = 0.1, -- 0.45     [0, 1]
+      stiffness_insert_mode = 0.7, -- 0.5      [0, 1]
+      trailing_stiffness_insert_mode = 0.7, -- 0.5      [0, 1]
+      damping = 0.95, -- 0.85     [0, 1]
+      damping_insert_mode = 0.95, -- 0.9      [0, 1]
+      distance_stop_animating = 0.5, -- 0.1      > 0
     },
   },
   {
