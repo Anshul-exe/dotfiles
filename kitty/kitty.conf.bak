@@ -1,5 +1,5 @@
 # BEGIN_KITTY_THEME
-# Atelier Sulphurpool Dark
+# GitHub Dark High Contrast
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -8,7 +8,7 @@ bold_font        auto
 italic_font      auto
 bold_italic_font auto
 
-font_size 12.0
+font_size 9.5
 # wayland_titlebar_color system
 
 kitty_mod ctrl+shift
@@ -16,5 +16,11 @@ kitty_mod ctrl+shift
 # map ctrl+f launch --location=first
 
 window_padding_width 15
+# background_opacity 0.9
 
-background_opacity 0.6
+# Cursor settings
+cursor_shape block
+cursor_blink_interval 0.6
+cursor_stop_blinking_after 0.0
+cursor_blink_on_focus yes
+cursor_blink_unglow yes
