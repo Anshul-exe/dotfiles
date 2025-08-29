@@ -81,7 +81,7 @@ alias bk="asusctl -p"
 # random alias that I need
 alias nv="nvim"
 alias 192="ip a| grep 192"
-alias ipa="ip a | grep -E '192|10\.'"
+alias ipa="ip a | grep -E '172|192|10\.'"
 alias check="ping archlinux.org"
 alias lz="lazygit"
 alias tkill="tmux kill-session"
