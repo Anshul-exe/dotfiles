@@ -167,3 +167,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' \
   --height=70% --reverse --border --prompt='Fir bhool gae? ' \
   --bind 'ctrl-a:select-all,ctrl-d:deselect-all,ctrl-x:toggle-preview'"
+
+# opencode
+export PATH=/home/mir/.opencode/bin:$PATH
