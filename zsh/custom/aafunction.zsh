@@ -66,9 +66,9 @@ aryan(){
 }
 
 # killing processes with fzf
-prokill() {
-kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
-}
+# prokill() {
+# kill -9 $(ps -ef | fzf --multi | awk '{print $2}')
+# }
 
 # search function for yay
 yays () {
@@ -96,14 +96,14 @@ weather () {
 }
 
 ## cd yazi and ranger to last viewing dir
-# function y() {
-# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-# 	yazi "$@" --cwd-file="$tmp"
-# 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-# 		builtin cd -- "$cwd"
-# 	fi
-# 	rm -f -- "$tmp"
-# }
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 function ranger() {
 	local tempfile
 	tempfile="$(mktemp -t ranger_cd.XXXXXX)" || return
