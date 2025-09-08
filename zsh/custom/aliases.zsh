@@ -20,6 +20,7 @@ alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
 alias webd="~/.scripts/tmux1by3.sh"
 alias ttc="nvim ~/.tmux.conf"
 alias gv="~/.scripts/gitView.sh"
+alias prokill="~/.scripts/proKill.sh"
 
 # listing shitz
 alias vidr='ls -a'
