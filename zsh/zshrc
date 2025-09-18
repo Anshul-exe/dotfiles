@@ -171,3 +171,9 @@ export FZF_CTRL_OPTS="--preview 'bat --style=numbers --color=always --line-range
 
 # opencode
 export PATH=/home/mir/.opencode/bin:$PATH
+
+# Hadoop ka shitz
+export HADOOP_HOME=/opt/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
