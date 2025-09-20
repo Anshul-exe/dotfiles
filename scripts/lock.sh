@@ -1,16 +1,9 @@
 #!/bin/bash
+# Reduce screen brightness to 0
+brightnessctl set 0
 
-LOCKED_DIR="$HOME/Videos/"
-PASSWORD="ahah"
+# Turn off Bluetooth
+bluetoothctl power off
 
-echo -n "Enter password to access $LOCKED_DIR: "
-read -s entered
-echo
-
-if [[ "$entered" == "$PASSWORD" ]]; then
-  echo "Access granted."
-  exec ranger "$LOCKED_DIR" || exec nvim "$LOCKED_DIR" || cd "$LOCKED_DIR"
-else
-  echo "Access denied."
-  exit 1
-fi
+# Run your lockscreen script
+/home/mir/.scripts/Tala/lockscreen.sh
