@@ -21,6 +21,7 @@ alias webd="~/.scripts/tmux1by3.sh"
 alias ttc="nvim ~/.tmux.conf"
 alias gv="~/.scripts/gitView.sh"
 alias prokill="~/.scripts/proKill.sh"
+alias lock="~/.scripts/lock.sh"
 
 # listing shitz
 alias vidr='ls -a'
