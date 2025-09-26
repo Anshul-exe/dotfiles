@@ -78,6 +78,10 @@ keymap.set("n", "<Leader>t", ":tab all<Return>")
 -- Gen.nvim keymaps
 keymap.set({ "n", "v" }, "<leader>G", ":Gen<CR>")
 
+-- Fix <Esc> in insert mode (Restore Escape key's behavior after latest LazyVim update)
+vim.keymap.del("i", "<esc>") -- delete LazyVim's mapping
+vim.keymap.set("i", "<esc>", "<esc>", { noremap = true, silent = true })
+
 -- R Programming shitz
 -- keymap.set("n", "<Leader>r", ":R<CR>", { noremap = true, silent = true }) -- Start R
 -- keymap.set("n", "<Leader>l", "<Plug>RSendLine", {}) -- Send current line to R

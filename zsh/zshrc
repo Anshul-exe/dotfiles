@@ -178,7 +178,8 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
-# Export DISPLAY and XAUTHORITY for remote SSH
-export DISPLAY=:0
-export XAUTHORITY=/home/mir/.Xauthority
-
+# Only set DISPLAY/XAUTHORITY when connected via SSH
+if [[ -n "$SSH_CONNECTION" ]]; then
+    export DISPLAY=:0
+    export XAUTHORITY=/home/mir/.Xauthority
+fi
