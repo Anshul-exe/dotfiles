@@ -60,7 +60,7 @@ return {
         keymap = {
           accept = "<C-a>",
           next = "<C-]>",
-          prev = "<C-[>",
+          prev = "<C-p>", -- changed from <C-[> to <C-p>
           dismiss = "<C-\\>",
         },
       },
@@ -75,6 +75,7 @@ return {
       },
     },
     config = function(_, opts)
+      vim.g.copilot_no_tab_map = true -- prevent Copilot from hijacking <Esc>/<Tab>
       vim.schedule(function()
         require("copilot").setup(opts)
       end)
