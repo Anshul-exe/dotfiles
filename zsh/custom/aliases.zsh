@@ -125,4 +125,4 @@ alias lsblk="lsblk | bat -l conf -p"
 # phone controls
 alias jj="amixer set Master 5%-"
 alias kk="amixer set Master 5%+"
-
+alias plause="playerctl play-pause"
