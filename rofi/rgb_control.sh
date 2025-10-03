@@ -2,7 +2,7 @@
 
 # Power menu script using rofi
 
-CHOSEN=$(printf "Red\nYellow\nGreen\nBlue\nPurple\nPink\nCyan\nPinkish\nSkin\nGold\nWhite" | rofi -dmenu -i -p "Konsa Rang Chahiye??:" -theme "$HOME/.config/rofi/topRight.rasi")
+CHOSEN=$(printf "Red\nYellow\nGreen\nBlue\nPurple\nPink\nCyan\nPinkish\nSkin\nGold\nWhite\nBreathe\nCycle\nWave\nPulse" | rofi -dmenu -i -p "Konsa Rang Chahiye??:" -theme "$HOME/.config/rofi/topRight.rasi")
 
 case "$CHOSEN" in
 "Red")
@@ -37,6 +37,18 @@ case "$CHOSEN" in
   ;;
 "White")
   asusctl aura static -c FFFACD
+  ;;
+"Breathe")
+  asusctl aura breathe
+  ;;
+"Cycle")
+  asusctl aura rainbow-cycle
+  ;;
+"Wave")
+  asusctl aura rainbow-wave
+  ;;
+"Pulse")
+  asusctl aura pulse
   ;;
 *)
   exit 1
