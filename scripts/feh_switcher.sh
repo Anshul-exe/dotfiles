@@ -36,6 +36,8 @@ wallpapers=(
   "Hacker|post-apocalyptic_hacker.png"
   "Leaves|purple_leaves.png"
   "Mountains|purpleMountain.jpg"
+  "datesheet|datesheet.jpeg"
+  "mess|mess.jpeg"
 )
 
 # Generate rofi menu options
