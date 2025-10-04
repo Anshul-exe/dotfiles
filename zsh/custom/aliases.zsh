@@ -21,6 +21,7 @@ alias ttc="nvim ~/.tmux.conf"
 alias gv="~/.scripts/gitView.sh"
 alias prokill="~/.scripts/proKill.sh"
 alias lock="~/.scripts/lock.sh"
+alias spt="~/.scripts/spotifySearch.sh"
 
 # listing shitz
 alias vidr='ls -a'
@@ -63,7 +64,7 @@ alias upar="xrandr --output HDMI-1-0 --above eDP-2"
 alias neeche="xrandr --output HDMI-1-0 --below eDP-2"
 alias left="xrandr --output HDMI-1-0 --left-of eDP-2"
 alias right="xrandr --output HDMI-1-0 --right-of eDP-2"
-alias mirror="xrandr --output HDMI-1-0 --same-as eDP-2 --auto"
+# alias mirror="xrandr --output HDMI-1-0 --same-as eDP-2 --auto"
 alias dusriband="xrandr --output HDMI-1-0 --off"
 
 # TMUX
