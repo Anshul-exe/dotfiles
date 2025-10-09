@@ -10,6 +10,7 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id picom -b --experimental-backends
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.scripts/Tala/lockscreen.sh
+exec --no-startup-id gammastep -c ~/.config/gammastep/config.ini
 
 # Pywal
 # exec_always --no-startup-id wal -R
@@ -277,6 +278,9 @@ bindsym Mod4+Ctrl+f exec hints --hover
 bindsym Mod4+t exec ~/.scripts/transparency.sh
 bindsym $mod+y exec ~/.scripts/guiClipboard.sh
 exec_always --no-startup-id while true; do sleep 1; ~/.scripts/guiClipboard.sh add 2>/dev/null; done
+# night light trigger
+bindsym $mod+F8 exec --no-startup-id /home/mir/.scripts/gammaToggle.sh
 
 ## custom exec commands
+# goodmorning ahh msgs
 exec --no-startup-id ~/.scripts/greeter.sh
