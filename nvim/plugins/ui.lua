@@ -73,7 +73,8 @@ return {
 
   -- animations
   {
-    "echasnovski/mini.animate",
+    "nvim-mini/mini.animate",
+    version = false,
     event = "VeryLazy",
     opts = function(_, opts)
       opts.scroll = {
@@ -83,7 +84,7 @@ return {
   },
 
   {
-    "echasnovski/mini.indentscope",
+    "nvim-mini/mini.indentscope",
     version = false, -- wait till new 0.7.0 release to put it back on semver
     event = "LazyFile",
     opts = {
@@ -436,6 +437,7 @@ ___  ---  ___  ---  ___
     config = function()
       require("image").setup({
         backend = "ueberzug",
+        kitty_method = "auto",
         processor = "magick_rock",
         integrations = {
           markdown = {
