@@ -18,7 +18,7 @@ cp ~/.config/neofetch/config.conf ~/dotfiles/neofetch/config.conf
 
 # nvim
 cp -r ~/.config/nvim/lua/* ~/dotfiles/nvim/
-cp -r ~/.local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua ~/dotfiles/nvim/local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua
+# cp -r ~/.local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua ~/dotfiles/nvim/local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua
 cp ~/.config/nvim/cheatSheet.md ~/dotfiles/nvim/cheatSheet.md
 
 # picom
@@ -56,16 +56,16 @@ cp ~/.config/libinput-gestures.conf ~/dotfiles/libinput-gestures.conf
 cp -r ~/.config/dunst/* ~/dotfiles/dunst/
 
 # hypr
-cp -r ~/.config/hypr/* ~/dotfiles/hypr/
+# cp -r ~/.config/hypr/* ~/dotfiles/hypr/
 
 # waybar
-cp -r ~/.config/waybar/* ~/dotfiles/waybar/
+# cp -r ~/.config/waybar/* ~/dotfiles/waybar/
 
 # waypaper
-cp -r ~/.config/waypaper/* ~/dotfiles/waypaper/
+# cp -r ~/.config/waypaper/* ~/dotfiles/waypaper/
 
 # hyprpanel
-cp -r ~/.config/hyprpanel/* ~/dotfiles/hyprpanel/
+# cp -r ~/.config/hyprpanel/* ~/dotfiles/hyprpanel/
 
 # kitty
 cp -r ~/.config/kitty/* ~/dotfiles/kitty/
