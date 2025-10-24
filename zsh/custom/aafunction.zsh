@@ -123,23 +123,13 @@ function ranger() {
 
 ## cd spf to last viewing dir
 spf() {
-    os=$(uname -s)
+  export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
 
-    # Linux
-    if [[ "$os" == "Linux" ]]; then
-        export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
-    fi
+  command spf "$@"
 
-    # macOS
-    if [[ "$os" == "Darwin" ]]; then
-        export SPF_LAST_DIR="$HOME/Library/Application Support/superfile/lastdir"
-    fi
-
-    command spf "$@"
-
-    [ ! -f "$SPF_LAST_DIR" ] || {
-        . "$SPF_LAST_DIR"
-        rm -f -- "$SPF_LAST_DIR" > /dev/null
+  [ ! -f "$SPF_LAST_DIR" ] || {
+    . "$SPF_LAST_DIR"
+      rm -f -- "$SPF_LAST_DIR" > /dev/null
     }
 }
 
@@ -172,4 +162,33 @@ gclc() {
   dir="$(basename "$1" .git)"
   echo "\ncd into $dir"
   cd "$dir" || return 1
+}
+
+# spotify cli control
+play() { spotify_player playback start track --id "$(spotify_player search "$1" | jq -r '.tracks[0].id')"; }
+
+# welcome back script
+hi() {
+  echo "🔆 Setting brightness to 50%"
+  brightnessctl set 50% > /dev/null
+
+  systemctl is-active --quiet bluetooth || systemctl start bluetooth
+  bluetoothctl power on > /dev/null
+
+  for i in {1..5}; do
+    if bluetoothctl show | grep -q "Powered: yes"; then
+    echo "📡 Bluetooth powered on."
+      break
+    fi
+    sleep 1
+  done
+
+  if ! bluetoothctl info F8:5C:7E:ED:9F:57 | grep -q "Connected: yes"; then
+    echo "🔊 Connecting to ISHpeaker..."
+    bluetoothctl connect F8:5C:7E:ED:9F:57 > /dev/null
+    echo "✅ ISHpeaker connected."
+    mpv --really-quiet /usr/share/sounds/freedesktop/stereo/service-login.oga >/dev/null 2>&1
+  else
+    echo "✅ ISHpeaker already connected."
+  fi
 }
