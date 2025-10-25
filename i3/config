@@ -280,7 +280,6 @@ bindsym $mod+y exec ~/.scripts/guiClipboard.sh
 exec_always --no-startup-id while true; do sleep 1; ~/.scripts/guiClipboard.sh add 2>/dev/null; done
 # night light trigger
 bindsym $mod+F8 exec --no-startup-id /home/mir/.scripts/gammaToggle.sh
-bindsym $mod+i exec --no-startup-id /home/mir/kri.sh
 
 ## custom exec commands
 # goodmorning ahh msgs
