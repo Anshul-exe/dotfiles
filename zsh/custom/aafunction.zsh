@@ -71,8 +71,24 @@ aryan(){
 # }
 
 # search function for yay
-yays () {
-  yay -Slq | fzf --multi --height 55% --preview 'yay -Si {1}' | xargs -ro yay -S
+yays() {
+  yay -Slq | fzf \
+    --multi \
+    --height 80% \
+    --border rounded \
+    --margin 1 \
+    --padding 1 \
+    --prompt "📦 Select packages to install: " \
+    --header "TAB: select | CTRL-A: toggle all | CTRL-/: preview | ENTER: install | ESC: cancel" \
+    --preview 'yay -Si {1}' \
+    --preview-window=right:60%:wrap \
+    --bind 'ctrl-/:toggle-preview' \
+    --bind 'ctrl-a:toggle-all' \
+    --color='fg:#d0d0d0,hl:#5f87af' \
+    --color='fg+:#ffffff,hl+:#5fd7ff' \
+    --color='info:#afaf87,prompt:#d7005f,pointer:#af5fff' \
+    --color='marker:#87ff00,spinner:#af5fff,header:#87afaf' \
+    | xargs -ro yay -S
 }
 
 # navigating through used directories
