@@ -208,15 +208,3 @@ hi() {
     echo "✅ ISHpeaker already connected."
   fi
 }
-
-tri(){
-  printf "%-20s %-20s %-10s\n" "DATE" "SUBJECT" "DAYS LEFT"; printf "%s\n" "----------------------------------------------"; while IFS='|' read -r _ date subject; do [[ $date =~ ^[0-9] ]] || continue; exam_date=$(date -d "Nov $date 2025" +%s); today=$(date +%s); diff=$(( (exam_date - today)/86400 )); printf "%-20s %-20s %-10s\n" "$date Nov 2025" "$subject" "$diff"; done <<EOF
-| Date | Subject |
-| 9 | Biometrics |
-| 10 | Neuroscience |
-| 12 | Compiler Design |
-| 17 | Data Mining (2nd Shift) |
-| 18 | Deep learning |
-| 22 | Big Data |
-EOF
-}
