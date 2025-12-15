@@ -129,3 +129,7 @@ alias nyancat="nyancat -s"
 alias jj="amixer set Master 5%-"
 alias kk="amixer set Master 5%+"
 alias plause="playerctl -p spotify play-pause"
+
+# Suffix aliases
+alias -s pdf="zathura"
+alias -s md="bat"
