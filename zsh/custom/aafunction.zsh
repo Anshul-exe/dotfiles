@@ -199,9 +199,11 @@ hi() {
     sleep 1
   done
 
-  if ! bluetoothctl info F8:5C:7E:ED:9F:57 | grep -q "Connected: yes"; then
+  if ! bluetoothctl info E8:EE:CC:BC:08:81 | grep -q "Connected: yes"; then
+  # if ! bluetoothctl info F8:5C:7E:ED:9F:57 | grep -q "Connected: yes"; then
     echo "🔊 Connecting to ISHpeaker..."
-    bluetoothctl connect F8:5C:7E:ED:9F:57 > /dev/null
+    bluetoothctl connect E8:EE:CC:BC:08:81 > /dev/null
+    # bluetoothctl connect F8:5C:7E:ED:9F:57 > /dev/null
     echo "✅ ISHpeaker connected."
     mpv --really-quiet /usr/share/sounds/freedesktop/stereo/service-login.oga >/dev/null 2>&1
   else
