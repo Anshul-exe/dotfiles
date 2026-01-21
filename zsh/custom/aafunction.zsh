@@ -188,22 +188,28 @@ hi() {
   echo "🔆 Setting brightness to 50%"
   brightnessctl set 50% > /dev/null
 
+  if amixer set Master toggle > /dev/null 2>&1; then
+    echo "🔊 Audio path restored."
+  else
+    echo "❌ Audio restore failed."
+  fi
+
   systemctl is-active --quiet bluetooth || systemctl start bluetooth
   bluetoothctl power on > /dev/null
 
   for i in {1..5}; do
     if bluetoothctl show | grep -q "Powered: yes"; then
-    echo "📡 Bluetooth powered on."
+      echo "📡 Bluetooth powered on."
       break
     fi
     sleep 1
   done
 
-  if ! bluetoothctl info E8:EE:CC:BC:08:81 | grep -q "Connected: yes"; then
-  # if ! bluetoothctl info F8:5C:7E:ED:9F:57 | grep -q "Connected: yes"; then
+  # if ! bluetoothctl info E8:EE:CC:BC:08:81 | grep -q "Connected: yes"; then
+    if ! bluetoothctl info F8:5C:7E:ED:9F:57 | grep -q "Connected: yes"; then
     echo "🔊 Connecting to ISHpeaker..."
-    bluetoothctl connect E8:EE:CC:BC:08:81 > /dev/null
-    # bluetoothctl connect F8:5C:7E:ED:9F:57 > /dev/null
+    # bluetoothctl connect E8:EE:CC:BC:08:81 > /dev/null
+    bluetoothctl connect F8:5C:7E:ED:9F:57 > /dev/null
     echo "✅ ISHpeaker connected."
     mpv --really-quiet /usr/share/sounds/freedesktop/stereo/service-login.oga >/dev/null 2>&1
   else
