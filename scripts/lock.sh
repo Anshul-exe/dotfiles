@@ -23,3 +23,4 @@ xhost +SI:localuser:"$USER_NAME" >/dev/null 2>&1 || true
 # 2) Then dim and toggle radios
 brightnessctl set 0 || true
 bluetoothctl power off || true
+amixer set Master toggle
