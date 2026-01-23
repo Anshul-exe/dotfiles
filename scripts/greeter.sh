@@ -15,5 +15,5 @@ quotes=(
 
 random_index=$((RANDOM % ${#quotes[@]}))
 
-notify-send -i /home/mir/clear_space/Media/LessGooBaby.png -u low -a "Shaahi Sandesha" "Let's get the work done my Liege"
-notify-send -i /home/mir/clear_space/Media/money.png -u normal -a "I Got This" "${quotes[$random_index]}"
+notify-send -i /home/mir/clear_space/Media/idharUdhar/LessGooBaby.png -u low -a "Shaahi Sandesha" "Let's get the work done my Liege"
+notify-send -i /home/mir/clear_space/Media/idharUdhar/money.png -u normal -a "I Got This" "${quotes[$random_index]}"
