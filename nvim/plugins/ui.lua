@@ -436,7 +436,7 @@ ___  ---  ___  ---  ___
     dependencies = { "luarocks.nvim" },
     config = function()
       require("image").setup({
-        backend = "ueberzug",
+        backend = "kitty",
         kitty_method = "auto",
         processor = "magick_rock",
         integrations = {
