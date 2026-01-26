@@ -99,10 +99,40 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*", -- use latest stable release
+    lazy = true,
+    ft = "markdown",
+
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+
+    opts = {
+      workspaces = {
+        {
+          name = "LesssGo",
+          path = vim.fn.expand("~/clear_space/codeLore/learnings/DevOps/go/notes/"),
+        },
+      },
+
+      -- 🔑 THIS IS THE IMPORTANT PART
+      follow_url_func = function(url)
+        -- Handle file:// URLs by opening them in Neovim
+        if url:match("^file://") then
+          local path = url:gsub("^file://", "")
+          vim.cmd("edit " .. vim.fn.fnameescape(path))
+        else
+          -- Fallback for http(s) links
+          vim.fn.jobstart({ "xdg-open", url }, { detach = true })
+        end
+      end,
+    },
   },
 }
