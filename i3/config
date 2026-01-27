@@ -256,7 +256,7 @@ bindsym Mod4+Shift+bracketright exec --no-startup-id "playerctl -p spotify posit
 bindsym Shift+XF86AudioPrev exec --no-startup-id "playerctl -p spotify position 10-"
 bindsym Mod4+Shift+bracketleft exec --no-startup-id "playerctl -p spotify position 10-"
 # screen lock
-bindsym Mod4+l exec --no-startup-id "~/.scripts/Tala/lockscreen.sh"
+bindsym Mod4+l exec --no-startup-id  "~/.scripts/lock.sh"
 bindsym Mod4+Shift+l exec --no-startup-id systemctl suspend
 # cycle through workspaces
 bindsym $mod+Tab exec --no-startup-id i3-msg 'workspace next'
@@ -287,6 +287,8 @@ exec_always --no-startup-id while true; do sleep 1; ~/.scripts/guiClipboard.sh a
 bindsym $mod+F8 exec --no-startup-id /home/mir/.scripts/gammaToggle.sh
 # Junior se hill house wall switcher
 bindsym $mod+Shift+p exec ~/.scripts/toggle_wallpaper.sh
+# F1 se vid and song toggle
+bindsym XF86MonBrightnessDown exec --no-startup-id sh -c " playerctl play-pause && playerctl -p spotify play-pause"
 
 ## custom exec commands
 # goodmorning ahh msgs
