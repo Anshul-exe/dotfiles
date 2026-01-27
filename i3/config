@@ -24,6 +24,11 @@ gaps outer 5
 # Mod1 = Alt ////// Mod4 = Windows
 set $mod Mod1
 
+## kuch toh shit hai
+for_window [class="bluetui-float"] floating enable
+for_window [class="bluetui-float"] resize set width 800 height 500
+for_window [class="bluetui-float"] move position center
+
 # rofi key binds
 # bindsym $mod+space exec rofi -show run -theme rofidmenu.rasi
 bindsym $mod+space exec "~/.config/rofi/better.sh"
@@ -280,7 +285,14 @@ bindsym $mod+y exec ~/.scripts/guiClipboard.sh
 exec_always --no-startup-id while true; do sleep 1; ~/.scripts/guiClipboard.sh add 2>/dev/null; done
 # night light trigger
 bindsym $mod+F8 exec --no-startup-id /home/mir/.scripts/gammaToggle.sh
+# Junior se hill house wall switcher
+bindsym $mod+Shift+p exec ~/.scripts/toggle_wallpaper.sh
 
 ## custom exec commands
 # goodmorning ahh msgs
 exec --no-startup-id ~/.scripts/greeter.sh
+
+## kuch toh shit hai
+bindsym $mod+b exec --no-startup-id alacritty \
+  --class bluetui-float \
+  -e bluetui
