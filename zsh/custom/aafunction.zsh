@@ -64,6 +64,9 @@ fi
 aryan(){
  echo "Aaj, Thursday April-10 03:09:13 AM IST 2025, ke 5 Saal baad Aryan Rastogi, Jhanvi Yadav ko contact krke gaand jalaega uski apni kamiyabi ko dikha ke" | figlet | lolcat
 }
+shashank(){
+  echo "Aaj tareek hai 6 Feb, 2026, Aur time horha hai subah ke 2:47AM. Aj account me 15 rupee bhi nahi hai but 10 saal me 15cr. bhi hoge"
+}
 
 # killing processes with fzf
 # prokill() {
