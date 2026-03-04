@@ -6,49 +6,49 @@ CHOSEN=$(printf "Red\nYellow\nGreen\nBlue\nPurple\nPink\nCyan\nPinkish\nSkin\nGo
 
 case "$CHOSEN" in
 "Red")
-  asusctl aura static -c ff0000
+  asusctl aura effect static -c ff0000
   ;;
 "Yellow")
-  asusctl aura static -c FFFF00
+  asusctl aura effect static -c FFFF00
   ;;
 "Green")
-  asusctl aura static -c 008000
+  asusctl aura effect static -c 008000
   ;;
 "Blue")
-  asusctl aura static -c 0000FF
+  asusctl aura effect static -c 0000FF
   ;;
 "Purple")
-  asusctl aura static -c 800080
+  asusctl aura effect static -c 800080
   ;;
 "Pink")
-  asusctl aura static -c FF1493
+  asusctl aura effect static -c FF1493
   ;;
 "Cyan")
-  asusctl aura static -c 00FFFF
+  asusctl aura effect static -c 00FFFF
   ;;
 "Pinkish")
-  asusctl aura static -c DC143C
+  asusctl aura effect static -c DC143C
   ;;
 "Skin")
-  asusctl aura static -c FF6347
+  asusctl aura effect static -c FF6347
   ;;
 "Gold")
-  asusctl aura static -c FFD700
+  asusctl aura effect static -c FFD700
   ;;
 "White")
-  asusctl aura static -c FFFACD
+  asusctl aura effect static -c FFFACD
   ;;
 "Breathe")
   asusctl aura breathe
   ;;
 "Cycle")
-  asusctl aura rainbow-cycle
+  asusctl aura effect rainbow-cycle --speed med
   ;;
 "Wave")
-  asusctl aura rainbow-wave
+  asusctl aura effect rainbow-wave --direction right --speed med
   ;;
 "Pulse")
-  asusctl aura pulse
+  asusctl aura effect pulse -c ffffff
   ;;
 *)
   exit 1
