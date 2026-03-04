@@ -82,7 +82,6 @@ export MANROFFOPT="-c"
 export MANPAGER="less -R"
 export MANPAGER="most"
 export GOG_ACCOUNT=anshulchauhan1224@gmail.com
-. "$HOME/.cargo/env"
 eval "$(zoxide init zsh)"
 eval "$(gog completion zsh)"
 

@@ -60,7 +60,7 @@ alias useof="pacman -Qi "
 # phle connected device ka name dekho (HDMI-1-0) fir jaha set krna hai vaha ki
 # command do aur fir "xrandr --auto" krke laga do
 alias whichscreen="xrandr | grep connected"
-alias upar="xrandr --output HDMI-1-0 --above eDP-2"
+alias upar="xrandr --output HDMI-1-0 --above eDP-1"
 alias neeche="xrandr --output HDMI-1-0 --below eDP-2"
 alias left="xrandr --output HDMI-1-0 --left-of eDP-2"
 alias right="xrandr --output HDMI-1-0 --right-of eDP-2"
@@ -77,8 +77,8 @@ alias ttk="tmux kill-session"
 
 # Asus ctl controls
 alias asusp="asusctl profile -p"
-alias bz="asusctl -n"
-alias bk="asusctl -p"
+alias bz="asusctl leds next"
+alias bk="asusctl leds prev"
 
 # random alias that I need
 alias nv="nvim"
@@ -108,7 +108,7 @@ alias cd="z"
 alias cdi="zi"
 alias fileppt="libreoffice --impress "
 alias filedoc="libreoffice --writer "
-alias db="sudo mariadb -u root -p"
+alias db="docker exec -it mariadb-dev mariadb -u root -p"
 alias pp="python3"
 alias spice="spicetify restore backup && spicetify apply"
 alias scrntime="scrntime --with-idletime -d 10 --style 2 --max-length 50"
@@ -124,6 +124,7 @@ alias server='ip=$(ip -4 addr show scope global | grep -oP "(?<=inet\s)\d+(\.\d+
 alias lsblk="lsblk | bat -l conf -p"
 alias connected='bluetoothctl devices Connected | awk '\''{$1=$2=""; print substr($0,3)}'\'''
 alias nyancat="nyancat -s"
+alias cf="copyfile"
 
 # phone controls
 alias jj="amixer set Master 5%-"

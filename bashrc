@@ -159,4 +159,3 @@ export PATH=$PATH:/home/mir/.spicetify
 export PATH=$PATH:/usr/bin/spicetify
 export PATH=$PATH:/.cargo/bin
 ################ END OF PATH #####################
-. "$HOME/.cargo/env"
