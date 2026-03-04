@@ -37,7 +37,7 @@ wallpapers=(
   "Leaves|purple_leaves.png"
   "Mountains|purpleMountain.jpg"
   "datesheet|datesheet.jpeg"
-  "mess|mess.png"
+  "mess|mess.jpeg"
 )
 
 # Generate rofi menu options
