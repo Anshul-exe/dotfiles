@@ -18,7 +18,6 @@ cp ~/.config/neofetch/config.conf ~/dotfiles/neofetch/config.conf
 
 # nvim
 cp -r ~/.config/nvim/lua/* ~/dotfiles/nvim/
-# cp -r ~/.local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua ~/dotfiles/nvim/local/share/nvim/lazy/which-key.nvim/lua/which-key/config.lua
 cp ~/.config/nvim/cheatSheet.md ~/dotfiles/nvim/cheatSheet.md
 
 # picom
@@ -55,18 +54,6 @@ cp ~/.config/libinput-gestures.conf ~/dotfiles/libinput-gestures.conf
 # dunst
 cp -r ~/.config/dunst/* ~/dotfiles/dunst/
 
-# hypr
-# cp -r ~/.config/hypr/* ~/dotfiles/hypr/
-
-# waybar
-# cp -r ~/.config/waybar/* ~/dotfiles/waybar/
-
-# waypaper
-# cp -r ~/.config/waypaper/* ~/dotfiles/waypaper/
-
-# hyprpanel
-# cp -r ~/.config/hyprpanel/* ~/dotfiles/hyprpanel/
-
 # kitty
 cp -r ~/.config/kitty/* ~/dotfiles/kitty/
 
@@ -82,5 +69,17 @@ cp ~/.ssh/id_ed25519.pub ~/clear_space/backups/gitSetup/DOTssh/
 cp ~/.gitconfig ~/clear_space/backups/gitSetup/gitconfig
 cp ~/.git-credentials ~/clear_space/backups/gitSetup/git-credentials
 
+# hypr
+# cp -r ~/.config/hypr/* ~/dotfiles/hypr/
+
+# waybar
+# cp -r ~/.config/waybar/* ~/dotfiles/waybar/
+
+# waypaper
+# cp -r ~/.config/waypaper/* ~/dotfiles/waypaper/
+
+# hyprpanel
+# cp -r ~/.config/hyprpanel/* ~/dotfiles/hyprpanel/
+
 # scripts
-cp -r ~/clear_space/codeLore/learnings/linux/practiceScripts/* ~/dotfiles/local/bin/
+# cp -r ~/clear_space/codeLore/learnings/linux/practiceScripts/* ~/dotfiles/local/bin/

@@ -126,6 +126,11 @@ alias connected='bluetoothctl devices Connected | awk '\''{$1=$2=""; print subst
 alias nyancat="nyancat -s"
 alias cf="copyfile"
 
+# terraform alias
+alias ta="terraform apply -auto-approve"
+alias td="terraform destroy -auto-approve"
+alias tda="terraform destroy -auto-approve && terraform apply -auto-approve"
+
 # phone controls
 alias jj="amixer set Master 5%-"
 alias kk="amixer set Master 5%+"
