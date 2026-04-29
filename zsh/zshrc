@@ -1,6 +1,5 @@
 # WELCOME TEXT
 pokeget random --hide-name -s
-echo "tech stack readme"
 # pokeget $(shuf -i 1-905 -n 6 | tr '\n' ' ') --hide-name -s
 # oneko &
 
@@ -155,7 +154,15 @@ bindkey -r '^R'
 
 # Custom fzf-history-widget
 fzf-history-widget() {
-  local selected=$(fc -rl 1 | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | fzf --height 40% --reverse --border --prompt "Fir bhool gae? " --no-sort)
+  local selected=$(fc -rl 1 \
+    | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' \
+    | awk '!seen[$0]++' \
+    | fzf --height 40% --reverse --border \
+        --prompt "Fir bhool gae? " \
+        --no-sort \
+        --scheme=history \
+        --exact \
+        --tiebreak=index)
   if [[ -n $selected ]]; then
     LBUFFER="$selected"
   fi
@@ -165,9 +172,9 @@ zle -N fzf-history-widget
 bindkey "^R" fzf-history-widget
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' \
-  --height=70% --reverse --border --prompt='Fir bhool gae? ' \
-  --bind 'ctrl-a:select-all,ctrl-d:deselect-all,ctrl-x:toggle-preview'"
+# export FZF_CTRL_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' \
+#   --height=70% --reverse --border --prompt='Fir bhool gae? ' \
+#   --bind 'ctrl-a:select-all,ctrl-d:deselect-all,ctrl-x:toggle-preview'"
 
 # opencode
 export PATH=/home/mir/.opencode/bin:$PATH
