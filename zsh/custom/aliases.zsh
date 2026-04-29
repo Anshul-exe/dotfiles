@@ -125,6 +125,7 @@ alias lsblk="lsblk | bat -l conf -p"
 alias connected='bluetoothctl devices Connected | awk '\''{$1=$2=""; print substr($0,3)}'\'''
 alias nyancat="nyancat -s"
 alias cf="copyfile"
+alias cls="clear && ls"
 
 # terraform alias
 alias ta="terraform apply -auto-approve"
