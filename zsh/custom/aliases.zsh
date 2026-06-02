@@ -126,6 +126,11 @@ alias connected='bluetoothctl devices Connected | awk '\''{$1=$2=""; print subst
 alias nyancat="nyancat -s"
 alias cf="copyfile"
 alias cls="clear && ls"
+alias band="nmcli connection down myhotspot"
+alias khol="nmcli connection up myhotspot ifname wlan0"
+alias netcheck="nmcli connection show --active"
+alias allow="sudo iptables -P FORWARD ACCEPT"
+## allow krne ke baad khol
 
 # terraform alias
 alias ta="terraform apply -auto-approve"
