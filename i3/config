@@ -238,6 +238,7 @@ exec --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id bluetooth
 # screenshot
 bindsym Print exec --no-startup-id ~/.scripts/ssCustomName.sh
+# exec --no-startup-id systemctl --user start graphical-session.target
 # playerctl media play-pause
 bindsym XF86AudioStop exec --no-startup-id "playerctl play-pause"
 bindsym Mod4+Shift+apostrophe exec --no-startup-id "playerctl play-pause"
@@ -274,11 +275,6 @@ bindsym Mod4+h exec --no-startup-id ~/.scripts/hotspot.sh
 bindsym Mod4+Shift+c exec --no-startup-id ~/.scripts/ocr.sh
 # normal work vali shit open krne vala
 bindsym Mod4+Return exec --no-startup-id ~/.scripts/dailyShitz.sh
-# hints ka shit
-bindsym Mod4+f exec hints
-bindsym Mod4+Shift+f exec hints --right-click
-bindsym Mod4+Ctrl+f exec hints --hover
-# bindsym Mod4+Alt+f exec hints --drag
 # transparency toggle
 bindsym Mod4+t exec ~/.scripts/transparency.sh
 bindsym $mod+y exec ~/.scripts/guiClipboard.sh
@@ -289,6 +285,8 @@ bindsym $mod+F8 exec --no-startup-id /home/mir/.scripts/gammaToggle.sh
 bindsym $mod+Shift+p exec ~/.scripts/toggle_wallpaper.sh
 # F1 se vid and song toggle
 bindsym XF86MonBrightnessDown exec --no-startup-id sh -c " playerctl play-pause && playerctl -p spotify play-pause"
+# Application form Automation
+bindsym Mod4+j exec ~/.scripts/apply.sh
 
 ## custom exec commands
 # goodmorning ahh msgs
