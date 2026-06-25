@@ -193,3 +193,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export XCURSOR_THEME=Bibata-Modern-Ice
 export XCURSOR_SIZE=24
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mir/.local/bin:$PATH"
