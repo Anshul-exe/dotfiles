@@ -159,3 +159,7 @@ export PATH=$PATH:/home/mir/.spicetify
 export PATH=$PATH:/usr/bin/spicetify
 export PATH=$PATH:/.cargo/bin
 ################ END OF PATH #####################
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mir/.local/bin:$PATH"
