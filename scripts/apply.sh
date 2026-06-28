@@ -4,6 +4,7 @@ ROFI_THEME="$HOME/.config/rofi/topRight.rasi"
 
 # Format:
 entries=(
+  "Name|Anshul Singh Chauhan"
   "University|Gautam Buddha University"
   "Summary|I'm a DevOps Engineer with strong Linux, networking, AWS, Kubernetes, Docker, Terraform, and CI/CD expertise. Built secure cloud-native platforms with DevSecOps, GitOps, Infrastructure as Code, automated security-gated deployments, reduced manual effort by 95% and CVE from 12 to 0. Experienced in EKS, containerized microservices, high-availability 3-tier architectures, observability, and FinOps driven cloud cost optimization."
   "Degree|B.Tech CSE with specialization in AI)"
@@ -15,6 +16,8 @@ entries=(
   "Location|Greater Noida, Uttar Pradesh, India"
   "Cloud Guardian|https://github.com/Anshul-exe/Autonomous-Cloud-Guardian"
   "3 Tier Lab|https://github.com/Anshul-exe/3Tier-End-to-End-Prod-Infra"
+  "Phone|9264920017"
+  "Mail|anshulchauhan1224@gmail.com"
 )
 
 # Clipboard setter
