@@ -219,3 +219,14 @@ hi() {
     echo "✅ ISHpeaker already connected."
   fi
 }
+
+# Git Commit with Date
+unalias gcd 2>/dev/null
+gcd() {
+    if [[ $# -ne 2 ]]; then
+        echo 'Usage: gcd "commit message" "commit date"'
+        return 1
+    fi
+
+    git commit -m "$1" --date="$2"
+}
