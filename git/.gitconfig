@@ -1,0 +1,109 @@
+[user]
+  name = Anshul Singh Chauhan
+  email = anshulchauhanworks@gmail.com
+
+[pull]
+  rebase = true
+
+[core]
+  excludesfile = ~/.gitignore_global
+	editor = nvim
+  compression = 9
+  preloadIndex = true
+  autocrlf = input
+  whitespaces = trailing-space,space-before-tab,indent-with-non-tab
+  askpass = ""
+  quotepath = false
+
+[credential]
+	helper = store
+
+[help]
+  autocorrect = 1
+
+[color "decorate"]
+  ui = auto
+  HEAD = red
+  branch = blue
+  tag = yellow
+  remoteBranch = magenta
+  diff = auto
+  status = auto
+  interactive = auto
+  showBranch = auto
+
+[color "branch"]
+  current = magenta
+  local = default
+  remote = yellow
+  upstream = green
+  plain = blue
+
+[merge]
+  tool = nvimdiff  # Use Neovim's diff tool for merges
+  conflictstyle = diff3
+
+[rebase]
+  autoStash = true # Automatically stash changes before a rebase
+  autoSquash = true
+
+[diff]
+  tool = nvimdiff
+  colorMoved = zebra
+  algorithm = histogram
+  mnemonicPrefix = true
+
+[interactive]
+  diffFilter = delta --color-always
+
+[format]
+  pretty = format:%C(yellow)%h%C(reset) %C(cyan)%ad%C(reset) %C(green)%an%C(reset)%n%C(white)%s%C(reset)
+
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  log = log --oneline --graph --all --decorate
+
+[log]
+  date = iso
+
+[status]
+  branch = true
+  showStash = true
+  showUntrackedFiles = all
+  showmoduleSummary = true
+  ; short = true
+
+[push]
+  default = current
+  autoSetupRemote = true
+  followTags = true
+
+[init]
+  defaultBranch = main
+
+[fetch]
+  prune = true
+
+[grep]
+  lineNumber = true
+  patternType = extended
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = -taggerdate
+  ; template = ~/.gitmessage.txt
+
+; [http]
+;   postBuffer = 524288000
+
+
+;   # Uncomment the following lines to enable GPG signing for commits
+; [user]
+;   signingkey = 9645C602AB036F7BD48287B18B61BB1829DE6900
+; [commit]
+;   gpgSign = true

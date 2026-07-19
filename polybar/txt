@@ -1,6 +1,0 @@
-echo "$(light | cut -d. -f1)"
-bash: light: command not found
-
-No backlight controller was found, so we could not decide an automatic target. The current command will have no effect. Please use -L to find a target and then specify it with -s.
-
-0

@@ -1,5 +1,26 @@
 # Arch Dotfiles
 
+i3 + polybar + picom rice, managed with [GNU stow](https://www.gnu.org/software/stow/).
+Every top-level directory is a stow package that mirrors `$HOME`
+(e.g. `kitty/.config/kitty/kitty.conf` → `~/.config/kitty/kitty.conf`).
+
+## Fresh install
+
+```sh
+git clone https://github.com/Anshul-exe/dotfiles ~/dotfiles
+cd ~/dotfiles
+./bootstrap.sh
+```
+
+`bootstrap.sh` installs all required packages (pacman → yay fallback) and fonts,
+clones oh-my-zsh / powerlevel10k / zsh plugins / TPM, symlinks every config with
+stow, recreates the `~/clear_space` media paths the configs reference, and can
+deploy system files (keyd, touchpad, SDDM themes) with sudo. Run
+`./bootstrap.sh --help` for flags (`--skip-packages`, `--skip-system`, `--yes`).
+Anything that fails to install is logged and listed at the end.
+
+Non-stow data directories: `wallpapers/`, `media/`, `sddm/`, `system/`, `random/`.
+
 ## Morning Colour Scheme
 
 ![2024-08-25_03-57](https://github.com/user-attachments/assets/bc215169-3c26-4728-ae68-6787be1f614d)

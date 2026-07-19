@@ -1,6 +1,0 @@
-{
-  "remote": "https://github.com/Anshul-exe/dotfiles",
-  "branch": "main",
-  "interval": 60,
-  "message_prefix": "Auto commit"
-}
