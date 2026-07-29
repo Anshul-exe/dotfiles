@@ -20,6 +20,7 @@ entries=(
   "Phone|9264920017"
   "Mail|anshulchauhan1224@gmail.com"
   "Address|F-9, Tower-6, Type-4, East Kidwai Nagar"
+  "hey|shi"
 )
 
 # Clipboard setter
