@@ -10,8 +10,9 @@
 #   2. Clones oh-my-zsh + powerlevel10k + zsh plugins, and tmux TPM
 #   3. Symlinks every config package into $HOME with GNU stow
 #   4. Creates the ~/clear_space media paths the configs reference
-#   5. Deploys system files (keyd, touchpad, sddm theme) with sudo — optional
-#   6. Prints a report of everything that failed or needs manual action
+#   5. Installs the user crontab (punch-in/out reminders) from system/crontab.user
+#   6. Deploys system files (keyd, touchpad, sddm theme) with sudo — optional
+#   7. Prints a report of everything that failed or needs manual action
 #
 # Flags:
 #   --skip-packages   don't install anything, only link configs
@@ -36,11 +37,15 @@ STOW_PACKAGES=(
   scripts spicetify starship tmux waybar waypaper zsh
 )
 
-RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; BLUE='\033[0;34m'; NC='\033[0m'
-info()    { echo -e "${BLUE}[INFO]${NC} $1"    | tee -a "$LOG_FILE"; }
-success() { echo -e "${GREEN}[ OK ]${NC} $1"   | tee -a "$LOG_FILE"; }
-warn()    { echo -e "${YELLOW}[WARN]${NC} $1"  | tee -a "$LOG_FILE"; }
-error()   { echo -e "${RED}[FAIL]${NC} $1"     | tee -a "$LOG_FILE"; }
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+info() { echo -e "${BLUE}[INFO]${NC} $1" | tee -a "$LOG_FILE"; }
+success() { echo -e "${GREEN}[ OK ]${NC} $1" | tee -a "$LOG_FILE"; }
+warn() { echo -e "${YELLOW}[WARN]${NC} $1" | tee -a "$LOG_FILE"; }
+error() { echo -e "${RED}[FAIL]${NC} $1" | tee -a "$LOG_FILE"; }
 
 failed_packages=()
 installed_packages=()
@@ -52,11 +57,17 @@ SKIP_SYSTEM=0
 ASSUME_YES=0
 for arg in "$@"; do
   case "$arg" in
-    --skip-packages) SKIP_PACKAGES=1 ;;
-    --skip-system)   SKIP_SYSTEM=1 ;;
-    --yes)           ASSUME_YES=1 ;;
-    -h|--help) awk 'NR>1 && !/^#/{exit} NR>1' "$0"; exit 0 ;;
-    *) echo "Unknown flag: $arg (see --help)"; exit 1 ;;
+  --skip-packages) SKIP_PACKAGES=1 ;;
+  --skip-system) SKIP_SYSTEM=1 ;;
+  --yes) ASSUME_YES=1 ;;
+  -h | --help)
+    awk 'NR>1 && !/^#/{exit} NR>1' "$0"
+    exit 0
+    ;;
+  *)
+    echo "Unknown flag: $arg (see --help)"
+    exit 1
+    ;;
   esac
 done
 
@@ -67,8 +78,14 @@ ask() { # ask "question" -> 0 yes / 1 no
 }
 
 # ---------------------------------------------------------------- guards
-[ "$EUID" -eq 0 ] && { error "Run as your user, not root."; exit 1; }
-command -v pacman >/dev/null || { error "Not an Arch system (pacman missing)."; exit 1; }
+[ "$EUID" -eq 0 ] && {
+  error "Run as your user, not root."
+  exit 1
+}
+command -v pacman >/dev/null || {
+  error "Not an Arch system (pacman missing)."
+  exit 1
+}
 [ "$REPO_DIR" != "$HOME/dotfiles" ] &&
   warn "Repo is at $REPO_DIR, not ~/dotfiles. Symlinks will point here — that's fine, but keep the repo in place."
 info "Logging to $LOG_FILE"
@@ -97,13 +114,15 @@ PKGS_CORE=(
   bluez bluez-utils blueman bluetui hostapd dnsmasq
   # pacman helpers
   pacman-contrib reflector
+  # cron daemon — drives the punch-in/out reminders (system/crontab.user)
+  cronie
   # spotify stack (spicetify config is in this repo)
   spotify-launcher
 )
 PKGS_FONTS=(
   ttf-meslo-nerd ttf-jetbrains-mono ttf-nerd-fonts-symbols otf-font-awesome
   noto-fonts noto-fonts-emoji ttf-roboto ttf-dejavu ttf-firacode-nerd
-  ttf-iosevka-nerd cantarell-fonts
+  ttf-iosevka-nerd cantarell-fonts noto-fonts-cjk
   # AUR fonts / cursor referenced by configs
   ttf-material-icons-git bibata-cursor-theme
 )
@@ -122,30 +141,45 @@ PKGS_WORKFLOW=(
 in_official_repos() { pacman -Si "$1" &>/dev/null; }
 
 install_yay() {
-  command -v yay >/dev/null && { success "yay already present"; return 0; }
+  command -v yay >/dev/null && {
+    success "yay already present"
+    return 0
+  }
   info "Installing yay (AUR helper)..."
-  sudo pacman -S --noconfirm --needed base-devel git || { error "base-devel/git install failed"; return 1; }
-  local tmp; tmp="$(mktemp -d)"
+  sudo pacman -S --noconfirm --needed base-devel git || {
+    error "base-devel/git install failed"
+    return 1
+  }
+  local tmp
+  tmp="$(mktemp -d)"
   if git clone --depth 1 https://aur.archlinux.org/yay.git "$tmp/yay" &&
-     (cd "$tmp/yay" && makepkg -si --noconfirm); then
-    success "yay installed"; rm -rf "$tmp"; return 0
+    (cd "$tmp/yay" && makepkg -si --noconfirm); then
+    success "yay installed"
+    rm -rf "$tmp"
+    return 0
   fi
   error "Could not build yay — AUR packages will be skipped"
-  rm -rf "$tmp"; return 1
+  rm -rf "$tmp"
+  return 1
 }
 
 install_pkg() {
   local pkg="$1"
   if pacman -Qq "$pkg" &>/dev/null; then
-    skipped_packages+=("$pkg"); return 0
+    skipped_packages+=("$pkg")
+    return 0
   fi
   if in_official_repos "$pkg"; then
     if sudo pacman -S --noconfirm --needed "$pkg" >>"$LOG_FILE" 2>&1; then
-      success "installed $pkg"; installed_packages+=("$pkg"); return 0
+      success "installed $pkg"
+      installed_packages+=("$pkg")
+      return 0
     fi
   elif command -v yay >/dev/null; then
     if yay -S --noconfirm --needed "$pkg" >>"$LOG_FILE" 2>&1; then
-      success "installed $pkg (AUR)"; installed_packages+=("$pkg"); return 0
+      success "installed $pkg (AUR)"
+      installed_packages+=("$pkg")
+      return 0
     fi
   fi
   error "failed to install $pkg"
@@ -180,16 +214,23 @@ fi
 
 command -v stow >/dev/null || {
   info "stow is required for linking; installing it..."
-  sudo pacman -S --noconfirm --needed stow >>"$LOG_FILE" 2>&1 || { error "stow missing and could not be installed — aborting."; exit 1; }
+  sudo pacman -S --noconfirm --needed stow >>"$LOG_FILE" 2>&1 || {
+    error "stow missing and could not be installed — aborting."
+    exit 1
+  }
 }
 
 # ------------------------------------------------- shell frameworks (clones)
 clone_if_missing() { # clone_if_missing <url> <dest> <label>
-  if [ -d "$2" ]; then success "$3 already present"; return 0; fi
+  if [ -d "$2" ]; then
+    success "$3 already present"
+    return 0
+  fi
   if git clone --depth 1 "$1" "$2" >>"$LOG_FILE" 2>&1; then
     success "cloned $3"
   else
-    error "failed to clone $3 ($1)"; manual_notes+=("Clone manually: git clone $1 $2")
+    error "failed to clone $3 ($1)"
+    manual_notes+=("Clone manually: git clone $1 $2")
   fi
 }
 
@@ -219,7 +260,10 @@ backup_conflicts() {
 info "Linking config packages with stow..."
 stow_failed=()
 for pkg in "${STOW_PACKAGES[@]}"; do
-  [ -d "$REPO_DIR/$pkg" ] || { warn "package '$pkg' missing in repo, skipping"; continue; }
+  [ -d "$REPO_DIR/$pkg" ] || {
+    warn "package '$pkg' missing in repo, skipping"
+    continue
+  }
   backup_conflicts "$pkg"
   if stow --dir="$REPO_DIR" --target="$HOME" --restow "$pkg" >>"$LOG_FILE" 2>&1; then
     success "stowed $pkg"
@@ -246,13 +290,34 @@ link_media() { # link_media <target> <source>
   fi
 }
 info "Creating media paths referenced by configs..."
-link_media "$HOME/clear_space/Media/wallpapers"        "$REPO_DIR/wallpapers"
-link_media "$HOME/clear_space/Media/idharUdhar"        "$REPO_DIR/media/idharUdhar"
+link_media "$HOME/clear_space/Media/wallpapers" "$REPO_DIR/wallpapers"
+link_media "$HOME/clear_space/Media/idharUdhar" "$REPO_DIR/media/idharUdhar"
 link_media "$HOME/clear_space/Random_Photos/wallpapers" "$REPO_DIR/wallpapers"
-link_media "$HOME/Pictures/wallpapers"                 "$REPO_DIR/wallpapers"
+link_media "$HOME/Pictures/wallpapers" "$REPO_DIR/wallpapers"
 mkdir -p "$HOME/clear_space/Media/screenshots"
 # Runtime data files scripts expect to exist:
 touch "$HOME/.rofi_notes" "$HOME/.clipboard_history" "$HOME/.Xresources"
+
+# ---------------------------------------------------------------- crontab
+# Punch-in/out reminders for work hours. Appends to any existing crontab
+# rather than replacing it, and is a no-op if the entries are already there.
+CRONTAB_FILE="$REPO_DIR/system/crontab.user"
+if [ -f "$CRONTAB_FILE" ]; then
+  if ! command -v crontab >/dev/null; then
+    warn "cronie not installed — punch reminders not scheduled"
+    manual_notes+=("Install cronie, then: crontab $CRONTAB_FILE")
+  elif crontab -l 2>/dev/null | grep -q punchReminder.sh; then
+    success "punch reminder crontab already installed"
+  elif {
+    crontab -l 2>/dev/null
+    cat "$CRONTAB_FILE"
+  } | crontab - >>"$LOG_FILE" 2>&1; then
+    success "punch reminder crontab installed"
+  else
+    error "could not install crontab"
+    manual_notes+=("Install manually: crontab $CRONTAB_FILE")
+  fi
+fi
 
 # ---------------------------------------------------------------- system files
 deploy_system() {
@@ -281,6 +346,10 @@ deploy_system() {
   # services that the configs assume
   sudo systemctl enable --now NetworkManager >>"$LOG_FILE" 2>&1 || true
   sudo systemctl enable --now bluetooth >>"$LOG_FILE" 2>&1 || true
+  # cron daemon must be running or the punch reminders never fire
+  sudo systemctl enable --now cronie >>"$LOG_FILE" 2>&1 &&
+    success "cronie service enabled" ||
+    manual_notes+=("Enable cron: sudo systemctl enable --now cronie.service")
 }
 if [ "$SKIP_SYSTEM" -eq 0 ]; then
   if ask "Deploy system-level files (keyd, touchpad, sddm themes)?"; then
@@ -305,7 +374,8 @@ if [ "$(basename "${SHELL:-}")" != "zsh" ] && command -v zsh >/dev/null; then
 fi
 
 # ---------------------------------------------------------------- report
-echo; info "================= BOOTSTRAP REPORT ================="
+echo
+info "================= BOOTSTRAP REPORT ================="
 success "packages installed: ${#installed_packages[@]}, already present: ${#skipped_packages[@]}"
 if [ ${#failed_packages[@]} -gt 0 ]; then
   error "packages that FAILED to install:"
