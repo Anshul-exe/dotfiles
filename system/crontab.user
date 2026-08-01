@@ -1,0 +1,22 @@
+# User crontab — HR portal punch reminders.
+#
+# Work hours are 18:30–03:30 IST. Each punch gets a nudge 5 min before and a
+# critical alert 1 min before that stays on screen until dismissed.
+# The notification itself is sent by scripts/.scripts/punchReminder.sh, which
+# exports DISPLAY/DBUS_SESSION_BUS_ADDRESS itself — cron's environment is
+# otherwise too bare for dunst to receive anything.
+#
+# Requires cronie:  sudo pacman -S cronie
+#                   sudo systemctl enable --now cronie.service
+#
+# Load (replaces the whole crontab):  crontab ~/dotfiles/system/crontab.user
+# Append to what's already there:     ( crontab -l; cat ~/dotfiles/system/crontab.user ) | crontab -
+# Check what's loaded:                crontab -l
+#
+# NOTE: '%' is special in crontab (it becomes a newline) — escape it as '\%'
+# if you ever add a date format or similar to these lines.
+
+25 18 * * * /home/mir/.scripts/punchReminder.sh timein
+29 18 * * * /home/mir/.scripts/punchReminder.sh timein urgent
+25  3 * * * /home/mir/.scripts/punchReminder.sh timeout
+29  3 * * * /home/mir/.scripts/punchReminder.sh timeout urgent
