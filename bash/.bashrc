@@ -18,8 +18,9 @@ alias xl="i3-msg exit"
 alias bb="nvim ~/.bashrc"
 alias sb="source ~/.bashrc"
 alias bi="nvim ~/.config/i3/config"
-alias cpc="~/.scripts/copyShitz.sh"
-alias bc="nvim ~/.scripts/copyShitz.sh"
+alias cpc="~/.scripts/syncSystem.sh"
+alias bc="nvim ~/.scripts/syncSystem.sh"
+alias dots="cd ~/dotfiles && git status --short"
 alias rnrc='cd ~/.config && ranger'
 alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf"
 
