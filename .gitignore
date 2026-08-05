@@ -1,0 +1,4 @@
+# Runtime state written by scripts into stowed (folded) config dirs.
+# These live inside the repo now that $HOME symlinks back here, but they
+# change constantly and carry no configuration value.
+i3/.config/i3/split_state
