@@ -124,6 +124,10 @@ export VDPAU_DRIVER=nvidia
 source ~/.oh-my-zsh/custom/aafunction.zsh
 source ~/.oh-my-zsh/custom/binds.zsh
 source ~/.oh-my-zsh/custom/aliases.zsh
+# Machine-local / secret shell config, deliberately NOT tracked in ~/dotfiles.
+# Sourced explicitly rather than leaning on oh-my-zsh's custom/*.zsh(N) glob,
+# which breaks on a re-source (`zz`) once nvm/bun have turned off BARE_GLOB_QUAL.
+[ -f ~/.oh-my-zsh/custom/local.zsh ] && source ~/.oh-my-zsh/custom/local.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 PROMPT='%~ % '

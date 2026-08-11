@@ -12,8 +12,11 @@ alias na="nvim ~/.oh-my-zsh/custom/aliases.zsh"
 alias nb="nvim ~/.oh-my-zsh/custom/binds.zsh"
 alias nf="nvim ~/.oh-my-zsh/custom/aafunction.zsh"
 alias bi="nvim ~/.config/i3/config"
-alias cpc="~/.scripts/copyShitz.sh"
-alias bc="nvim ~/.scripts/copyShitz.sh"
+# ~/.config and ~/.scripts are stow symlinks into ~/dotfiles, so edits land in
+# the repo on their own. cpc only pulls the leftovers: /etc, crontab, pkg list.
+alias cpc="~/.scripts/syncSystem.sh"
+alias bc="nvim ~/.scripts/syncSystem.sh"
+alias dots="cd ~/dotfiles && git status --short"
 alias rnrc='cd ~/.config && ranger'
 alias laygord="sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf" # asusctl ke phle khudse keyboard lighting set krne ka scene
 alias webd="~/.scripts/tmux1by3.sh"
